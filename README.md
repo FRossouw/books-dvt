@@ -1,27 +1,54 @@
-# BooksDvt
+# Books-DVT (Web-Ass)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+[![CircleCI](https://circleci.com/gh/FRossouw/dvt-books.svg?style=shield)](https://circleci.com/gh/FRossouw/dvt-books)
 
-## Development server
+## Introduction
+DVT is in the process of building a central repository for its developers to find software development books. The application has been named DVTBooks.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+An API has already been created to create, read, update and delete books from a data store.
 
-## Code scaffolding
+Develop a frontend to provide functionality to users.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project Requirements and Extensions
+1. Use Angular 2+
+2. Responsiveness to Desktop and Mobile Devices
+3. Internationalization i18n implemented (English, Afrikaans, isiZulu)
+4. Follow corporate guidelines for consistency (Theme)
+5. The project should be a progressive web application (PWA)
+6. The project should be linted statically (Circle CI)
+7. The project does not need to be deployed/hosted
 
-## Build
+### User Useability and Functionality
+1. Roles
+    * Administrators can create, read, search, update and delete books
+    * Users can read and search for books
+2. Functions
+    * Create book
+    * Read book
+    * Search for books (Using tags or names)
+    * Update book
+    * Delete book
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Notes
+* 2020 04 21
+    * The API endpoints are secured with OAuth
+    * Users will have to present a JWT when making requests
+    * Users can acquire access tokens from an identity server (provisioned)
+    * The application can use OAuth 2.0 implicit flow
 
-## Running unit tests
+## Screenshots
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Outcomes
+1. Practiced building components and services 
+2. Practiced authentication using OAuth & OpenID Connect (OIDC) 
+3. Practiced consuming REST APIs 
+4. Used server-side filtering 
+5. Practiced formatting field values 
+6. Practiced input validation 
+7. Implemented unit tests using Karma & Jasmine 
+8. Used Internationalization (i18n) 
+9. Practiced Reactive Programming using Rx and Observables 
+10. Used server-side pagination 
+11. Loaded data & assets from cache when offline (PWA) 
+12. Practiced using Docker in an Angular web application 
+13. Built a modern app using a web framework that calls a secure back-end service. 
