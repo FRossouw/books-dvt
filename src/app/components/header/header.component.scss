@@ -10,9 +10,10 @@ header {
         border-radius: 0px;
 
         img {
+            display: flex;
             align-self: center;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
 
         h1 {
