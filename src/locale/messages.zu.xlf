@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+
+      <trans-unit id="ButtonLogInLabel" datatype="html">
+        <source>Log In</source>
+        <target>Ngena Ngemvume</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Label for login button</note>
+        <note priority="1" from="meaning">Button Label</note>
+      </trans-unit>
+
+      <trans-unit id="ButtonLogOutLabel" datatype="html">
+        <source>Log Out</source>
+        <target>Phuma</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Label for logout button</note>
+        <note priority="1" from="meaning">Button Label</note>
+      </trans-unit>
+
+      <trans-unit id="LinkHomeLabel" datatype="html">
+        <source>Home</source>
+        <target>Ikhaya</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Label for home routing</note>
+        <note priority="1" from="meaning">Link Label</note>
+      </trans-unit>
+      
+      <trans-unit id="LinkProfileLabel" datatype="html">
+        <source>Profile</source>
+        <target>Iphrofayili</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Label for profile routing</note>
+        <note priority="1" from="meaning">Link Label</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>
