@@ -8,7 +8,7 @@ export class Book {
         href: string;
         id: string;
         name: string;
-    }
+    };
     publisher: string;
     datePublished: Date;
     image: string;
