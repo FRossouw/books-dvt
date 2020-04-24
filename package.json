@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4200 --poll 1000 --configuration=en",
-    "start:af": "ng serve --host 0.0.0.0 --port 4201 --poll 1000 --configuration=af",
-    "start:zu": "ng serve --host 0.0.0.0 --port 4202 --poll 1000 --configuration=zu",
+    "start:af": "ng serve --host 0.0.0.0 --port 4210 --poll 1000 --configuration=af",
+    "start:zu": "ng serve --host 0.0.0.0 --port 4211 --poll 1000 --configuration=zu",
     "build": "ng build --configuration=en",
     "build:af": "ng build --configuration=af",
     "build:zu": "ng build --configuration=zu",
