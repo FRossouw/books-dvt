@@ -8,13 +8,15 @@ import { environment } from '../environments/environment';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NotLoggedInComponent } from './components/not-logged-in/not-logged-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    NotLoggedInComponent
   ],
   imports: [
     BrowserModule,
