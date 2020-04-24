@@ -1,0 +1,28 @@
+@import '../../../variables';
+
+header {
+    color: $white;
+
+    .jumbotron {
+        height: 15vh;
+        display: flex;
+        background-color: $blue;
+        border-radius: 0px;
+
+        img {
+            align-self: center;
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            align-self: center;
+            flex-grow: 1;
+        }
+
+        app-navbar {
+            align-self: center;
+        }
+
+    }
+}
