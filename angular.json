@@ -34,6 +34,14 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "aot": true,
+              "outputPath": "dist/books-dvt/",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
             "af": {
               "aot": true,
               "outputPath": "dist/books-dvt-af/",
@@ -90,6 +98,9 @@
           "configurations": {
             "production": {
               "browserTarget": "books-dvt:build:production"
+            },
+            "en": {
+              "browserTarget": "books-dvt:build:en"
             },
             "af": {
               "browserTarget": "books-dvt:build:af"
