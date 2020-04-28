@@ -12,3 +12,17 @@ $white: #fff;
 $yellow: #FFC72C;
 $font-family-sans-serif: 'Poppins', sans-serif;
 $font-family-monospace: 'Poppins', sans-serif;
+
+.btn-gray {
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    color: $gray-900;
+    background-color: $gray-500;
+    border: 2px solid $gray-500;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: none;
+    border-radius: 8px;
+    margin: 10px;
+}
