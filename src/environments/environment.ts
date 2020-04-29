@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBooks: 'http://localhost:4201/Books'
+  apiBooks: 'http://localhost:4201/Books',
+  apiAuthors: 'http://localhost:4201/Authors'
 };
 
 /*
