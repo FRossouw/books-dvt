@@ -1,6 +1,14 @@
-<header>
-    <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
-    <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
-    <a routerLink="/">Home</a>&nbsp;
-    <a routerLink="profile" *ngIf="auth.loggedIn">Profile</a>
-</header>
+<nav class="navbar">
+
+    <span></span>
+    <ng-container *ngIf="!auth.loggedIn">
+        <ul class="nav justify-content-end">
+            <a i18n="Link Label|Label for home routing@@LinkHomeLabel" routerLink="/" class="nav-link">Home</a>
+            <a i18n="Link Label|Label for home routing@@LinkHomeLabel" routerLink="profile" class="nav-link">Profile</a>
+            <a i18n="Link Label|Label for home routing@@LinkHomeLabel" routerLink="/" class="nav-link">Home</a>
+        </ul>
+    </ng-container>
+    <button i18n="Button Label|Label for login button@@ButtonLogInLabel" (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn-gray">Log In</button>
+    <button i18n="Button Label|Label for logout button@@ButtonLogOutLabel" (click)="auth.logout()" *ngIf="auth.loggedIn" class="btn-gray">Log Out</button>
+
+</nav>

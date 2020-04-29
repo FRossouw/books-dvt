@@ -1,0 +1,31 @@
+@import '../../../variables';
+
+header {
+    color: $white;
+    height: 15vh;
+    width: 105%;
+    position: relative;
+    left: -3%;
+    display: flex;
+    background-color: $blue;
+    border-radius: 0px;
+
+        img {
+            display: flex;
+            align-self: center;
+            height: 70%;
+            margin: 20px;
+            margin-left: 80px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            align-self: center;
+            flex-grow: 1;
+        }
+
+        app-navbar {
+            align-self: center;
+        }
+    
+}
