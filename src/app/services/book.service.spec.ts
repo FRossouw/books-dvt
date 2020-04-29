@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { BookService } from './book.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('BookService', () => {
   let service: BookService;
@@ -13,7 +12,7 @@ describe('BookService', () => {
       providers: [BookService]
     });
 
-    httpTestingController = TestBed.get(HttpTestingController); 
+    httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(BookService);
   });
 
