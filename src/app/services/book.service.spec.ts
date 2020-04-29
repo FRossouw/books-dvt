@@ -21,8 +21,7 @@ describe('BookService', () => {
   });
 
   describe('getBooks', () => {
-    
-    it('should retrieve a single of book', () => {
+    it('should retrieve a single of books', () => {
       service.getBook('9780133966152').subscribe();
 
       const req = httpTestingController.expectOne('http://localhost:4201/Books/9780133966152');
