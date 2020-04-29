@@ -3,4 +3,5 @@ export class AuthorBook {
     id: string;
     isbn10: string;
     isbn13: string;
+    title: string;
 }
