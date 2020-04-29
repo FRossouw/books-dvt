@@ -6,9 +6,9 @@ describe('BookAuthor', () => {
   });
 
   it('should create a Book Author with data', () => {
-    const author = new BookAuthor;
-    author.href = "www.localhost.co.za.png";
-    author.id = "1700";
+    const author = new BookAuthor();
+    author.href = 'www.localhost.co.za.png';
+    author.id = '1700';
 
     expect(author).toBeTruthy();
   });

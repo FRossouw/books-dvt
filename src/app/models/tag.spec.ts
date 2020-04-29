@@ -6,10 +6,10 @@ describe('Tag', () => {
   });
 
   it('should create a Tag with data', () => {
-    const tag = new Tag;
-    tag.id = "1200";
-    tag.href = "www.nowhere.png";
-    tag.description = "a picture of nowhere";
+    const tag = new Tag();
+    tag.id = '1200';
+    tag.href = 'www.nowhere.png';
+    tag.description = 'a picture of nowhere';
 
     expect(tag).toBeTruthy();
   });
