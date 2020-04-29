@@ -21,7 +21,7 @@ describe('AuthorService', () => {
   });
 
   describe('getAuthors', () => {
-    it('should retrieve a single of books', () => {
+    it('should retrieve a single author', () => {
       service.getAuthor('3888d8b0-af27-4fba-bbed-f91b11f98b27').subscribe();
 
       const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
@@ -31,7 +31,7 @@ describe('AuthorService', () => {
 
     });
 
-    it('should retrieve an array of books', () => {
+    it('should retrieve an array of authors', () => {
       service.getAuthors().subscribe();
 
       const req = httpTestingController.expectOne('http://localhost:4201/Authors');
