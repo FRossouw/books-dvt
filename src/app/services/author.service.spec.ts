@@ -44,9 +44,9 @@ describe('AuthorService', () => {
 
     it('createAuthor() should send a new author to the server', () => {
       const author = new Author();
-      author.first_name = "Robin";
-      author.middle_names = "Peter";
-      author.last_name = "Smith";
+      author.first_name = 'Robin';
+      author.middle_names = 'Peter';
+      author.last_name = 'Smith';
 
       service.createAuthor(author).subscribe();
 
@@ -57,10 +57,10 @@ describe('AuthorService', () => {
 
     it('updateAuthor() should update an author on the server', () => {
       const author = new Author();
-      author.first_name = "John";
-      author.middle_names = "Jack";
-      author.last_name = "James";
-      author.id = "test-value";
+      author.first_name = 'John';
+      author.middle_names = 'Jack';
+      author.last_name = 'James';
+      author.id = 'test-value';
 
       service.updateAuthor(author).subscribe();
 
