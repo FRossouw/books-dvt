@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/operators';
 import { BookReturn } from '../models/book-return';
 
 @Injectable({
