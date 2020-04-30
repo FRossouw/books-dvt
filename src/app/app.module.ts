@@ -9,6 +9,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotLoggedInComponent } from './components/not-logged-in/not-logged-in.component';
+import { BookComponent } from './components/book/book.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthorComponent } from './components/author/author.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { NotLoggedInComponent } from './components/not-logged-in/not-logged-in.c
     NavBarComponent,
     ProfileComponent,
     HeaderComponent,
-    NotLoggedInComponent
+    NotLoggedInComponent,
+    BookComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
