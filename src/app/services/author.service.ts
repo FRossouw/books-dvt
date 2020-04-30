@@ -21,11 +21,11 @@ export class AuthorService {
   }
 
   createAuthor(author: Author): Observable<AuthorReturn> {
-    return this.http.post<AuthorReturn>(environment.apiAuthors, author);
+    return this.http.put<AuthorReturn>(environment.apiAuthors, author);
   }
 
   updateAuthor(author: Author): Observable<AuthorReturn> {
-    return this.http.post<AuthorReturn>(`${environment.apiAuthors}/${author.id}`, author);
+    return this.http.put<AuthorReturn>(`${environment.apiAuthors}/${author.id}`, author);
   }
 
 }
