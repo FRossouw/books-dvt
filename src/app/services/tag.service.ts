@@ -13,17 +13,11 @@ export class TagService {
   constructor(private http: HttpClient) { }
 
   getTag(tagName: string): Observable<Tag> {
-    const data = this.http.get<Tag>(`${environment.apiTags}/${tagName}`).pipe(
-      map(x => x)
-    );
-    return data;
+    return this.http.get<Tag>(`${environment.apiTags}/${tagName}`);
   }
 
   getTags(): Observable<Tag[]> {
-    const data = this.http.get<Tag[]>(`${environment.apiTags}`).pipe(
-      map(x => x)
-    );
-    return data;
+    return this.http.get<Tag[]>(`${environment.apiTags}`);
   }
 
 }
