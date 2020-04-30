@@ -27,7 +27,7 @@ export class BookService {
     return data;
   }
 
-  createBook(book: Book):Observable<BookReturn> {
+  createBook(book: Book): Observable<BookReturn> {
     return this.http.post<BookReturn>(environment.apiBooks, book).pipe(
       map(x => x)
     );
