@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { BookReturn } from '../models/book-return';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,12 @@ export class BookService {
       map(x => x)
     );
     return data;
+  }
+
+  createBook(book: Book):Observable<BookReturn> {
+    return this.http.post<BookReturn>(environment.apiBooks, book).pipe(
+      map(x => x)
+    );
   }
 
 }
