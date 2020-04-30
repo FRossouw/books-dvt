@@ -25,7 +25,7 @@ export class AuthorService {
   }
 
   updateAuthor(author: Author): Observable<AuthorReturn> {
-    return this.http.post<AuthorReturn>(`${environment.apiBooks}/${author.id}`, author);
+    return this.http.post<AuthorReturn>(`${environment.apiAuthors}/${author.id}`, author);
   }
 
 }
