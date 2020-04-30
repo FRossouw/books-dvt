@@ -14,23 +14,15 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   getBook(isbn13: string): Observable<Book> {
-    const data = this.http.get<Book>(`${environment.apiBooks}/${isbn13}`).pipe(
-      map(x => x)
-    );
-    return data;
+    return this.http.get<Book>(`${environment.apiBooks}/${isbn13}`);
   }
 
   getBooks(): Observable<Book[]> {
-    const data = this.http.get<Book[]>(`${environment.apiBooks}`).pipe(
-      map(x => x)
-    );
-    return data;
+    return this.http.get<Book[]>(`${environment.apiBooks}`);
   }
 
   createBook(book: Book): Observable<BookReturn> {
-    return this.http.post<BookReturn>(environment.apiBooks, book).pipe(
-      map(x => x)
-    );
+    return this.http.post<BookReturn>(environment.apiBooks, book);
   }
 
 }
