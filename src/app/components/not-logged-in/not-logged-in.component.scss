@@ -1,7 +1,80 @@
 @import '../../../variables';
 
-.card {
-    background-image: url(../../../assets/images/slide.svg);
-    background-size: cover;
-    background-position: center bottom;
+.card-not-logged-in {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: $font-family-sans-serif;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(111,111,111,1) 100%);
+
+    .card-middle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-self: center;
+        width: 500px;
+        background-color: $blue;
+        border: 10px double $white;
+        border-radius: 10px;
+
+        div {
+            width: 240px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+
+            img {
+                width: 100%;
+            }
+
+            h1, h2 {
+                margin: 0px;
+                color: $white;
+            }
+
+            h1 {
+                font-size: 2.8em;
+                font-weight: 600;
+                position: relative;
+            }
+
+            h2 {
+                font-size: 1.4em;
+                font-weight: 300;
+                position: relative;
+            }
+
+        }
+
+        div:nth-child(3) {
+            justify-content: center;
+        }
+    }
 }
+
+@media only screen and (max-width: 500px) {
+    .card-not-logged-in {
+        background: $blue;
+        
+        .card-middle {
+            border: none;
+
+            div {
+                justify-content: center;
+
+                h1, h2 {
+                    text-align: center;
+                }
+
+            }
+        }
+    }    
+}
+
+// Smaller than 500px justify content center
