@@ -37,8 +37,8 @@ export class AuthService {
   // Create a local property for login status
   loggedIn: boolean = null;
   userProfileData: any;
-  admin: boolean = false;
-  user: boolean = false;
+  admin = false;
+  user = false;
 
   constructor(private router: Router) {
     // On initial load, check authentication state with authorization server
