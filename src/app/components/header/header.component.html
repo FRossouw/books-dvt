@@ -1,5 +1,23 @@
+<app-not-logged-in></app-not-logged-in>
 <header>
-    <img src="../../../assets/logos/Group 1.png">
-    <h1>Books</h1>
-    <app-navbar></app-navbar>
+    <div>
+        <img src="../../../assets/logos/DVT_icon_inverted.png">
+        <h1>Books</h1>
+    </div>
+    <div *ngIf="auth.loggedIn">
+        <h2>Welcome User,</h2>
+    </div>
+    <div class="input-group flex-nowrap" *ngIf="auth.loggedIn">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Search Books, Authors or Tags" aria-label="Username"
+            aria-describedby="addon-wrapping">
+    </div>
+    <div *ngIf="auth.loggedIn">
+        <a href="">Profile</a>
+    </div>
+    <div>
+        <button (click)="auth.logout()" *ngIf="auth.loggedIn" class="btn-login-logout">Log Out</button>
+    </div>
 </header>
