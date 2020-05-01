@@ -36,6 +36,9 @@ export class AuthService {
   userProfile$ = this.userProfileSubject$.asObservable();
   // Create a local property for login status
   loggedIn: boolean = null;
+  userProfileData: any;
+  admin: boolean = false;
+  user: boolean = false;
 
   constructor(private router: Router) {
     // On initial load, check authentication state with authorization server
@@ -50,7 +53,10 @@ export class AuthService {
   getUser$(options?): Observable<any> {
     return this.auth0Client$.pipe(
       concatMap((client: Auth0Client) => from(client.getUser(options))),
-      tap(user => this.userProfileSubject$.next(user))
+      tap(user => {
+        this.userProfileSubject$.next(user);
+        this.userProfileData = user;
+      })
     );
   }
 

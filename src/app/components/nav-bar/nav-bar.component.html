@@ -1,7 +1,7 @@
 <nav class="navbar">
 
     <span></span>
-    <ng-container *ngIf="!auth.loggedIn">
+    <ng-container *ngIf="auth.loggedIn">
         <ul class="nav justify-content-end">
             <a i18n="Link Label|Label for home routing@@LinkHomeLabel" routerLink="/" class="nav-link">Home</a>
             <a i18n="Link Label|Label for home routing@@LinkHomeLabel" routerLink="profile" class="nav-link">Profile</a>
