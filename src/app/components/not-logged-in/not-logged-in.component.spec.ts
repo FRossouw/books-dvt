@@ -20,7 +20,7 @@ describe('NotLoggedInComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NotLoggedInComponent);
     component = fixture.componentInstance;
-    testBedService = TestBed.get(AuthService);
+    testBedService = TestBed.inject(AuthService);
     fixture.detectChanges();
   });
 
