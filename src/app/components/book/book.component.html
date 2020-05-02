@@ -1,16 +1,16 @@
 <div class="book-container">
     <ng-container *ngFor="let book of books">
-        <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
             <div class="card" style="width: 18rem;">
-                <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{book.title}}</h5>
-                    <p class="card-text">{{book.abstract}}</p>
-                </div>
+                <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
+                    <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{book.title}}</h5>
+                        <p class="card-text">{{book.abstract}}</p>
+                    </div>
+                </a>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="card-features">Author: </span><a href="/book">{{book.author.name}}</a></li>
+                    <li class="list-group-item"><span class="card-features">Author: </span><a href="/author">{{book.author.name}}</a></li>
                 </ul>
             </div>
-        </a>
     </ng-container>
 </div>
