@@ -1,6 +1,6 @@
 <div class="book-container">
     <ng-container *ngFor="let book of books">
-        <a href="/book" class="card-anchor">
+        <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
             <div class="card" style="width: 18rem;">
                 <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
                 <div class="card-body">

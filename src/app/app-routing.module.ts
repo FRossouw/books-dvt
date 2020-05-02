@@ -6,12 +6,18 @@ import { NotLoggedInComponent } from './components/not-logged-in/not-logged-in.c
 import { HeaderComponent } from './components/header/header.component';
 import { BookComponent } from './components/book/book.component';
 import { AuthorComponent } from './components/author/author.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 
 const routes: Routes = [
   {
     path: 'book',
     component: BookComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'book/view/:id',
+    component: BookDetailsComponent,
     canActivate: [AuthGuard]
   },
   {

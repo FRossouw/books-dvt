@@ -11,6 +11,7 @@ import { NotLoggedInComponent } from './components/not-logged-in/not-logged-in.c
 import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthorComponent } from './components/author/author.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthorComponent } from './components/author/author.component';
     HeaderComponent,
     NotLoggedInComponent,
     BookComponent,
-    AuthorComponent
+    AuthorComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
