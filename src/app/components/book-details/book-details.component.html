@@ -1,1 +1,25 @@
-<p>book-details works!</p>
+<ng-container *ngIf="book">
+    <div class="book-details-container">
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="../../../assets/images/slide.svg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{book.title}}</h5>
+                        <p class="card-text"><small class="text-muted">Date Published: {{book.date_published}}</small></p>
+                        <p class="card-text">{{book.about}}</p>
+                        <p class="card-text"><small class="text-muted">Published by: {{book.publisher}}</small></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span class="card-features">Author: </span>
+                            <a href="/author">{{book.author.name}}</a></li>
+                    </ul>
+                    <button [routerLink]="['/book']" class="btn-login-logout" type="button">Back</button>
+                    <button [routerLink]="['/book']" class="btn-login-logout" type="button">Update</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,9 @@
+@import '../../../variables';
+
+.book-details-container {
+    font-family: $font-family-sans-serif;
+    margin-top: 20px;
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
