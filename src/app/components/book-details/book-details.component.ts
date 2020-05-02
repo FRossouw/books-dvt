@@ -27,7 +27,6 @@ export class BookDetailsComponent implements OnInit {
   private getBook(isbn13: string): void {
     this.book = new Book();
     this.bookService.getBook(isbn13).subscribe((bookX) => {
-      console.log(bookX)
       this.book = bookX;
     });
   }
