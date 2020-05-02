@@ -12,7 +12,6 @@ import { BookAuthor } from 'src/app/models/book-author';
 export class BookComponent implements OnInit {
   @Output()
   books: Book[] = new Array();
-  
   bookReturn: BookReturn;
 
   constructor(private bookService: BookService) { }

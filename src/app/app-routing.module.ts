@@ -10,12 +10,12 @@ import { AuthorComponent } from './components/author/author.component';
 
 const routes: Routes = [
   {
-    path:'book',
+    path: 'book',
     component: BookComponent,
     canActivate: [AuthGuard]
   },
   {
-    path:'author',
+    path: 'author',
     component: AuthorComponent,
     canActivate: [AuthGuard]
   },
