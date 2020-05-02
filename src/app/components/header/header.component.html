@@ -13,14 +13,29 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Search</span>
         </div>
-        <input type="text" class="form-control" placeholder="Author, Book, Tag" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Author, Book, Tag" aria-label="Username"
+            aria-describedby="basic-addon1">
     </div>
 
-    <div *ngIf="auth.loggedIn">
+    <div class="navigation" *ngIf="auth.loggedIn">
         <a href="">Profile</a>
     </div>
 
     <div>
         <button (click)="auth.logout()" *ngIf="auth.loggedIn" class="btn-login-logout">Log Out</button>
     </div>
+
 </header>
+
+<div *ngIf="auth.loggedIn" class="dropdown-header">
+    <div class="space"></div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button">Profile</button>
+          <button class="dropdown-item " type="button" (click)="auth.logout()">Log Out</button>
+        </div>
+    </div>
+</div>
