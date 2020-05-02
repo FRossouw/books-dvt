@@ -19,7 +19,6 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
     // this.addBook(null);
     this.getBooks();
-    console.log(this.books);
   }
 
   private getBooks(): void {
