@@ -18,6 +18,8 @@
     </div>
 
     <div class="navigation" *ngIf="auth.loggedIn">
+        <a [routerLink]="['/book']">Books</a>
+        <a [routerLink]="['/author']">Authors</a>
         <a href="">Profile</a>
     </div>
 
@@ -31,9 +33,11 @@
     <div class="space"></div>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Menu
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button [routerLink]="['/book']" class="dropdown-item" type="button">Books</button>
+          <button [routerLink]="['/author']" class="dropdown-item" type="button">Authors</button>
           <button class="dropdown-item" type="button">Profile</button>
           <button class="dropdown-item " type="button" (click)="auth.logout()">Log Out</button>
         </div>
