@@ -1,5 +1,5 @@
 @import '../../../variables';
-//@import '../../../bootstrap.css';
+@import '../../../bootstrap.min.css';
 
 header {
     background-color: $blue;
@@ -8,6 +8,7 @@ header {
     font-family: $font-family-sans-serif;
     position: relative;
     width: 100vw;
+    border-bottom: 5px solid darken($blue, 10%);
 
     div {
         display: flex;
@@ -42,18 +43,25 @@ header {
             color: $white;
             margin: 0px 20px;
         }
-
-        .form-control {
-            width: 230px;
-        }
         
     }
 
-    div:nth-child(2) {
+    .input-group {
+        font-family: $font-family-sans-serif;
+        margin: 0px;
+        padding: 0px;
+        width: 290px;
+        position: relative;
+        top: 7px;
+
+        input {
+            width: 180px;
+        }
+
+    }
+
+   .welcome-text {
         flex-grow: 1;
     }
 
-    div:nth-child(3) {
-        width: 300px;
-    }
 }

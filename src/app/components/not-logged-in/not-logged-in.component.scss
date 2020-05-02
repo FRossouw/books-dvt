@@ -1,6 +1,7 @@
 @import '../../../variables';
 
 .card-not-logged-in {
+    z-index: 1000;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -10,8 +11,6 @@
     left: 0px;
     width: 100vw;
     height: 100vh;
-    background: rgb(255, 255, 255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(111,111,111,1) 100%);
 
     .card-middle {
         display: flex;
