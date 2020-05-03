@@ -6,4 +6,21 @@
     position: relative;
     width: 80%;
     left: 10%;
+
+    .card {    
+        border: 2px solid $blue;
+
+        img {
+            border-right: 2px solid $blue;
+        }
+
+        ul {
+            border: none;
+
+            .list-group-item {
+                border: none;
+            }
+        }
+
+    }
 }
