@@ -27,8 +27,9 @@ export class AuthGuard implements CanActivate {
             this.auth.admin = false;
             this.auth.user = true;
           } else {
+            // If no role is specified the role will be a user
             this.auth.admin = false;
-            this.auth.user = false;
+            this.auth.user = true;
           }
         }
 
