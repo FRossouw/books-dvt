@@ -13,7 +13,6 @@ export class AuthorDetailsComponent implements OnInit {
 
   author: Author;
   admin: boolean;
-
   constructor(private activatedRoute: ActivatedRoute, private authorService: AuthorService, private auth: AuthService) { 
     this.admin = false;
     this.admin = auth.admin;
