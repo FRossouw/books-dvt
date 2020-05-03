@@ -19,7 +19,7 @@
                             <a href="/book">{{author.name}} Books</a></li>
                     </ul>
                     <button [routerLink]="['/author']" class="btn-login-logout" type="button">Back</button>
-                    <button *ngIf="admin" [routerLink]="['/author']" class="btn-login-logout" type="button">Update</button>
+                    <button *ngIf="admin" [routerLink]="['/author/forms',author.id]" class="btn-login-logout" type="button">Update</button>
                 </div>  
             </div>
         </div>

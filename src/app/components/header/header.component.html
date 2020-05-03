@@ -19,9 +19,9 @@
 
     <div class="navigation" *ngIf="auth.loggedIn">
         <a [routerLink]="['/book']">Books</a>
-        <a *ngIf="auth.admin" [routerLink]="['/book']">Add Books</a>
+        <a *ngIf="auth.admin" [routerLink]="['/book/forms','1']">Add Books</a>
         <a [routerLink]="['/author']">Authors</a>
-        <a *ngIf="auth.admin" [routerLink]="['/author']">Add Authors</a>
+        <a *ngIf="auth.admin" [routerLink]="['/author/forms','1']">Add Authors</a>
         <a [routerLink]="['/profile']">Profile</a>
     </div>
 
@@ -39,9 +39,9 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <button [routerLink]="['/book']" class="dropdown-item" type="button">Books</button>
-            <button *ngIf="auth.admin" [routerLink]="['/book']" class="dropdown-item" type="button">Add Books</button>
+            <button *ngIf="auth.admin" [routerLink]="['/book/forms','1']" class="dropdown-item" type="button">Add Books</button>
             <button [routerLink]="['/author']" class="dropdown-item" type="button">Authors</button>
-            <button *ngIf="auth.admin" [routerLink]="['/author']" class="dropdown-item" type="button">Add Authors</button>
+            <button *ngIf="auth.admin" [routerLink]="['/author/forms','1']" class="dropdown-item" type="button">Add Authors</button>
             <button class="dropdown-item" type="button">Profile</button>
             <button class="dropdown-item " type="button" (click)="auth.logout()">Log Out</button>
         </div>
