@@ -12,6 +12,7 @@ import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthorComponent } from './components/author/author.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { AuthorDetailsComponent } from './components/author-details/author-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
     NotLoggedInComponent,
     BookComponent,
     AuthorComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    AuthorDetailsComponent
   ],
   imports: [
     BrowserModule,

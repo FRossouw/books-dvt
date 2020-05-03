@@ -5,7 +5,7 @@
     <ng-container *ngFor="let author of authors">
         
             <div class="card" style="width: 18rem;">
-                <a [routerLink]="['/author']" class="card-anchor">
+                <a [routerLink]="['/author/view',author.id]" class="card-anchor">
                     <img src="../../../assets/images/author.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{author.last_name}}, {{author.first_name}} <ng-container *ngIf="author.middle_names">{{author.middle_names[0]}}.</ng-container></h5>
