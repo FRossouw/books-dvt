@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthorComponent } from './components/author/author.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AuthorDetailsComponent } from './components/author-details/author-details.component';
+import { AuthorFormComponent } from './components/author-form/author-form.component';
+import { BookFormComponent } from './components/book-form/book-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AuthorDetailsComponent } from './components/author-details/author-detai
     BookComponent,
     AuthorComponent,
     BookDetailsComponent,
-    AuthorDetailsComponent
+    AuthorDetailsComponent,
+    AuthorFormComponent,
+    BookFormComponent
   ],
   imports: [
     BrowserModule,
