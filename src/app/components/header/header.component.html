@@ -18,9 +18,9 @@
     </div>
 
     <div class="navigation" *ngIf="auth.loggedIn">
-        <a *ngIf="auth.user" [routerLink]="['/book']">Books</a>
-        <a *ngIf="auth.user" [routerLink]="['/author']">Authors</a>
+        <a [routerLink]="['/book']">Books</a>
         <a *ngIf="auth.admin" [routerLink]="['/book']">Add Books</a>
+        <a [routerLink]="['/author']">Authors</a>
         <a *ngIf="auth.admin" [routerLink]="['/author']">Add Authors</a>
         <a [routerLink]="['/profile']">Profile</a>
     </div>
@@ -38,9 +38,9 @@
           Menu
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button *ngIf="auth.user" [routerLink]="['/book']" class="dropdown-item" type="button">Books</button>
-            <button *ngIf="auth.user" [routerLink]="['/author']" class="dropdown-item" type="button">Authors</button>
+            <button [routerLink]="['/book']" class="dropdown-item" type="button">Books</button>
             <button *ngIf="auth.admin" [routerLink]="['/book']" class="dropdown-item" type="button">Add Books</button>
+            <button [routerLink]="['/author']" class="dropdown-item" type="button">Authors</button>
             <button *ngIf="auth.admin" [routerLink]="['/author']" class="dropdown-item" type="button">Add Authors</button>
             <button class="dropdown-item" type="button">Profile</button>
             <button class="dropdown-item " type="button" (click)="auth.logout()">Log Out</button>
