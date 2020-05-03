@@ -12,9 +12,11 @@ import { AuthService } from 'src/app/services/auth.service';
 export class BookDetailsComponent implements OnInit {
 
   book: Book;
+  admin: boolean;
+
   constructor(private activatedRoute: ActivatedRoute, public bookService: BookService, private auth: AuthService) {
-    console.log('auth service admin' + auth.admin);
-    console.log('auth service user' + auth.user);
+    this.admin = false;
+    this.admin = auth.admin;
   }
 
   ngOnInit(): void {

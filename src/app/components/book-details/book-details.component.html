@@ -16,11 +16,12 @@
                         <p class="card-text"><small class="text-muted">Published by: {{book.publisher}}</small></p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><span class="card-features">Author: </span>
-                            <a href="/author">{{book.author.name}}</a></li>
+                        <li *ngIf="book.author" class="list-group-item"><span class="card-features">Author: </span>
+                            <a href="/author">{{book.author.name}}</a>
+                        </li>
                     </ul>
                     <button [routerLink]="['/book']" class="btn-login-logout" type="button">Back</button>
-                    <button [routerLink]="['/book']" class="btn-login-logout" type="button">Update</button>
+                    <button *ngIf="admin" [routerLink]="['/book']" class="btn-login-logout" type="button">Update</button>
                 </div>  
             </div>
         </div>
