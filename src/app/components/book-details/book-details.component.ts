@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-book-details',
@@ -12,7 +13,10 @@ export class BookDetailsComponent implements OnInit {
 
   book: Book;
 
-  constructor(private activatedRoute: ActivatedRoute, public bookService: BookService) { }
+  constructor(private activatedRoute: ActivatedRoute, public bookService: BookService, private auth: AuthService) { 
+    console.log("auth service admin" + auth.admin);
+    console.log("auth service user" + auth.user);
+  }
 
   ngOnInit(): void {
     let bookIsbn13: string;
