@@ -85,7 +85,7 @@ export class BookFormComponent implements OnInit {
 
   saveForm(): void {
     if (this.update) {
-      //this.updateAuthor();
+      // this.updateAuthor();
     } else {
       this.addBook();
     }
@@ -96,7 +96,7 @@ export class BookFormComponent implements OnInit {
     this.bookService.getBook(isbn13).subscribe((bookX) => {
       this.book = bookX;
       console.log(bookX);
-      console.log("........................." + JSON.stringify(this.book.tags));
+      console.log('.........................' + JSON.stringify(this.book.tags));
     });
   }
 
@@ -132,12 +132,12 @@ export class BookFormComponent implements OnInit {
   }
 
   private convertAuthorToBookAuthor(): void {
-    let bookAuth = {} as BookAuthor;
+    const bookAuth = {} as BookAuthor;
     let selectedAuthor: Author;
-    let bAuth = this.book.author;
+    const bAuth = this.book.author;
 
     this.authors.forEach(element => {
-      if (element.id.toString() == bAuth.toString()) {
+      if (element.id.toString() === bAuth.toString()) {
         selectedAuthor = element;
         bookAuth.id = selectedAuthor.id;
         bookAuth.href = selectedAuthor.href;
@@ -148,12 +148,12 @@ export class BookFormComponent implements OnInit {
   }
 
   private convertTagsToBookTags(): void {
-    let bookTags = this.book.tags;
-    let tagArray: Tag[] = new Array();
+    const bookTags = this.book.tags;
+    const tagArray: Tag[] = new Array();
     let selectedTag: Tag;
 
     this.tagList.forEach(tagElement => {
-      if (tagElement.id.toString() == bookTags.toString()) {
+      if (tagElement.id.toString() === bookTags.toString()) {
         selectedTag = tagElement;
         this.book.tags = {} as Tag[];
         tagArray.push(selectedTag);
