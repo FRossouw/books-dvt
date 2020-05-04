@@ -13,8 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthorComponent } from './components/author/author.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AuthorDetailsComponent } from './components/author-details/author-details.component';
-import { AuthorFormComponent } from './components/author-form/author-form.component';
-import { BookFormComponent } from './components/book-form/book-form.component';
+import { AuthorFormComponent } from './components/forms/author-form/author-form.component';
+import { BookFormComponent } from './components/forms/book-form/book-form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import { BookFormComponent } from './components/book-form/book-form.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
