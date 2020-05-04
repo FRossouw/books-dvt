@@ -88,6 +88,16 @@
             </select>
         </div>
 
+        <div class="form-group">
+            <label for="Image">Upload Image</label>
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input (change)="uploadPicture($event)" type="file" class="custom-file-input" id="image" name="image" accept="image/bmp,image/gif,image/jpeg,image/png" autocomplete="none" autocorrect="off" autocapitalize="off" spellcheck="false">
+                    <label class="custom-file-label" for="image" aria-describedby="image">Choose file</label>
+                </div>
+            </div>       
+        </div>
+        
         <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Add Book</button>
         <button *ngIf="!update" [routerLink]="['/book']" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
         <button *ngIf="update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Update Author</button>

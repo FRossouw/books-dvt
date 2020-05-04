@@ -22,12 +22,13 @@ export class BookFormComponent implements OnInit {
   book: Book;
   authors: Author[];
   tagList: Tag[];
+  imageFile: File;
   constructor(
-      private activatedRoute: ActivatedRoute,
-      private bookService: BookService,
-      private authorService: AuthorService,
-      private tagService: TagService,
-      private router: Router) {
+    private activatedRoute: ActivatedRoute,
+    private bookService: BookService,
+    private authorService: AuthorService,
+    private tagService: TagService,
+    private router: Router) {
     this.form = new FormGroup({
       isbn10: new FormControl('', {}),
       isbn13: new FormControl('', {}),
@@ -56,7 +57,7 @@ export class BookFormComponent implements OnInit {
       }
     });
 
-    
+
 
     this.isbn10.valueChanges.subscribe(x => this.book.isbn10 = x);
     this.isbn13.valueChanges.subscribe(x => this.book.isbn13 = x);
@@ -124,6 +125,7 @@ export class BookFormComponent implements OnInit {
 
     this.bookService.createBook(this.book).subscribe(bookR => {
       bookReturn = bookR;
+      this.bookService.postPicture(this.book.isbn13, this.imageFile).subscribe();
       this.router.navigate([`/book/view/${bookReturn.id}`]);
     });
 
@@ -145,22 +147,26 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  private convertTagsToBookTags():void {
+  private convertTagsToBookTags(): void {
     let bookTags = this.book.tags;
-    let tagArray : Tag[] = new Array();
+    let tagArray: Tag[] = new Array();
     let selectedTag: Tag;
 
-    console.log("book tag element ........................................." + JSON.stringify(this.book.tags));
     this.tagList.forEach(tagElement => {
       if (tagElement.id.toString() == bookTags.toString()) {
         selectedTag = tagElement;
-        console.log("selecet ........................................." + JSON.stringify(selectedTag));
         this.book.tags = {} as Tag[];
         tagArray.push(selectedTag);
         this.book.tags = tagArray;
       }
     });
 
+  }
+
+  uploadPicture(event) {
+    if (event.target.files.length) {
+      this.imageFile = event.target.files[0];
+    }
   }
 
 }
