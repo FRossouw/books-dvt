@@ -37,10 +37,10 @@
                     <ng-container *ngIf="book.author">
                         <ng-container *ngFor="let authorB of authors">
                             <ng-container *ngIf="authorB.id == book.author.id">
-                                <option [value]="authorB" selected>{{authorB.name}}</option>
+                                <option [value]="authorB.id" selected>{{authorB.name}}</option>
                             </ng-container>
                             <ng-container *ngIf="authorB.id != book.author.id">
-                                <option [value]="authorB">{{authorB.name}}</option>
+                                <option [value]="authorB.id">{{authorB.name}}</option>
                             </ng-container>
                         </ng-container>
                     </ng-container>
@@ -61,7 +61,7 @@
 
         <div class="form-group">
             <label for="datePublished">Published Date</label>
-            <input type="date" value="{{book.date_published}}" class="form-control" id="datePublished" formControlName="datePublished">
+            <input type="date" class="form-control" id="datePublished" formControlName="datePublished">
         </div>
 
         <div class="form-group">
@@ -71,10 +71,10 @@
                     <ng-container *ngIf="book.tags">
                         <ng-container *ngFor="let tagB of tagList">
                             <ng-container *ngIf="tagB.id == book.tags[0].id">
-                                <option [value]="tagB" selected>{{tagB.description}}</option>
+                                <option [value]="tagB.id" selected>{{tagB.description}}</option>
                             </ng-container>
                             <ng-container *ngIf="tagB.id != book.tags[0].id">
-                                <option [value]="tagB">{{tagB.description}}</option>
+                                <option [value]="tagB.id">{{tagB.description}}</option>
                             </ng-container>
                         </ng-container>
                     </ng-container>
@@ -88,7 +88,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div *ngIf="!update" class="form-group">
             <label for="Image">Upload Image</label>
             <div class="input-group mb-3">
                 <div class="custom-file">

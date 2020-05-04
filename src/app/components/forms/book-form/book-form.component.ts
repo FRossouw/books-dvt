@@ -85,7 +85,7 @@ export class BookFormComponent implements OnInit {
 
   saveForm(): void {
     if (this.update) {
-      // this.updateAuthor();
+      this.updateBook();
     } else {
       this.addBook();
     }
@@ -94,9 +94,8 @@ export class BookFormComponent implements OnInit {
   private getBook(isbn13: string): void {
     this.book = new Book();
     this.bookService.getBook(isbn13).subscribe((bookX) => {
+      console.log(bookX.date_published);
       this.book = bookX;
-      console.log(bookX);
-      console.log('.........................' + JSON.stringify(this.book.tags));
     });
   }
 
@@ -128,7 +127,18 @@ export class BookFormComponent implements OnInit {
       this.bookService.postPicture(this.book.isbn13, this.imageFile).subscribe();
       this.router.navigate([`/book/view/${bookReturn.id}`]);
     });
+  }
 
+  private updateBook(): void {
+    this.convertAuthorToBookAuthor();
+    this.convertTagsToBookTags();
+    console.log('author ' + JSON.stringify(this.book.author));
+    console.log('tags ' + JSON.stringify(this.book.tags));
+    console.log('book ' + JSON.stringify(this.book));
+
+    this.bookService.updateBook(this.book).subscribe((bookReturn) => {
+      this.router.navigate([`/book/view/${this.book.isbn13}`]);
+    });
   }
 
   private convertAuthorToBookAuthor(): void {
