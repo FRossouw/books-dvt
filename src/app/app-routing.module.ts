@@ -24,7 +24,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'book/forms/:id',
+    path: 'book/forms/update/:id',
+    component: BookFormComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'book/forms/add',
     component: BookFormComponent,
     canActivate: [AuthGuard]
   },
