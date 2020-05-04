@@ -11,21 +11,19 @@ export class AuthorFormComponent implements OnInit {
 
   form: FormGroup;
   update: boolean;
-  constructor(private activatedRoute: ActivatedRoute) { 
+  constructor(private activatedRoute: ActivatedRoute) {
     this.form = new FormGroup({});
   }
 
   ngOnInit(): void {
     let authorId: string;
     this.update = false;
-    if(this.activatedRoute.snapshot.queryParams['id']) {
-      this.activatedRoute.paramMap.subscribe(params => {
+    this.activatedRoute.paramMap.subscribe(params => {
+      if (params.get('id')) {
         authorId = params.get('id');
-        console.log("Parameter ULR " + authorId);
         this.update = true;
-      });
-    }
-    
+      }
+    });
   }
 
 }
