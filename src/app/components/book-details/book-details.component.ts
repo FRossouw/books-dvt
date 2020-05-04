@@ -35,7 +35,6 @@ export class BookDetailsComponent implements OnInit {
     //   } else {
     //     this.bookImage = "../../../assets/images/slide.svg";
     //   }
-      
     // });
 
   }
