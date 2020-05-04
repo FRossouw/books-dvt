@@ -1,5 +1,49 @@
+<app-not-logged-in></app-not-logged-in>
 <header>
-    <img src="../../../assets/logos/Group 1.png">
-    <h1>Books</h1>
-    <app-navbar></app-navbar>
+    <div>
+        <img src="../../../assets/logos/DVT_icon_inverted.png">
+        <h1>Books</h1>
+    </div>
+
+    <div class="welcome-text" *ngIf="auth.loggedIn">
+        <h2>Welcome {{auth.userProfileData.nickname}},</h2>
+    </div>
+
+    <div *ngIf="auth.loggedIn" class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Search</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Author, Book, Tag" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <div class="navigation" *ngIf="auth.loggedIn">
+        <a [routerLink]="['/book']">Books</a>
+        <a *ngIf="auth.admin" [routerLink]="['/book/forms','1']">Add Books</a>
+        <a [routerLink]="['/author']">Authors</a>
+        <a *ngIf="auth.admin" [routerLink]="['/author/forms','1']">Add Authors</a>
+        <a [routerLink]="['/profile']">Profile</a>
+    </div>
+
+    <div>
+        <button (click)="auth.logout()" *ngIf="auth.loggedIn" class="btn-login-logout">Log Out</button>
+    </div>
+
 </header>
+
+<div *ngIf="auth.loggedIn" class="dropdown-header">
+    <div class="space"></div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button [routerLink]="['/book']" class="dropdown-item" type="button">Books</button>
+            <button *ngIf="auth.admin" [routerLink]="['/book/forms','1']" class="dropdown-item" type="button">Add Books</button>
+            <button [routerLink]="['/author']" class="dropdown-item" type="button">Authors</button>
+            <button *ngIf="auth.admin" [routerLink]="['/author/forms','1']" class="dropdown-item" type="button">Add Authors</button>
+            <button class="dropdown-item" type="button">Profile</button>
+            <button class="dropdown-item " type="button" (click)="auth.logout()">Log Out</button>
+        </div>
+    </div>
+</div>

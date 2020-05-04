@@ -15,7 +15,6 @@ export class AuthorComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAuthors();
-    console.log(this.authors);
   }
 
   private getAuthors(): void {

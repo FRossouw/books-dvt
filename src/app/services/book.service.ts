@@ -25,7 +25,7 @@ export class BookService {
   }
 
   updateBook(book: Book): Observable<BookReturn> {
-    return this.http.post<BookReturn>(`${environment.apiBooks}/${book.isbn13}`, book);
+    return this.http.put<BookReturn>(`${environment.apiBooks}/${book.isbn13}`, book);
   }
 
 }

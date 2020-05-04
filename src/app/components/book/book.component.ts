@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 import { BookReturn } from 'src/app/models/book-return';
@@ -10,7 +10,7 @@ import { BookAuthor } from 'src/app/models/book-author';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-
+  @Output()
   books: Book[] = new Array();
   bookReturn: BookReturn;
 
@@ -19,7 +19,6 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
     // this.addBook(null);
     this.getBooks();
-    console.log(this.books);
   }
 
   private getBooks(): void {
