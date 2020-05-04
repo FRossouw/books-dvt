@@ -9,7 +9,7 @@
     "build": "ng build --configuration=en",
     "build:af": "ng build --configuration=af",
     "build:zu": "ng build --configuration=zu",
-    "test": "ng test",
+    "test": "ng test -- --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "int:extract": "ng xi18n --output-path src/locale"

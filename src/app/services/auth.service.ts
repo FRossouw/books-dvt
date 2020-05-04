@@ -36,6 +36,9 @@ export class AuthService {
   userProfile$ = this.userProfileSubject$.asObservable();
   // Create a local property for login status
   loggedIn: boolean = null;
+  userProfileData: any;
+  admin = false;
+  user = false;
 
   constructor(private router: Router) {
     // On initial load, check authentication state with authorization server
@@ -50,7 +53,10 @@ export class AuthService {
   getUser$(options?): Observable<any> {
     return this.auth0Client$.pipe(
       concatMap((client: Auth0Client) => from(client.getUser(options))),
-      tap(user => this.userProfileSubject$.next(user))
+      tap(user => {
+        this.userProfileSubject$.next(user);
+        this.userProfileData = user;
+      })
     );
   }
 
@@ -71,7 +77,7 @@ export class AuthService {
     checkAuth$.subscribe();
   }
 
-  login(redirectPath: string = '/') {
+  login(redirectPath: string = '/book') {
     // A desired redirect path can be passed to login method
     // (e.g., from a route guard)
     // Ensure Auth0 client instance exists

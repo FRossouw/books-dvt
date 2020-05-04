@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileComponent } from './profile.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AuthService } from 'src/app/services/auth.service';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -8,7 +10,9 @@ describe('ProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      declarations: [ ProfileComponent ],
+      imports: [RouterTestingModule],
+      providers: [AuthService]
     })
     .compileComponents();
   }));
@@ -19,7 +23,7 @@ describe('ProfileComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

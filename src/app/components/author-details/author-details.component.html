@@ -1,0 +1,27 @@
+<ng-container *ngIf="author">
+    <div class="author-details-header">
+        <h1>{{author.name}} Information</h1>
+    </div>
+    <div class="author-details-container">
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="../../../assets/images/author.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">{{author.last_name}}, {{author.first_name}} <ng-container *ngIf="author.middle_names">{{author.middle_names[0]}}.</ng-container></h4>
+                        <p class="card-text"><small class="text-muted">Author Full Name: {{author.name}}</small></p>
+                        <p class="card-text">{{author.about}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span class="card-features">Books: </span>
+                            <a href="/book">{{author.name}} Books</a></li>
+                    </ul>
+                    <button [routerLink]="['/author']" class="btn-login-logout" type="button">Back</button>
+                    <button *ngIf="admin" [routerLink]="['/author/forms',author.id]" class="btn-login-logout" type="button">Update</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+</ng-container>

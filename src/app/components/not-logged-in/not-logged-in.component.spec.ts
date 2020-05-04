@@ -1,25 +1,31 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { NotLoggedInComponent } from './not-logged-in.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NotLoggedInComponent', () => {
   let component: NotLoggedInComponent;
   let fixture: ComponentFixture<NotLoggedInComponent>;
+  let testBedService: AuthService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotLoggedInComponent ]
+      declarations: [NotLoggedInComponent],
+      imports: [RouterTestingModule],
+      providers: [AuthService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NotLoggedInComponent);
     component = fixture.componentInstance;
+    testBedService = TestBed.inject(AuthService);
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
 });

@@ -1,22 +1,17 @@
 <ng-container *ngIf="!auth.loggedIn">
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4"></div>
-
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Log In</h5>
-                      <p class="card-text">Please log in to continue.</p>
-                      <a href="#" class="btn btn-secondary" (click)="auth.login()">Log In</a>
-                    </div>
-                </div>
+    <div class="card-not-logged-in">
+        <div class="card-middle">
+            <div>
+                <img src="../../../assets/logos/DVT_icon_inverted.png">
             </div>
-
-            <div class="col-sm-4"></div>
-        </div>      
+            <div>
+                <h1>DVT Books</h1>
+                <h2>Please log in to continue</h2>
+            </div>
+            <div>
+                <button (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn-login-logout">Log In</button>
+            </div>
+        </div>
     </div>
 
 </ng-container>
-

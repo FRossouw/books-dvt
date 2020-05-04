@@ -1,7 +1,7 @@
-export class AuthorBook {
+export class BookReturn {
     href: string;
-    id: string;
     isbn10: string;
     isbn13: string;
+    id: string;
     title: string;
 }
