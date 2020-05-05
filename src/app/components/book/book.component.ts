@@ -2,7 +2,6 @@ import { Component, OnInit, Output } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 import { BookReturn } from 'src/app/models/book-return';
-import { BookAuthor } from 'src/app/models/book-author';
 
 @Component({
   selector: 'app-book',
