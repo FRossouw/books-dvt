@@ -2,51 +2,121 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
-
-      <trans-unit id="ButtonLogInLabel" datatype="html">
-        <source>Log In</source>
-        <target>Teken Aan</target>
+      <trans-unit id="Word Books" datatype="html">
+        <source>Books</source>
+        <target>Boeke</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">5</context>
         </context-group>
-        <note priority="1" from="description">Label for login button</note>
-        <note priority="1" from="meaning">Button Label</note>
-      </trans-unit>
-
-      <trans-unit id="ButtonLogOutLabel" datatype="html">
-        <source>Log Out</source>
-        <target>Teken Uit</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
-        <note priority="1" from="description">Label for logout button</note>
-        <note priority="1" from="meaning">Button Label</note>
-      </trans-unit>
-
-      <trans-unit id="LinkHomeLabel" datatype="html">
-        <source>Home</source>
-        <target>Tuis</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">41</context>
         </context-group>
-        <note priority="1" from="description">Label for home routing</note>
-        <note priority="1" from="meaning">Link Label</note>
+        <note priority="1" from="description">Word Books</note>
+        <note priority="1" from="meaning">Books</note>
       </trans-unit>
       
-      <trans-unit id="LinkProfileLabel" datatype="html">
+      <trans-unit id="Word Welcome" datatype="html">
+        <source>Welcome <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.nickname}}"/>,</source>
+        <target>Welkom <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.nickname}}"/>,</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Word Welcome</note>
+        <note priority="1" from="meaning">Welcome</note>
+      </trans-unit>
+
+      <trans-unit id="Word Search" datatype="html">
+        <source>Search</source>
+        <target>Soek</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Word Search</note>
+        <note priority="1" from="meaning">Search</note>
+      </trans-unit>
+
+      <trans-unit id="Words Add Books" datatype="html">
+        <source>Add Books</source>
+        <target>Voeg Boeke By</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">Words Add Books</note>
+        <note priority="1" from="meaning">Add Books</note>
+      </trans-unit>
+
+      <trans-unit id="Word Authors" datatype="html">
+        <source>Authors</source>
+        <target>Skrywers</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <note priority="1" from="description">Word Authors</note>
+        <note priority="1" from="meaning">Authors</note>
+      </trans-unit>
+
+      <trans-unit id="Words Add Authors" datatype="html">
+        <source>Add Authors</source>
+        <target>Voeg Skrywers By</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">Words Add Authors</note>
+        <note priority="1" from="meaning">Add Authors</note>
+      </trans-unit>
+
+      <trans-unit id="Word Profile" datatype="html">
         <source>Profile</source>
         <target>Profiel</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/nav-bar/nav-bar.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">25</context>
         </context-group>
-        <note priority="1" from="description">Label for profile routing</note>
-        <note priority="1" from="meaning">Link Label</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">Word Profile</note>
+        <note priority="1" from="meaning">Profile</note>
       </trans-unit>
 
+      <trans-unit id="Words Log Out" datatype="html">
+        <source>Log Out</source>
+        <target>Teken uit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">Words Log Out</note>
+        <note priority="1" from="meaning">Log Out</note>
+      </trans-unit>
     </body>
   </file>
 </xliff>
