@@ -1,6 +1,6 @@
 # Books-DVT (Web-Ass)
 
-[![CircleCI](https://circleci.com/gh/FRossouw/books-dvt.svg?style=svg&circle-token=982a79ea26917a22f54ce3adea772121271936fb)]
+[![CircleCI](https://circleci.com/gh/FRossouw/books-dvt/tree/master.svg?style=svg&ircle-token=982a79ea26917a22f54ce3adea772121271936fb)]
 
 ## Introduction
 DVT is in the process of building a central repository for its developers to find software development books. The application has been named DVTBooks.
