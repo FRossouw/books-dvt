@@ -150,6 +150,17 @@
         <note priority="1" from="description">Words Log In</note>
         <note priority="1" from="meaning">Log In</note>
       </trans-unit>
+
+      <trans-unit id="Words Available Authors" datatype="html">
+        <source>Available Authors</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/author/author.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Words Available Authors</note>
+        <note priority="1" from="meaning">Available Authors</note>
+      </trans-unit>
+      
     </body>
   </file>
 </xliff>
