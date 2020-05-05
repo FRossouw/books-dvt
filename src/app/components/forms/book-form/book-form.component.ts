@@ -188,9 +188,9 @@ export class BookFormComponent implements OnInit {
 
   addTag(event) {
     const bookTags = this.book.tags;
-    let tagArray = this.tagAddArray;
+    const tagArray = this.tagAddArray;
     let selectedTag: Tag;
-    let newTag = event.target.value;
+    const newTag = event.target.value;
     this.book.tags = {} as Tag[];
 
     this.tagList.forEach(tagElement => {

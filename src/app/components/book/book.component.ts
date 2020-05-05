@@ -26,7 +26,6 @@ export class BookComponent implements OnInit {
     this.bookService.getBooks().subscribe((bookX) => {
       bookX.forEach(bookFE => {
         this.books.push(bookFE);
-        //console.log(bookFE);
       });
     });
   }
