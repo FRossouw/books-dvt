@@ -27,5 +27,15 @@ $font-family-monospace: 'Poppins', sans-serif;
     margin: 10px;
     margin-right: 25px;
     width: 100px;
+    
+}
+
+.text-error {
+    font-family: $font-family-sans-serif;
+    margin-left: 5px;
+    font-size: 1rem;
+    color: red;
+    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: 1px 1px black, 1px 1px black, 1px 1px black, 1px 1px black;
 }
 

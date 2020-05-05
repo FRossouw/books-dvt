@@ -17,9 +17,9 @@ export class AuthorFormComponent implements OnInit {
   author: Author;
   constructor(private activatedRoute: ActivatedRoute, private authorService: AuthorService, private router: Router) {
     this.form = new FormGroup({
-      firstName: new FormControl('', {}),
+      firstName: new FormControl('', { validators: [Validators.required] }),
       middleName: new FormControl('', {}),
-      lastName: new FormControl('', {}),
+      lastName: new FormControl('', { validators: [Validators.required] }),
       about: new FormControl('', {})
     });
     this.author = {} as Author;
