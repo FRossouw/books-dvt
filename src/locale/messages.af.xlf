@@ -206,31 +206,68 @@
         <note priority="1" from="meaning">Available Authors</note>
       </trans-unit>
 
-      <trans-unit id="Word Information" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Information</source>
-        <target><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Informasie</target>
+      <trans-unit id="Word Information Book" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{book.title}}"/> Information</source>
+        <target><x id="INTERPOLATION" equiv-text="{{book.title}}"/> Informasie</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
+          <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
         <note priority="1" from="description">Word Information</note>
-        <note priority="1" from="meaning">Information</note>
+        <note priority="1" from="meaning">Information Book</note>
       </trans-unit>
 
-      <trans-unit id="Words Author Full Name:" datatype="html">
-        <source>Author Full Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
-        <target>Skrywer Volle Naam: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
+      <trans-unit id="Words Date Published:" datatype="html">
+        <source>Date Published: <x id="INTERPOLATION" equiv-text="{{book.date_published}}"/></source>
+        <target>Datum Gepubliseer: <x id="INTERPOLATION" equiv-text="{{book.date_published}}"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
+          <context context-type="linenumber">19</context>
         </context-group>
-        <note priority="1" from="description">Words Author Full Name</note>
-        <note priority="1" from="meaning">Author Full Name:</note>
+        <note priority="1" from="description">Words Date Published</note>
+        <note priority="1" from="meaning">Date Published:</note>
+      </trans-unit>
+
+      <trans-unit id="Words Published By:" datatype="html">
+        <source>Published by: <x id="INTERPOLATION" equiv-text="{{book.publisher}}"/></source>
+        <target>Gepubliseer Deur: <x id="INTERPOLATION" equiv-text="{{book.publisher}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Words Published By</note>
+        <note priority="1" from="meaning">Published By:</note>
+      </trans-unit>
+
+      <trans-unit id="Word Tags:" datatype="html">
+        <source>Tags: <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="INTERPOLATION" equiv-text="{{tag.description}}"/> <x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/></source>
+        <target>Tags: <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="INTERPOLATION" equiv-text="{{tag.description}}"/> <x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Words Tags</note>
+        <note priority="1" from="meaning">Tags:</note>
+      </trans-unit>
+
+      <trans-unit id="Word Author:" datatype="html">
+        <source>Author: </source>
+        <target>Skrywer: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">Word Author</note>
+        <note priority="1" from="meaning">Author:</note>
       </trans-unit>
 
       <trans-unit id="Word Back" datatype="html">
         <source>Back</source>
         <target>Terug</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">17</context>
@@ -243,6 +280,10 @@
         <source>Update</source>
         <target>Opdateer</target>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
@@ -250,6 +291,28 @@
         <note priority="1" from="meaning">Update</note>
       </trans-unit>
       
+      <trans-unit id="Word Information" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Information</source>
+        <target><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Informasie</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Word Information</note>
+        <note priority="1" from="meaning">Information</note>
+      </trans-unit>
+      
+      <trans-unit id="Words Author Full Name:" datatype="html">
+        <source>Author Full Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
+        <target>Skrywer Volle Naam: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Words Author Full Name</note>
+        <note priority="1" from="meaning">Author Full Name:</note>
+      </trans-unit>
+
     </body>
   </file>
 </xliff>
