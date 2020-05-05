@@ -11,7 +11,7 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h4 class="card-title">{{author.last_name}}, {{author.first_name}} <ng-container *ngIf="author.middle_names">{{author.middle_names[0]}}.</ng-container></h4>
-                        <p class="card-text"><small class="text-muted" i18n="Author Full Name|Words Author Full Name@@Words Author Full Name">Author Full Name: {{author.name}}</small></p>
+                        <p class="card-text"><small class="text-muted" i18n="Author Full Name:|Words Author Full Name@@Words Author Full Name:">Author Full Name: {{author.name}}</small></p>
                         <p class="card-text">{{author.about}}</p>
                     </div>
                     <button [routerLink]="['/author']" class="btn-login-logout" type="button" i18n="Back|Word Back@@Word Back">Back</button>

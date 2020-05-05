@@ -217,7 +217,7 @@
         <note priority="1" from="meaning">Information</note>
       </trans-unit>
 
-      <trans-unit id="Words Author Full Name" datatype="html">
+      <trans-unit id="Words Author Full Name:" datatype="html">
         <source>Author Full Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
         <target>Skrywer Volle Naam: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
         <context-group purpose="location">
@@ -225,7 +225,7 @@
           <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">Words Author Full Name</note>
-        <note priority="1" from="meaning">Author Full Name</note>
+        <note priority="1" from="meaning">Author Full Name:</note>
       </trans-unit>
 
       <trans-unit id="Word Back" datatype="html">

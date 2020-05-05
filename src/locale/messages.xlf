@@ -4,7 +4,6 @@
     <body>
       <trans-unit id="Word Books" datatype="html">
         <source>Books</source>
-        <target>Boeke</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">5</context>
@@ -20,10 +19,8 @@
         <note priority="1" from="description">Word Books</note>
         <note priority="1" from="meaning">Books</note>
       </trans-unit>
-      
       <trans-unit id="Word Welcome" datatype="html">
         <source>Welcome <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.nickname}}"/>,</source>
-        <target>Welkom <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.nickname}}"/>,</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">9</context>
@@ -31,10 +28,8 @@
         <note priority="1" from="description">Word Welcome</note>
         <note priority="1" from="meaning">Welcome</note>
       </trans-unit>
-
       <trans-unit id="Word Search" datatype="html">
         <source>Search</source>
-        <target>Soek</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">14</context>
@@ -42,10 +37,8 @@
         <note priority="1" from="description">Word Search</note>
         <note priority="1" from="meaning">Search</note>
       </trans-unit>
-
       <trans-unit id="Words Add Books" datatype="html">
         <source>Add Books</source>
-        <target>Voeg Boeke By</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">22</context>
@@ -57,10 +50,8 @@
         <note priority="1" from="description">Words Add Books</note>
         <note priority="1" from="meaning">Add Books</note>
       </trans-unit>
-
       <trans-unit id="Word Authors" datatype="html">
         <source>Authors</source>
-        <target>Skrywers</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">23</context>
@@ -72,10 +63,8 @@
         <note priority="1" from="description">Word Authors</note>
         <note priority="1" from="meaning">Authors</note>
       </trans-unit>
-
       <trans-unit id="Words Add Authors" datatype="html">
         <source>Add Authors</source>
-        <target>Voeg Skrywers By</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">24</context>
@@ -87,10 +76,8 @@
         <note priority="1" from="description">Words Add Authors</note>
         <note priority="1" from="meaning">Add Authors</note>
       </trans-unit>
-
       <trans-unit id="Word Profile" datatype="html">
         <source>Profile</source>
-        <target>Profiel</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">25</context>
@@ -102,10 +89,8 @@
         <note priority="1" from="description">Word Profile</note>
         <note priority="1" from="meaning">Profile</note>
       </trans-unit>
-
       <trans-unit id="Words Log Out" datatype="html">
         <source>Log Out</source>
-        <target>Teken uit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">29</context>
@@ -117,10 +102,8 @@
         <note priority="1" from="description">Words Log Out</note>
         <note priority="1" from="meaning">Log Out</note>
       </trans-unit>
-
       <trans-unit id="Words DVT Books" datatype="html">
         <source>DVT Books</source>
-        <target>DVT Boeke</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/not-logged-in/not-logged-in.component.html</context>
           <context context-type="linenumber">8</context>
@@ -128,10 +111,8 @@
         <note priority="1" from="description">Words DVT Books</note>
         <note priority="1" from="meaning">DVT Books</note>
       </trans-unit>
-
       <trans-unit id="Words PLITC" datatype="html">
         <source>Please log in to continue</source>
-        <target>Teken asseblief in om voort te gaan</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/not-logged-in/not-logged-in.component.html</context>
           <context context-type="linenumber">9</context>
@@ -139,10 +120,8 @@
         <note priority="1" from="description">Words Please log in to continue</note>
         <note priority="1" from="meaning">PLITC</note>
       </trans-unit>
-
       <trans-unit id="Words Log In" datatype="html">
         <source>Log In</source>
-        <target>Teken In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/not-logged-in/not-logged-in.component.html</context>
           <context context-type="linenumber">12</context>
@@ -150,10 +129,8 @@
         <note priority="1" from="description">Words Log In</note>
         <note priority="1" from="meaning">Log In</note>
       </trans-unit>
-
       <trans-unit id="Words Available Books" datatype="html">
         <source>Available Books</source>
-        <target>Beskikbare Boeke</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">2</context>
@@ -161,10 +138,8 @@
         <note priority="1" from="description">Words Available Books</note>
         <note priority="1" from="meaning">Available Books</note>
       </trans-unit>
-
       <trans-unit id="Word Author" datatype="html">
         <source>Author: </source>
-        <target>Skrywer: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">21</context>
@@ -172,10 +147,8 @@
         <note priority="1" from="description">Word Author</note>
         <note priority="1" from="meaning">Author:</note>
       </trans-unit>
-
       <trans-unit id="Word Previous" datatype="html">
         <source>Previous</source>
-        <target>Vorige</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">30</context>
@@ -183,10 +156,8 @@
         <note priority="1" from="description">Word Previous</note>
         <note priority="1" from="meaning">Previous</note>
       </trans-unit>
-
       <trans-unit id="Word Next" datatype="html">
         <source>Next</source>
-        <target>Volgende</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">38</context>
@@ -194,10 +165,8 @@
         <note priority="1" from="description">Word Next</note>
         <note priority="1" from="meaning">Next</note>
       </trans-unit>
-
       <trans-unit id="Words Available Authors" datatype="html">
         <source>Available Authors</source>
-        <target>Beskikbare Skrywers</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author/author.component.html</context>
           <context context-type="linenumber">2</context>
@@ -205,10 +174,8 @@
         <note priority="1" from="description">Words Available Authors</note>
         <note priority="1" from="meaning">Available Authors</note>
       </trans-unit>
-
       <trans-unit id="Word Information" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Information</source>
-        <target><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Informasie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">3</context>
@@ -216,21 +183,17 @@
         <note priority="1" from="description">Word Information</note>
         <note priority="1" from="meaning">Information</note>
       </trans-unit>
-
-      <trans-unit id="Words Author Full Name" datatype="html">
+      <trans-unit id="Words Author Full Name:" datatype="html">
         <source>Author Full Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
-        <target>Skrywer Volle Naam: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">Words Author Full Name</note>
-        <note priority="1" from="meaning">Author Full Name</note>
+        <note priority="1" from="meaning">Author Full Name:</note>
       </trans-unit>
-
       <trans-unit id="Word Back" datatype="html">
         <source>Back</source>
-        <target>Terug</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">17</context>
@@ -238,10 +201,8 @@
         <note priority="1" from="description">Word Back</note>
         <note priority="1" from="meaning">Back</note>
       </trans-unit>
-
       <trans-unit id="Word Update" datatype="html">
         <source>Update</source>
-        <target>Opdateer</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">18</context>
@@ -249,7 +210,6 @@
         <note priority="1" from="description">Word Update</note>
         <note priority="1" from="meaning">Update</note>
       </trans-unit>
-      
     </body>
   </file>
 </xliff>
