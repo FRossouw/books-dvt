@@ -16,7 +16,9 @@ import { AuthorDetailsComponent } from './components/author-details/author-detai
 import { AuthorFormComponent } from './components/forms/author-form/author-form.component';
 import { BookFormComponent } from './components/forms/book-form/book-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
+import { InputLengthDirectiveDirective } from './forms/directives/input-length-directive.directive';
+import { Isbn13DirectiveDirective } from './forms/directives/isbn13-directive.directive';
+import { Isbn10DirectiveDirective } from './forms/directives/isbn10-directive.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BookDetailsComponent,
     AuthorDetailsComponent,
     AuthorFormComponent,
-    BookFormComponent
+    BookFormComponent,
+    InputLengthDirectiveDirective,
+    Isbn13DirectiveDirective,
+    Isbn10DirectiveDirective
   ],
   imports: [
     BrowserModule,
