@@ -368,6 +368,129 @@
         <note priority="1" from="meaning">Author Full Name:</note>
       </trans-unit>
 
+      
+      <trans-unit id="Words Update Author" datatype="html">
+        <source>Update Author</source>
+        <target>Dateer Skrywer Op</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">Words Update Author</note>
+        <note priority="1" from="meaning">Update Author</note>
+      </trans-unit>
+
+      <trans-unit id="Words Add Author" datatype="html">
+        <source>Add Author</source>
+        <target>Voeg Skrywer By</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Words Add Author</note>
+        <note priority="1" from="meaning">Add Author</note>
+      </trans-unit>
+
+      <trans-unit id="Words First Name" datatype="html">
+        <source>First Name<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target>Eerst Naam<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Words First Name</note>
+        <note priority="1" from="meaning">First Name</note>
+      </trans-unit>
+
+      <trans-unit id="Words FNR" datatype="html">
+        <source>First name is required.</source>
+        <target>Voornaam is 'n vereiste.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Words First Name Required</note>
+        <note priority="1" from="meaning">FNR</note>
+      </trans-unit>
+
+      <trans-unit id="Words Middle Names" datatype="html">
+        <source>Middle Name</source>
+        <target>Middle Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Words Middle Names</note>
+        <note priority="1" from="meaning">Middle Names</note>
+      </trans-unit>
+
+      <trans-unit id="Words Last Name" datatype="html">
+        <source>Last Name<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target>Van<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Words Last Name</note>
+        <note priority="1" from="meaning">Last Name</note>
+      </trans-unit>
+
+      <trans-unit id="Words LNR" datatype="html">
+        <source>Last name is required.</source>
+        <target>Van is 'n vereiste.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Words Last Name Required</note>
+        <note priority="1" from="meaning">LNR</note>
+      </trans-unit>
+
+      <trans-unit id="Word About" datatype="html">
+        <source>About</source>
+        <target>Oor</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">Word About</note>
+        <note priority="1" from="meaning">About</note>
+      </trans-unit>
+
+      <trans-unit id="Words FIelds Required" datatype="html">
+        <source>All fields marked with an * is required.</source>
+        <target>Alle velde gemerk met 'n * is vereis.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Words Fields Required</note>
+        <note priority="1" from="meaning">Fields Required</note>
+      </trans-unit>
+
+      <trans-unit id="Word Cancel" datatype="html">
+        <source>Cancel</source>
+        <target>Kanselleer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <note priority="1" from="description">Word Cancel</note>
+        <note priority="1" from="meaning">Cancel</note>
+      </trans-unit>
+
     </body>
   </file>
 </xliff>
