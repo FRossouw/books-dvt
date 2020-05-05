@@ -1,45 +1,46 @@
 <div class="reactive-form-container">
     <form class="form-container" [formGroup]="form" (ngSubmit)="saveForm()">
-        <h1><ng-container *ngIf="update">Update</ng-container><ng-container *ngIf="!update">Add</ng-container> Author</h1>
+        <ng-container *ngIf="update"><h1 i18n="Update Author|Words Update Author@@Words Update Author">Update Author</h1></ng-container>
+        <ng-container *ngIf="!update"><h1 i18n="Add Author|Words Add Author@@Words Add Author">Add Author</h1></ng-container>
 
         <div class="form-group">
-            <label for="firstName">First Name<b class="text-error">*</b></label>
+            <label for="firstName" i18n="First Name|Words First Name@@Words First Name">First Name<b class="text-error">*</b></label>
             <input type="text" value="{{author.first_name}}" class="form-control" id="firstName" placeholder="Enter First Name" formControlName="firstName">
         
             <div *ngIf="firstName.touched && firstName.invalid && firstName.errors.required">
-                <span class="text-error">First name is required.</span>
+                <span class="text-error" i18n="FNR|Words First Name Required@@Words FNR">First name is required.</span>
             </div>
         
         </div>
 
         <div class="form-group">
-            <label for="middleName">Middle Name</label>
+            <label for="middleName" i18n="Middle Names|Words Middle Names@@Words Middle Names">Middle Name</label>
             <input type="text" value="{{author.middle_names}}" class="form-control" id="middleName"  placeholder="Enter Middle Name" formControlName="middleName">
         </div>
 
         <div class="form-group">
-            <label for="lastName">Last Name<b class="text-error">*</b></label>
+            <label for="lastName" i18n="Last Name|Words Last Name@@Words Last Name">Last Name<b class="text-error">*</b></label>
             <input type="text" value="{{author.last_name}}" class="form-control" id="lastName"  placeholder="Enter Last Name" formControlName="lastName">
         
             <div *ngIf="lastName.touched && lastName.invalid && lastName.errors.required">
-                <span class="text-error">Last name is required.</span>
+                <span class="text-error" i18n="LNR|Words Last Name Required@@Words LNR">Last name is required.</span>
             </div>
 
         </div>
 
         <div class="form-group">
-            <label for="about">About</label>
+            <label for="about" i18n="About|Word About@@Word About">About</label>
             <textarea value="{{author.about}}" class="form-control" id="about" rows="3"  placeholder="Enter About" formControlName="about"></textarea>
         </div>
 
         <div *ngIf="form.invalid">
-            <span class="text-error">All fields marked with an * is required.</span>
+            <span class="text-error" i18n="Fields Required|Words Fields Required@@Words FIelds Required">All fields marked with an * is required.</span>
         </div>
 
-        <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Add Author</button>
-        <button *ngIf="!update" [routerLink]="['/author']" type="submit" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
-        <button *ngIf="update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Update Author</button>
-        <button *ngIf="update" type="submit" [routerLink]="['/author']" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+        <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit i18n="Add Author|Words Add Author@@Words Add Author">Add Author</button>
+        <button *ngIf="!update" [routerLink]="['/author']" type="submit" class="btn-login-logout btn-wider btn-cancel" #submit i18n="Cancel|Word Cancel@@Word Cancel">Cancel</button>
+        <button *ngIf="update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit i18n="Update Author|Words Update Author@@Words Update Author">Update Author</button>
+        <button *ngIf="update" type="submit" [routerLink]="['/author']" class="btn-login-logout btn-wider btn-cancel" #submit i18n="Cancel|Word Cancel@@Word Cancel">Cancel</button>
 
     </form>
 </div>

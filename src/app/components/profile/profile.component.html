@@ -4,15 +4,15 @@
             <img src="{{auth.userProfileData.picture}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{auth.userProfileData.nickname}}</h5>
-              <p class="card-text">Name: {{auth.userProfileData.name}}</p>
+              <p class="card-text" i18n="Name:|Word Name@@Word Name:">Name: {{auth.userProfileData.name}}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><span>Email:</span></li>
+                <li class="list-group-item" i18n="Email:|Word Email@@Word Email:"><span>Email:</span></li>
                 <li class="list-group-item">{{auth.userProfileData.email}}</li>
-                <li class="list-group-item"><span>Email Verified:</span></li>
+                <li class="list-group-item" i18n="Email Verified:|Words Email Verified@@Words Email Verified:"><span>Email Verified:</span></li>
                 <li class="list-group-item">
-                    <ng-container *ngIf="auth.userProfileData.email_verified">Yes, verified</ng-container>
-                    <ng-container *ngIf="!auth.userProfileData.email_verified">No, not verified</ng-container>
+                    <ng-container *ngIf="auth.userProfileData.email_verified" i18n="Yes verified:|Words Yes verified@@Words Yes verified:">Yes, verified</ng-container>
+                    <ng-container *ngIf="!auth.userProfileData.email_verified" i18n="No verified:|Words No verified@@Words No verified:">No, not verified</ng-container>
                 </li>
             </ul>
           </div>

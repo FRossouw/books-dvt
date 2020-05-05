@@ -1,5 +1,5 @@
 <div class="book-header">
-    <h1>Available Books</h1>
+    <h1 i18n="Available Books|Words Available Books@@Words Available Books">Available Books</h1>
 </div>
 <div class="book-container">
     <ng-container *ngFor="let book of books">
@@ -18,7 +18,7 @@
                     <p class="card-text">{{book.abstract}}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="card-features">Author: </span><a [routerLink]="['/author/view',book.author.id]">{{book.author.name}}</a></li>
+                    <li class="list-group-item"><span class="card-features" i18n="Author:|Word Author@@Word Author">Author: </span><a [routerLink]="['/author/view',book.author.id]">{{book.author.name}}</a></li>
                 </ul>
             </div>
     </ng-container>
@@ -27,7 +27,7 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li *ngIf="currentPage !== 1" class="page-item">
-                <a (click)="previous()" class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
+                <a (click)="previous()" class="page-link" tabindex="-1" aria-disabled="true" i18n="Previous|Word Previous@@Word Previous">Previous</a>
               </li>
               <ng-container *ngFor="let num of pagesTotal">
                 <li class="page-item">
@@ -35,7 +35,7 @@
                 </li>
               </ng-container>
               <li *ngIf="currentPage !== lastPage" class="page-item">
-                <a (click)="next()" class="page-link" tabindex="+1" aria-disabled="true">Next</a>
+                <a (click)="next()" class="page-link" tabindex="+1" aria-disabled="true" i18n="Next|Word Next@@Word Next">Next</a>
               </li>
               
             </ul>
