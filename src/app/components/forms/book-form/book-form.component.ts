@@ -24,6 +24,7 @@ export class BookFormComponent implements OnInit {
   book: Book;
   authors: Author[];
   tagList: Tag[];
+  tagAddArray: Tag[] = new Array();
   imageFile: File;
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -41,11 +42,11 @@ export class BookFormComponent implements OnInit {
       title: new FormControl('', { validators: [Validators.required] }),
       about: new FormControl('', {}),
       abstract: new FormControl('', {}),
-      image: new FormControl('', { validators: [Validators.required] }),
+      image: new FormControl('', {}),
       author: new FormControl('', { validators: [Validators.required] }),
       datePublished: new FormControl('', {}),
       publisher: new FormControl('', {}),
-      tags: new FormControl('', { validators: [Validators.required] })
+      tags: new FormControl('', {})
     });
     this.book = {} as Book;
   }
@@ -183,6 +184,22 @@ export class BookFormComponent implements OnInit {
     if (event.target.files.length) {
       this.imageFile = event.target.files[0];
     }
+  }
+
+  addTag(event) {
+    const bookTags = this.book.tags;
+    let tagArray = this.tagAddArray;
+    let selectedTag: Tag;
+    let newTag = event.target.value;
+    this.book.tags = {} as Tag[];
+
+    this.tagList.forEach(tagElement => {
+      if (tagElement.id.toString() === bookTags.toString()) {
+        selectedTag = tagElement;
+        tagArray.push(selectedTag);
+        this.book.tags = tagArray;
+      }
+    });
   }
 
 }
