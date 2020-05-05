@@ -32,20 +32,15 @@ export class BookFormComponent implements OnInit {
     private tagService: TagService,
     private router: Router) {
     this.form = new FormGroup({
-      isbn10: new FormControl('', { 
+      isbn10: new FormControl('', {
         validators: [
-          Validators.required,
-          Isbn10Factori.inputIsbn10
-        ] 
+          Validators.required
+        ]
       }),
       isbn13: new FormControl('', { validators: [Validators.required] }),
       title: new FormControl('', { validators: [Validators.required] }),
       about: new FormControl('', {}),
-      abstract: new FormControl('', {
-        validators: [
-          InputLengthFactory.inputLength
-        ]
-      }),
+      abstract: new FormControl('', {}),
       image: new FormControl('', { validators: [Validators.required] }),
       author: new FormControl('', { validators: [Validators.required] }),
       datePublished: new FormControl('', {}),
