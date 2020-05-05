@@ -26,26 +26,8 @@ export class BookComponent implements OnInit {
     this.bookService.getBooks().subscribe((bookX) => {
       bookX.forEach(bookFE => {
         this.books.push(bookFE);
+        //console.log(bookFE);
       });
-    });
-  }
-
-  private addBook(newBook: Book): void {
-    const book = new Book();
-    book.isbn10 = '0133966151';
-    book.isbn13 = '9780133966392';
-    book.title = 'Testing';
-    book.image = '';
-
-    const author = new BookAuthor();
-    author.href = 'http://localhost:4201/Authors/0f3c3a97-4a31-4d06-b5e9-5a3ce01cafd6';
-    author.id = '0f3c3a97-4a31-4d06-b5e9-5a3ce01cafd6';
-    author.name = 'Robin2 Patricia Williams';
-    book.author = author;
-
-    this.bookService.createBook(book).subscribe((bookA) => {
-      this.bookReturn = bookA;
-      console.log(this.bookReturn);
     });
   }
 

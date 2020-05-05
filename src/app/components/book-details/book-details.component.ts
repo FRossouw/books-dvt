@@ -27,15 +27,6 @@ export class BookDetailsComponent implements OnInit {
     });
 
     this.getBook(bookIsbn13);
-    // this.bookService.getPicture(bookIsbn13).subscribe((imageX) => {
-    //   console.log(imageX);
-    //   if (imageX != null) {
-    //     this.bookImage = imageX;
-    //     console.log(this.bookImage);
-    //   } else {
-    //     this.bookImage = "../../../assets/images/slide.svg";
-    //   }
-    // });
 
   }
 
