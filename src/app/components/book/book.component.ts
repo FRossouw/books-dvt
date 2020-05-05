@@ -37,7 +37,7 @@ export class BookComponent implements OnInit {
 
   private paginateBooks(numberPerPage: number): void {
     this.books = new Array();
-    if (this.currentBookStart == 0) {
+    if (this.currentBookStart === 0) {
       for (let index = 0; index < numberPerPage; index++) {
         this.books.push(this.allBooks[index]);
       }
@@ -52,7 +52,7 @@ export class BookComponent implements OnInit {
     this.pagesTotal = new Array();
     const bookTotal = this.allBooks.length;
     let pages = bookTotal / this.booksPerPage;
-    if (pages % 1 != 0) {
+    if (pages % 1 !== 0) {
       pages = Math.ceil(pages);
     }
 
@@ -66,9 +66,9 @@ export class BookComponent implements OnInit {
   movePage(number: number): void {
     this.currentPage = number;
 
-    if (number == 1) {
+    if (number === 1) {
       this.currentBookStart = 0;
-    } else if (number == this.lastPage) {
+    } else if (number === this.lastPage) {
       this.currentBookStart = (this.allBooks.length - this.booksPerPage);
     } else {
       this.currentBookStart = (this.booksPerPage * (number - 1));
