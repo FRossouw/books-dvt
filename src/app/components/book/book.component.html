@@ -4,7 +4,13 @@
 <div class="book-container">
     <ng-container *ngFor="let book of books">
             <div class="card" style="width: 18rem;">
-                <img src="{{book.image}}" class="card-img-top" alt="...">
+                <ng-container *ngIf="book.image">
+                    <img src="{{book.image}}" class="card-img-top" alt="...">
+                </ng-container>
+                <ng-container *ngIf="!book.image">
+                    <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
+                </ng-container>
+                
                 <div class="card-body">
                     <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
                         <h5 class="card-title">{{book.title}}</h5>

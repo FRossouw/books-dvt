@@ -6,7 +6,12 @@
         <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img src="{{book.image}}" class="card-img" alt="...">
+                    <ng-container *ngIf="book.image">
+                        <img src="{{book.image}}" class="card-img" alt="...">
+                    </ng-container>
+                    <ng-container *ngIf="!book.image">
+                        <img src="../../../assets/images/slide.svg" class="card-img" alt="...">
+                    </ng-container>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
