@@ -14,6 +14,7 @@
                         <p class="card-text"><small class="text-muted">Date Published: {{book.date_published}}</small></p>
                         <p class="card-text">{{book.about}}</p>
                         <p class="card-text"><small class="text-muted">Published by: {{book.publisher}}</small></p>
+                        <p class="card-text"><small class="text-muted">Tags: <ng-container *ngFor="let tag of book.tags">{{tag.description}}</ng-container></small></p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li *ngIf="book.author" class="list-group-item"><span class="card-features">Author: </span>
@@ -21,7 +22,7 @@
                         </li>
                     </ul>
                     <button [routerLink]="['/book']" class="btn-login-logout" type="button">Back</button>
-                    <button *ngIf="admin" [routerLink]="['/book/forms', book.isbn13]" class="btn-login-logout" type="button">Update</button>
+                    <button *ngIf="admin" [routerLink]="['/book/forms/update', book.isbn13]" class="btn-login-logout" type="button">Update</button>
                 </div>  
             </div>
         </div>

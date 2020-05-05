@@ -1,0 +1,31 @@
+<div class="reactive-form-container">
+    <form class="form-container" [formGroup]="form" (ngSubmit)="saveForm()">
+        <h1><ng-container *ngIf="update">Update</ng-container><ng-container *ngIf="!update">Add</ng-container> Author</h1>
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" value="{{author.first_name}}" class="form-control" id="firstName" placeholder="Enter First Name" formControlName="firstName">
+        </div>
+
+        <div class="form-group">
+            <label for="middleName">Middle Name</label>
+            <input type="text" value="{{author.middle_names}}" class="form-control" id="middleName"  placeholder="Enter Middle Name" formControlName="middleName">
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" value="{{author.last_name}}" class="form-control" id="lastName"  placeholder="Enter Last Name" formControlName="lastName">
+        </div>
+
+        <div class="form-group">
+            <label for="about">About</label>
+            <textarea value="{{author.about}}" class="form-control" id="about" rows="3"  placeholder="Enter About" formControlName="about"></textarea>
+        </div>
+
+        <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Add Author</button>
+        <button *ngIf="!update" [routerLink]="['/author']" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+        <button *ngIf="update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Update Author</button>
+        <button *ngIf="update" type="submit" [routerLink]="['/author']" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+
+    </form>
+</div>
