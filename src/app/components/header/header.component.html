@@ -42,7 +42,7 @@
             <button *ngIf="auth.admin" [routerLink]="['/book/forms/add']" class="dropdown-item" type="button">Add Books</button>
             <button [routerLink]="['/author']" class="dropdown-item" type="button">Authors</button>
             <button *ngIf="auth.admin" [routerLink]="['/author/forms/add']" class="dropdown-item" type="button">Add Authors</button>
-            <button class="dropdown-item" type="button">Profile</button>
+            <button [routerLink]="['/profile']" class="dropdown-item" type="button">Profile</button>
             <button class="dropdown-item " type="button" (click)="auth.logout()">Log Out</button>
         </div>
     </div>
