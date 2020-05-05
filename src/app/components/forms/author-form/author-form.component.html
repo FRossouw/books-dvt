@@ -33,13 +33,13 @@
         </div>
 
         <div *ngIf="form.invalid">
-            <span class="text-error">All fields marked with a * is required.</span>
+            <span class="text-error">All fields marked with an * is required.</span>
         </div>
 
         <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Add Author</button>
-        <button *ngIf="!update" [routerLink]="['/author']" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+        <button *ngIf="!update" [routerLink]="['/author']" type="submit" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
         <button *ngIf="update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Update Author</button>
-        <button *ngIf="update" type="submit" [routerLink]="['/author']" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+        <button *ngIf="update" type="submit" [routerLink]="['/author']" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
 
     </form>
 </div>

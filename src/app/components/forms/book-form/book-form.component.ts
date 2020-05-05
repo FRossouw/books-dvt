@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 import { Book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,16 +30,16 @@ export class BookFormComponent implements OnInit {
     private tagService: TagService,
     private router: Router) {
     this.form = new FormGroup({
-      isbn10: new FormControl('', {}),
-      isbn13: new FormControl('', {}),
-      title: new FormControl('', {}),
+      isbn10: new FormControl('', { validators: [Validators.required] }),
+      isbn13: new FormControl('', { validators: [Validators.required] }),
+      title: new FormControl('', { validators: [Validators.required] }),
       about: new FormControl('', {}),
       abstract: new FormControl('', {}),
-      image: new FormControl('', {}),
-      author: new FormControl('', {}),
+      image: new FormControl('', { validators: [Validators.required] }),
+      author: new FormControl('', { validators: [Validators.required] }),
       datePublished: new FormControl('', {}),
       publisher: new FormControl('', {}),
-      tags: new FormControl('', {})
+      tags: new FormControl('', { validators: [Validators.required] })
     });
     this.book = {} as Book;
   }
