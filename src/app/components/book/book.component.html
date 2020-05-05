@@ -4,13 +4,13 @@
 <div class="book-container">
     <ng-container *ngFor="let book of books">
             <div class="card" style="width: 18rem;">
-                <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
-                    <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
-                    <div class="card-body">
+                <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
                         <h5 class="card-title">{{book.title}}</h5>
-                        <p class="card-text">{{book.abstract}}</p>
-                    </div>
-                </a>
+                    </a>
+                    <p class="card-text">{{book.abstract}}</p>
+                </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><span class="card-features">Author: </span><a [routerLink]="['/author/view',book.author.id]">{{book.author.name}}</a></li>
                 </ul>
