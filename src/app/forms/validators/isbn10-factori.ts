@@ -11,4 +11,4 @@ export class Isbn10Factori {
             return isValid ? null : { inputLength: true};
         }
     }
-
+}
