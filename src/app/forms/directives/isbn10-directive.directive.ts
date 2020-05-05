@@ -13,15 +13,15 @@ import { Isbn10Factori } from '../validators/isbn10-factori';
 export class Isbn10DirectiveDirective implements Validator {
 
   validateIsbn10: ValidatorFn;
-  constructor() { 
+  constructor() {
     this.validateIsbn10 = Isbn10Factori.inputIsbn10();
   }
 
-  validate(control: import("@angular/forms").AbstractControl): import("@angular/forms").ValidationErrors {
-    throw new Error("Method not implemented.");
+  validate(control: import('@angular/forms').AbstractControl): import('@angular/forms').ValidationErrors {
+    throw new Error('Method not implemented.');
   }
   registerOnValidatorChange?(fn: () => void): void {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
 
 }
