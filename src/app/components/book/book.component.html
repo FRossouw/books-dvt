@@ -18,7 +18,7 @@
                     <p class="card-text">{{book.abstract}}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="card-features">Author: </span><a [routerLink]="['/author/view',book.author.id]">{{book.author.name}}</a></li>
+                    <li class="list-group-item"><span class="card-features" i18n="Author:|Word Author@@Word Author">Author: </span><a [routerLink]="['/author/view',book.author.id]">{{book.author.name}}</a></li>
                 </ul>
             </div>
     </ng-container>
