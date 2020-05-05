@@ -22,4 +22,24 @@
                 </ul>
             </div>
     </ng-container>
+
+    <ng-container *ngIf="pagesTotal">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li *ngIf="currentPage !== 1" class="page-item">
+                <a (click)="previous()" class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <ng-container *ngFor="let num of pagesTotal">
+                <li class="page-item">
+                    <a class="page-link" (click)="movePage(num)" tabindex="{{num}}" aria-disabled="true">{{num}}</a>
+                </li>
+              </ng-container>
+              <li *ngIf="currentPage !== lastPage" class="page-item">
+                <a (click)="next()" class="page-link" tabindex="+1" aria-disabled="true">Next</a>
+              </li>
+              
+            </ul>
+          </nav>
+    </ng-container>
+
 </div>

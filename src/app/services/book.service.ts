@@ -32,8 +32,4 @@ export class BookService {
     return this.http.put(`${environment.apiBooks}/${isbn13}/picture`, file);
   }
 
-  getPicture(isbn13: string) {
-    return this.http.get(`${environment.apiBooks}/${isbn13}/picture`);
-  }
-
 }
