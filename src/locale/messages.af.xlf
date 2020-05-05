@@ -2,6 +2,61 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="Word Name:" datatype="html">
+        <source>Name: <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.name}}"/></source>
+        <target>Naam: <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.name}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Word Name</note>
+        <note priority="1" from="meaning">Name:</note>
+      </trans-unit>
+
+      <trans-unit id="Word Email:" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Email:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>E-pos:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Word Email</note>
+        <note priority="1" from="meaning">Email:</note>
+      </trans-unit>
+
+      <trans-unit id="Words Email Verified:" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Email Verified:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>E-pos verifikasie:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Words Email Verified</note>
+        <note priority="1" from="meaning">Email Verified:</note>
+      </trans-unit>
+
+      <trans-unit id="Words Yes verified:" datatype="html">
+        <source>Yes, verified</source>
+        <target>Ja, geverifieer </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Words Yes verified</note>
+        <note priority="1" from="meaning">Yes verified:</note>
+      </trans-unit>
+
+      <trans-unit id="Words No verified:" datatype="html">
+        <source>No, not verified</source>
+        <target>Nee, nie geverifieer nie</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Words No verified</note>
+        <note priority="1" from="meaning">No verified:</note>
+      </trans-unit>
+
       <trans-unit id="Word Books" datatype="html">
         <source>Books</source>
         <target>Boeke</target>
