@@ -8,8 +8,9 @@
                     <label for="isbn10">ISBN 10<b class="text-error">*</b></label>
                     <input type="text" value="{{book.isbn10}}" class="form-control" id="isbn10" placeholder="Enter Isbn10" formControlName="isbn10">
                     
-                    <div *ngIf="isbn10.touched && isbn10.invalid && isbn10.errors.required">
-                        <span class="text-error">ISBN10 is required.</span>
+                    <div *ngIf="isbn10.touched && isbn10.invalid">
+                        <span *ngIf="isbn10.errors.required" class="text-error">ISBN10 is required.</span>
+                        <span *ngIf="isbn10.errors.inputIsbn10" class="text-error">ISBN10 is invalid.</span>
                     </div>
                     
                 </div>
@@ -43,6 +44,11 @@
         <div class="form-group">
             <label for="abstract">Abstract</label>
             <textarea value="{{book.abstract}}" class="form-control" id="abstract" rows="3"  placeholder="Enter Abstract" formControlName="abstract"></textarea>
+        
+            <div *ngIf="abstract.touched && abstract.invalid">
+                <span *ngIf="isbn10.errors.inputLength" class="text-error">Abstract cannot exceed 255 characters.</span>
+            </div>
+        
         </div>
 
         <div class="form-group">

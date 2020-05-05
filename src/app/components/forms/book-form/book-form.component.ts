@@ -9,6 +9,8 @@ import { BookReturn } from 'src/app/models/book-return';
 import { BookAuthor } from 'src/app/models/book-author';
 import { Tag } from 'src/app/models/tag';
 import { TagService } from 'src/app/services/tag.service';
+import { Isbn10Factori } from 'src/app/forms/validators/isbn10-factori';
+import { InputLengthFactory } from 'src/app/forms/validators/input-length-factory';
 
 @Component({
   selector: 'app-book-form',
@@ -30,11 +32,20 @@ export class BookFormComponent implements OnInit {
     private tagService: TagService,
     private router: Router) {
     this.form = new FormGroup({
-      isbn10: new FormControl('', { validators: [Validators.required] }),
+      isbn10: new FormControl('', { 
+        validators: [
+          Validators.required,
+          Isbn10Factori.inputIsbn10
+        ] 
+      }),
       isbn13: new FormControl('', { validators: [Validators.required] }),
       title: new FormControl('', { validators: [Validators.required] }),
       about: new FormControl('', {}),
-      abstract: new FormControl('', {}),
+      abstract: new FormControl('', {
+        validators: [
+          InputLengthFactory.inputLength
+        ]
+      }),
       image: new FormControl('', { validators: [Validators.required] }),
       author: new FormControl('', { validators: [Validators.required] }),
       datePublished: new FormControl('', {}),
