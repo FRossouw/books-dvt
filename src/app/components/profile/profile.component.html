@@ -1,3 +1,20 @@
-<pre *ngIf="auth.userProfile$ | async as profile">
-    <code>{{ profile | json }}</code>
-</pre>
+<div class="container-profile">
+    <ng-container *ngIf="auth.userProfile$">
+        <div class="card" style="width: 18rem;">
+            <img src="{{auth.userProfileData.picture}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{auth.userProfileData.nickname}}</h5>
+              <p class="card-text">Name: {{auth.userProfileData.name}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><span>Email:</span></li>
+                <li class="list-group-item">{{auth.userProfileData.email}}</li>
+                <li class="list-group-item"><span>Email Verified:</span></li>
+                <li class="list-group-item">
+                    <ng-container *ngIf="auth.userProfileData.email_verified">Yes, verified</ng-container>
+                    <ng-container *ngIf="!auth.userProfileData.email_verified">No, not verified</ng-container>
+                </li>
+            </ul>
+          </div>
+    </ng-container>
+</div>

@@ -28,4 +28,12 @@ export class BookService {
     return this.http.put<BookReturn>(`${environment.apiBooks}/${book.isbn13}`, book);
   }
 
+  postPicture(isbn13: string, file: File) {
+    return this.http.put(`${environment.apiBooks}/${isbn13}/picture`, file);
+  }
+
+  getPicture(isbn13: string) {
+    return this.http.get(`${environment.apiBooks}/${isbn13}/picture`);
+  }
+
 }

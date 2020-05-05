@@ -8,8 +8,8 @@ import { BookComponent } from './components/book/book.component';
 import { AuthorComponent } from './components/author/author.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AuthorDetailsComponent } from './components/author-details/author-details.component';
-import { AuthorFormComponent } from './components/author-form/author-form.component';
-import { BookFormComponent } from './components/book-form/book-form.component';
+import { AuthorFormComponent } from './components/forms/author-form/author-form.component';
+import { BookFormComponent } from './components/forms/book-form/book-form.component';
 
 
 const routes: Routes = [
@@ -24,7 +24,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'book/forms/:id',
+    path: 'book/forms/update/:id',
+    component: BookFormComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'book/forms/add',
     component: BookFormComponent,
     canActivate: [AuthGuard]
   },
@@ -39,7 +44,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'author/forms/:id',
+    path: 'author/forms/update/:id',
+    component: AuthorFormComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'author/forms/add',
     component: AuthorFormComponent,
     canActivate: [AuthGuard]
   },
