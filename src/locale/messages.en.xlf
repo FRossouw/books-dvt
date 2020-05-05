@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="Word Name:" datatype="html">
         <source>Name: <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.name}}"/></source>
-        <target>Naam: <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.name}}"/></target>
+        <target>Name: <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.name}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
           <context context-type="linenumber">7</context>
@@ -15,7 +15,7 @@
 
       <trans-unit id="Word Email:" datatype="html">
         <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Email:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>E-pos:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Email:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
           <context context-type="linenumber">10</context>
@@ -26,7 +26,7 @@
 
       <trans-unit id="Words Email Verified:" datatype="html">
         <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Email Verified:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>E-pos verifikasie:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Email Verified:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
           <context context-type="linenumber">12</context>
@@ -37,7 +37,7 @@
 
       <trans-unit id="Words Yes verified:" datatype="html">
         <source>Yes, verified</source>
-        <target>Ja, geverifieer </target>
+        <target>Yes, verified</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
           <context context-type="linenumber">14</context>
@@ -48,7 +48,7 @@
 
       <trans-unit id="Words No verified:" datatype="html">
         <source>No, not verified</source>
-        <target>Nee, nie geverifieer nie</target>
+        <target>No, not verified</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
           <context context-type="linenumber">15</context>
@@ -59,7 +59,7 @@
 
       <trans-unit id="Word Books" datatype="html">
         <source>Books</source>
-        <target>Boeke</target>
+        <target>Books</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">5</context>
@@ -78,7 +78,7 @@
       
       <trans-unit id="Word Welcome" datatype="html">
         <source>Welcome <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.nickname}}"/>,</source>
-        <target>Welkom <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.nickname}}"/>,</target>
+        <target>Welcome <x id="INTERPOLATION" equiv-text="{{auth.userProfileData.nickname}}"/>,</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">9</context>
@@ -89,7 +89,7 @@
 
       <trans-unit id="Word Search" datatype="html">
         <source>Search</source>
-        <target>Soek</target>
+        <target>Search</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">14</context>
@@ -100,7 +100,7 @@
 
       <trans-unit id="Words Add Books" datatype="html">
         <source>Add Books</source>
-        <target>Voeg Boeke By</target>
+        <target>Add Books</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">22</context>
@@ -115,7 +115,7 @@
 
       <trans-unit id="Word Authors" datatype="html">
         <source>Authors</source>
-        <target>Skrywers</target>
+        <target>Authors</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">23</context>
@@ -130,7 +130,7 @@
 
       <trans-unit id="Words Add Authors" datatype="html">
         <source>Add Authors</source>
-        <target>Voeg Skrywers By</target>
+        <target>Add Authors</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">24</context>
@@ -145,7 +145,7 @@
 
       <trans-unit id="Word Profile" datatype="html">
         <source>Profile</source>
-        <target>Profiel</target>
+        <target>Profile</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">25</context>
@@ -160,7 +160,7 @@
 
       <trans-unit id="Words Log Out" datatype="html">
         <source>Log Out</source>
-        <target>Teken uit</target>
+        <target>Log Out</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">29</context>
@@ -175,7 +175,7 @@
 
       <trans-unit id="Words DVT Books" datatype="html">
         <source>DVT Books</source>
-        <target>DVT Boeke</target>
+        <target>DVT Books</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/not-logged-in/not-logged-in.component.html</context>
           <context context-type="linenumber">8</context>
@@ -186,7 +186,7 @@
 
       <trans-unit id="Words PLITC" datatype="html">
         <source>Please log in to continue</source>
-        <target>Teken asseblief in om voort te gaan</target>
+        <target>Please log in to continue</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/not-logged-in/not-logged-in.component.html</context>
           <context context-type="linenumber">9</context>
@@ -197,7 +197,7 @@
 
       <trans-unit id="Words Log In" datatype="html">
         <source>Log In</source>
-        <target>Teken In</target>
+        <target>Log In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/not-logged-in/not-logged-in.component.html</context>
           <context context-type="linenumber">12</context>
@@ -208,7 +208,7 @@
 
       <trans-unit id="Words Available Books" datatype="html">
         <source>Available Books</source>
-        <target>Beskikbare Boeke</target>
+        <target>Available Books</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">2</context>
@@ -219,7 +219,7 @@
 
       <trans-unit id="Word Author" datatype="html">
         <source>Author: </source>
-        <target>Skrywer: </target>
+        <target>Author: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">21</context>
@@ -230,7 +230,7 @@
 
       <trans-unit id="Word Previous" datatype="html">
         <source>Previous</source>
-        <target>Vorige</target>
+        <target>Previous</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">30</context>
@@ -241,7 +241,7 @@
 
       <trans-unit id="Word Next" datatype="html">
         <source>Next</source>
-        <target>Volgende</target>
+        <target>Next</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book/book.component.html</context>
           <context context-type="linenumber">38</context>
@@ -252,7 +252,7 @@
 
       <trans-unit id="Words Available Authors" datatype="html">
         <source>Available Authors</source>
-        <target>Beskikbare Skrywers</target>
+        <target>Available Authors</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author/author.component.html</context>
           <context context-type="linenumber">2</context>
@@ -263,7 +263,7 @@
 
       <trans-unit id="Word Information Book" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{book.title}}"/> Information</source>
-        <target><x id="INTERPOLATION" equiv-text="{{book.title}}"/> Informasie</target>
+        <target><x id="INTERPOLATION" equiv-text="{{book.title}}"/> Information</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
           <context context-type="linenumber">3</context>
@@ -274,7 +274,7 @@
 
       <trans-unit id="Words Date Published:" datatype="html">
         <source>Date Published: <x id="INTERPOLATION" equiv-text="{{book.date_published}}"/></source>
-        <target>Datum Gepubliseer: <x id="INTERPOLATION" equiv-text="{{book.date_published}}"/></target>
+        <target>Date Published: <x id="INTERPOLATION" equiv-text="{{book.date_published}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
           <context context-type="linenumber">19</context>
@@ -285,7 +285,7 @@
 
       <trans-unit id="Words Published By:" datatype="html">
         <source>Published by: <x id="INTERPOLATION" equiv-text="{{book.publisher}}"/></source>
-        <target>Gepubliseer Deur: <x id="INTERPOLATION" equiv-text="{{book.publisher}}"/></target>
+        <target>Published by: <x id="INTERPOLATION" equiv-text="{{book.publisher}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
           <context context-type="linenumber">21</context>
@@ -307,7 +307,7 @@
 
       <trans-unit id="Word Author:" datatype="html">
         <source>Author: </source>
-        <target>Skrywer: </target>
+        <target>Author: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
           <context context-type="linenumber">25</context>
@@ -318,7 +318,7 @@
 
       <trans-unit id="Word Back" datatype="html">
         <source>Back</source>
-        <target>Terug</target>
+        <target>Back</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
           <context context-type="linenumber">29</context>
@@ -333,7 +333,7 @@
 
       <trans-unit id="Word Update" datatype="html">
         <source>Update</source>
-        <target>Opdateer</target>
+        <target>Update</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/book-details/book-details.component.html</context>
           <context context-type="linenumber">30</context>
@@ -348,7 +348,7 @@
       
       <trans-unit id="Word Information" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Information</source>
-        <target><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Informasie</target>
+        <target><x id="INTERPOLATION" equiv-text="{{author.name}}"/> Information</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">3</context>
@@ -359,7 +359,7 @@
       
       <trans-unit id="Words Author Full Name:" datatype="html">
         <source>Author Full Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></source>
-        <target>Skrywer Volle Naam: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
+        <target>Author Full Name: <x id="INTERPOLATION" equiv-text="{{author.name}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/author-details/author-details.component.html</context>
           <context context-type="linenumber">14</context>
@@ -371,7 +371,7 @@
       
       <trans-unit id="Words Update Author" datatype="html">
         <source>Update Author</source>
-        <target>Dateer Skrywer Op</target>
+        <target>Update Author</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">3</context>
@@ -386,7 +386,7 @@
 
       <trans-unit id="Words Add Author" datatype="html">
         <source>Add Author</source>
-        <target>Voeg Skrywer By</target>
+        <target>Add Author</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">4</context>
@@ -401,7 +401,7 @@
 
       <trans-unit id="Words First Name" datatype="html">
         <source>First Name<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
-        <target>Eerst Naam<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <target>First Name<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">7</context>
@@ -412,7 +412,7 @@
 
       <trans-unit id="Words FNR" datatype="html">
         <source>First name is required.</source>
-        <target>Voornaam is 'n vereiste.</target>
+        <target>First name is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">11</context>
@@ -423,7 +423,7 @@
 
       <trans-unit id="Words Middle Names" datatype="html">
         <source>Middle Name</source>
-        <target>Middle Name</target>
+        <target>Middle Names</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">17</context>
@@ -434,7 +434,7 @@
 
       <trans-unit id="Words Last Name" datatype="html">
         <source>Last Name<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
-        <target>Van<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <target>Last Name<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">22</context>
@@ -445,7 +445,7 @@
 
       <trans-unit id="Words LNR" datatype="html">
         <source>Last name is required.</source>
-        <target>Van is 'n vereiste.</target>
+        <target>Last name is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">26</context>
@@ -456,7 +456,7 @@
 
       <trans-unit id="Word About" datatype="html">
         <source>About</source>
-        <target>Oor</target>
+        <target>About</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">32</context>
@@ -467,7 +467,7 @@
 
       <trans-unit id="Words FIelds Required" datatype="html">
         <source>All fields marked with an * is required.</source>
-        <target>Alle velde gemerk met 'n * is vereis.</target>
+        <target>All fields marked with an * are required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">37</context>
@@ -482,7 +482,7 @@
 
       <trans-unit id="Word Cancel" datatype="html">
         <source>Cancel</source>
-        <target>Kanselleer</target>
+        <target>Cancel</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/author-form/author-form.component.html</context>
           <context context-type="linenumber">41</context>
@@ -502,11 +502,10 @@
         <note priority="1" from="description">Word Cancel</note>
         <note priority="1" from="meaning">Cancel</note>
       </trans-unit>
-
       
       <trans-unit id="Words Update Book" datatype="html">
         <source>Update Book</source>
-        <target>Dateer Boek Op</target>
+        <target>Update Book</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">3</context>
@@ -521,7 +520,7 @@
 
       <trans-unit id="Words Add Book" datatype="html">
         <source>Add Book</source>
-        <target>Voeg Boek By</target>
+        <target>Add Book</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">4</context>
@@ -536,7 +535,7 @@
 
       <trans-unit id="Words ISBN10 Required" datatype="html">
         <source>ISBN10 is required.</source>
-        <target>ISBN10 is vereis.</target>
+        <target>ISBN10 is required..</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">14</context>
@@ -547,7 +546,7 @@
 
       <trans-unit id="Words ISBN13 Required" datatype="html">
         <source>ISBN13 is required.</source>
-        <target>ISBN13 is vereis.</target>
+        <target>ISBN13 is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">24</context>
@@ -558,7 +557,7 @@
 
       <trans-unit id="Words Title Form Book" datatype="html">
         <source>Title<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
-        <target>Titel<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <target>Title<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">32</context>
@@ -569,7 +568,7 @@
 
       <trans-unit id="Words Title Form Required" datatype="html">
         <source>Title is required.</source>
-        <target>Titel is vereis.</target>
+        <target>Title is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">37</context>
@@ -580,7 +579,7 @@
 
       <trans-unit id="Words About Form Book" datatype="html">
         <source>About</source>
-        <target>Oor</target>
+        <target>About</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">43</context>
@@ -591,7 +590,7 @@
 
       <trans-unit id="Words Abstract Form Book" datatype="html">
         <source>Abstract</source>
-        <target>Abstrakte</target>
+        <target>Abstract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">49</context>
@@ -602,7 +601,7 @@
 
       <trans-unit id="Word Author Form" datatype="html">
         <source>Author<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
-        <target>Skrywer<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <target>Author<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">55</context>
@@ -613,7 +612,7 @@
       
       <trans-unit id="Words Author Select" datatype="html">
         <source>Select Author</source>
-        <target>Selekteer Skrywer</target>
+        <target>Select Author</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">70</context>
@@ -624,7 +623,7 @@
 
       <trans-unit id="Words Author Form Required" datatype="html">
         <source>Author is required.</source>
-        <target>SKrywer is vereis.</target>
+        <target>Author is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">78</context>
@@ -635,7 +634,7 @@
 
       <trans-unit id="Word Author Form Publisher" datatype="html">
         <source>Publisher</source>
-        <target>Publiseerder</target>
+        <target>Publisher</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">84</context>
@@ -646,7 +645,7 @@
 
       <trans-unit id="Words Author Form Published Date" datatype="html">
         <source>Published Date</source>
-        <target>Gepubliseerde Datum</target>
+        <target>Published Date</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">90</context>
@@ -668,7 +667,7 @@
 
       <trans-unit id="Words Select Tags" datatype="html">
         <source>Select Tag</source>
-        <target>Selekteer Tag</target>
+        <target>Select Tag</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">97</context>
@@ -679,7 +678,7 @@
 
       <trans-unit id="Words Book Tags" datatype="html">
         <source>Book Tags: <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="INTERPOLATION" equiv-text="{{bTag.description}}"/> <x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/> </source>
-        <target>Boek Tags: <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="INTERPOLATION" equiv-text="{{bTag.description}}"/> <x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/> </target>
+        <target>Book Tags: <x id="START_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;ng-container&gt;"/><x id="INTERPOLATION" equiv-text="{{bTag.description}}"/> <x id="CLOSE_TAG_NG-CONTAINER" ctype="x-ng-container" equiv-text="&lt;/ng-container&gt;"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">104</context>
@@ -690,7 +689,7 @@
 
       <trans-unit id="Words Tags Required" datatype="html">
         <source>Tags are required.</source>
-        <target>Tags is vereis.</target>
+        <target>Tags are required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">108</context>
@@ -701,7 +700,7 @@
 
       <trans-unit id="Words Upload Image" datatype="html">
         <source>Upload Image<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
-        <target>Laai Prent Op<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <target>Upload Image<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>*<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">114</context>
@@ -712,7 +711,7 @@
 
       <trans-unit id="Words Choose Image" datatype="html">
         <source>Choose file</source>
-        <target>Kies Leêr</target>
+        <target>Choose file</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">120</context>
@@ -723,7 +722,7 @@
 
       <trans-unit id="Words Required Image" datatype="html">
         <source>Image is required.</source>
-        <target>Prent is vereis.</target>
+        <target>Image is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/forms/book-form/book-form.component.html</context>
           <context context-type="linenumber">125</context>
