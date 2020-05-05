@@ -4,16 +4,42 @@
 <div class="book-container">
     <ng-container *ngFor="let book of books">
             <div class="card" style="width: 18rem;">
-                <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
+                <ng-container *ngIf="book.image">
+                    <img src="{{book.image}}" class="card-img-top" alt="...">
+                </ng-container>
+                <ng-container *ngIf="!book.image">
                     <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
-                    <div class="card-body">
+                </ng-container>
+                
+                <div class="card-body">
+                    <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
                         <h5 class="card-title">{{book.title}}</h5>
-                        <p class="card-text">{{book.abstract}}</p>
-                    </div>
-                </a>
+                    </a>
+                    <p class="card-text">{{book.abstract}}</p>
+                </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><span class="card-features">Author: </span><a [routerLink]="['/author/view',book.author.id]">{{book.author.name}}</a></li>
                 </ul>
             </div>
     </ng-container>
+
+    <ng-container *ngIf="pagesTotal">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li *ngIf="currentPage !== 1" class="page-item">
+                <a (click)="previous()" class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <ng-container *ngFor="let num of pagesTotal">
+                <li class="page-item">
+                    <a class="page-link" (click)="movePage(num)" tabindex="{{num}}" aria-disabled="true">{{num}}</a>
+                </li>
+              </ng-container>
+              <li *ngIf="currentPage !== lastPage" class="page-item">
+                <a (click)="next()" class="page-link" tabindex="+1" aria-disabled="true">Next</a>
+              </li>
+              
+            </ul>
+          </nav>
+    </ng-container>
+
 </div>

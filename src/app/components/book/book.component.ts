@@ -2,7 +2,6 @@ import { Component, OnInit, Output } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 import { BookReturn } from 'src/app/models/book-return';
-import { BookAuthor } from 'src/app/models/book-author';
 
 @Component({
   selector: 'app-book',
@@ -10,43 +9,82 @@ import { BookAuthor } from 'src/app/models/book-author';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-  @Output()
   books: Book[] = new Array();
+  allBooks: Book[] = new Array();
   bookReturn: BookReturn;
+  currentBookStart = 0;
+  booksPerPage = 5;
+  pagesTotal: number[];
+  lastPage = 0;
+  currentPage = 1;
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-    // this.addBook(null);
     this.getBooks();
   }
 
   private getBooks(): void {
-    this.books = new Array();
+    this.allBooks = new Array();
     this.bookService.getBooks().subscribe((bookX) => {
       bookX.forEach(bookFE => {
-        this.books.push(bookFE);
+        this.allBooks.push(bookFE);
       });
+      this.paginateBooks(this.booksPerPage);
+      this.determinePages();
     });
   }
 
-  private addBook(newBook: Book): void {
-    const book = new Book();
-    book.isbn10 = '0133966151';
-    book.isbn13 = '9780133966392';
-    book.title = 'Testing';
-    book.image = '';
+  private paginateBooks(numberPerPage: number): void {
+    this.books = new Array();
+    if (this.currentBookStart === 0) {
+      for (let index = 0; index < numberPerPage; index++) {
+        this.books.push(this.allBooks[index]);
+      }
+    } else {
+      for (let bindex = this.currentBookStart; bindex < (this.currentBookStart + numberPerPage); bindex++) {
+        this.books.push(this.allBooks[bindex]);
+      }
+    }
+  }
 
-    const author = new BookAuthor();
-    author.href = 'http://localhost:4201/Authors/0f3c3a97-4a31-4d06-b5e9-5a3ce01cafd6';
-    author.id = '0f3c3a97-4a31-4d06-b5e9-5a3ce01cafd6';
-    author.name = 'Robin2 Patricia Williams';
-    book.author = author;
+  private determinePages(): void {
+    this.pagesTotal = new Array();
+    const bookTotal = this.allBooks.length;
+    let pages = bookTotal / this.booksPerPage;
+    if (pages % 1 !== 0) {
+      pages = Math.ceil(pages);
+    }
 
-    this.bookService.createBook(book).subscribe((bookA) => {
-      this.bookReturn = bookA;
-      console.log(this.bookReturn);
-    });
+    for (let index = 1; index <= pages; index++) {
+      this.pagesTotal.push(index);
+    }
+
+    this.lastPage = pages;
+  }
+
+  movePage(number: number): void {
+    this.currentPage = number;
+
+    if (number === 1) {
+      this.currentBookStart = 0;
+    } else if (number === this.lastPage) {
+      this.currentBookStart = (this.allBooks.length - this.booksPerPage);
+    } else {
+      this.currentBookStart = (this.booksPerPage * (number - 1));
+    }
+
+    this.paginateBooks(this.booksPerPage);
+  }
+
+  previous(): void {
+    this.currentPage--;
+    this.movePage(this.currentPage);
+  }
+
+  next(): void {
+    this.currentPage++;
+    this.movePage(this.currentPage);
   }
 
 }

@@ -1,37 +1,60 @@
 <div class="reactive-form-container">
     <form class="form-container" [formGroup]="form" (ngSubmit)="saveForm()">
-        <h1><ng-container *ngIf="update">Update</ng-container><ng-container *ngIf="!update">Add</ng-container> Book</h1>
+        <h1>
+            <ng-container *ngIf="update">Update</ng-container>
+            <ng-container *ngIf="!update">Add</ng-container> Book
+        </h1>
 
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
-                    <label for="isbn10">Isbn 10</label>
-                    <input type="text" value="{{book.isbn10}}" class="form-control" id="isbn10" placeholder="Enter Isbn10" formControlName="isbn10">
+                    <label for="isbn10">ISBN 10<b class="text-error">*</b></label>
+                    <input type="text" value="{{book.isbn10}}" class="form-control" id="isbn10"
+                        placeholder="Enter Isbn10" formControlName="isbn10">
+
+                    <div *ngIf="isbn10.touched && isbn10.invalid">
+                        <span *ngIf="isbn10.errors.required" class="text-error">ISBN10 is required.</span>
+                    </div>
+
                 </div>
                 <div class="col">
-                    <label for="isbn13">Isbn 13</label>
-                    <input type="text" value="{{book.isbn13}}" class="form-control" id="isbn13" placeholder="Enter Isbn13" formControlName="isbn13">
+                    <label for="isbn13">ISBN 13<b class="text-error">*</b></label>
+                    <input type="text" value="{{book.isbn13}}" class="form-control" id="isbn13"
+                        placeholder="Enter Isbn13" formControlName="isbn13">
+
+                    <div *ngIf="isbn13.touched && isbn13.invalid && isbn13.errors.required">
+                        <span class="text-error">ISBN13 is required.</span>
+                    </div>
+
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" value="{{book.title}}" class="form-control" id="title" placeholder="Enter Title" formControlName="title">
+            <label for="title">Title<b class="text-error">*</b></label>
+            <input type="text" value="{{book.title}}" class="form-control" id="title" placeholder="Enter Title"
+                formControlName="title">
+
+            <div *ngIf="title.touched && title.invalid && title.errors.required">
+                <span class="text-error">Title is required.</span>
+            </div>
+
         </div>
 
         <div class="form-group">
             <label for="about">About</label>
-            <textarea value="{{book.about}}" class="form-control" id="about" rows="3"  placeholder="Enter About" formControlName="about"></textarea>
+            <textarea value="{{book.about}}" class="form-control" id="about" rows="3" placeholder="Enter About"
+                formControlName="about"></textarea>
         </div>
 
         <div class="form-group">
             <label for="abstract">Abstract</label>
-            <textarea value="{{book.abstract}}" class="form-control" id="abstract" rows="3"  placeholder="Enter Abstract" formControlName="abstract"></textarea>
+            <textarea value="{{book.abstract}}" class="form-control" id="abstract" rows="3" placeholder="Enter Abstract"
+                formControlName="abstract"></textarea>
         </div>
 
         <div class="form-group">
-            <label for="author">Author</label>
+            <label for="author">Author<b class="text-error">*</b></label>
             <select class="form-control" id="author" formControlName="author">
                 <ng-container *ngIf="update">
                     <ng-container *ngIf="book.author">
@@ -52,11 +75,17 @@
                     </ng-container>
                 </ng-container>
             </select>
+
+            <div *ngIf="author.touched && author.invalid && author.errors.required">
+                <span class="text-error">Author is required.</span>
+            </div>
+
         </div>
 
         <div class="form-group">
             <label for="publisher">Publisher</label>
-            <input type="text" value="{{book.publisher}}" class="form-control" id="publisher" placeholder="Enter Publisher" formControlName="publisher">
+            <input type="text" value="{{book.publisher}}" class="form-control" id="publisher"
+                placeholder="Enter Publisher" formControlName="publisher">
         </div>
 
         <div class="form-group">
@@ -65,43 +94,52 @@
         </div>
 
         <div class="form-group">
-            <label for="Tags">Tags</label>
-            <select class="form-control" id="tags" formControlName="tags">
-                <ng-container *ngIf="update">
-                    <ng-container *ngIf="book.tags">
-                        <ng-container *ngFor="let tagB of tagList">
-                            <ng-container *ngIf="tagB.id == book.tags[0].id">
-                                <option [value]="tagB.id" selected>{{tagB.description}}</option>
-                            </ng-container>
-                            <ng-container *ngIf="tagB.id != book.tags[0].id">
-                                <option [value]="tagB.id">{{tagB.description}}</option>
-                            </ng-container>
-                        </ng-container>
-                    </ng-container>
-                </ng-container>
-                <ng-container *ngIf="!update">
-                    <option>Select Tag</option>
-                    <ng-container *ngFor="let tagA of tagList">
-                        <option [value]="tagA.id">{{tagA.description}}</option>
-                    </ng-container>
+            <label for="tags">Tags<b class="text-error">*</b></label>
+            <select (change)="addTag($event)" class="form-control" id="tags" formControlName="tags">
+                <option>Select Tag</option>
+                <ng-container *ngFor="let tagA of tagList">
+                    <option [value]="tagA.id">{{tagA.description}}</option>
                 </ng-container>
             </select>
+
+            <div class="form-group">
+                <label for="about">Book Tags: <ng-container *ngFor="let bTag of book.tags">{{bTag.description}} </ng-container> </label>
+            </div>
+
+            <div *ngIf="tags.touched && tags.invalid && tags.errors.required">
+                <span class="text-error">Tags are required.</span>
+            </div>
+
         </div>
 
         <div *ngIf="!update" class="form-group">
-            <label for="Image">Upload Image</label>
+            <label for="image">Upload Image<b class="text-error">*</b></label>
             <div class="input-group mb-3">
                 <div class="custom-file">
-                    <input (change)="uploadPicture($event)" type="file" class="custom-file-input" id="image" name="image" accept="image/bmp,image/gif,image/jpeg,image/png" autocomplete="none" autocorrect="off" autocapitalize="off" spellcheck="false">
+                    <input (change)="uploadPicture($event)" type="file" class="custom-file-input" id="image"
+                        name="image" accept="image/bmp,image/gif,image/jpeg,image/png" autocomplete="none"
+                        autocorrect="off" autocapitalize="off" spellcheck="false">
                     <label class="custom-file-label" for="image" aria-describedby="image">Choose file</label>
                 </div>
-            </div>       
+            </div>
+
+            <div *ngIf="image.touched && image.invalid && image.errors.required">
+                <span class="text-error">Image is required.</span>
+            </div>
+
         </div>
-        
-        <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Add Book</button>
-        <button *ngIf="!update" [routerLink]="['/book']" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
-        <button *ngIf="update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Update Author</button>
-        <button *ngIf="update" type="submit" [routerLink]="['/book']" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+
+        <div *ngIf="form.invalid">
+            <span class="text-error">All fields marked with an * is required.</span>
+        </div>
+
+        <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Add
+            Book</button>
+        <button *ngIf="!update" [routerLink]="['/book']" type="submit" class="btn-login-logout btn-wider btn-cancel"
+            #submit>Cancel</button>
+        <button *ngIf="update" type="submit" class="btn-login-logout btn-wider" #submit>Update Author</button>
+        <button *ngIf="update" type="submit" [routerLink]="['/book']" class="btn-login-logout btn-wider btn-cancel"
+            #submit>Cancel</button>
 
     </form>
 </div>

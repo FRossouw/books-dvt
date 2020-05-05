@@ -3,8 +3,13 @@
         <h1><ng-container *ngIf="update">Update</ng-container><ng-container *ngIf="!update">Add</ng-container> Author</h1>
 
         <div class="form-group">
-            <label for="firstName">First Name</label>
+            <label for="firstName">First Name<b class="text-error">*</b></label>
             <input type="text" value="{{author.first_name}}" class="form-control" id="firstName" placeholder="Enter First Name" formControlName="firstName">
+        
+            <div *ngIf="firstName.touched && firstName.invalid && firstName.errors.required">
+                <span class="text-error">First name is required.</span>
+            </div>
+        
         </div>
 
         <div class="form-group">
@@ -13,8 +18,13 @@
         </div>
 
         <div class="form-group">
-            <label for="lastName">Last Name</label>
+            <label for="lastName">Last Name<b class="text-error">*</b></label>
             <input type="text" value="{{author.last_name}}" class="form-control" id="lastName"  placeholder="Enter Last Name" formControlName="lastName">
+        
+            <div *ngIf="lastName.touched && lastName.invalid && lastName.errors.required">
+                <span class="text-error">Last name is required.</span>
+            </div>
+
         </div>
 
         <div class="form-group">
@@ -22,10 +32,14 @@
             <textarea value="{{author.about}}" class="form-control" id="about" rows="3"  placeholder="Enter About" formControlName="about"></textarea>
         </div>
 
+        <div *ngIf="form.invalid">
+            <span class="text-error">All fields marked with an * is required.</span>
+        </div>
+
         <button *ngIf="!update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Add Author</button>
-        <button *ngIf="!update" [routerLink]="['/author']" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+        <button *ngIf="!update" [routerLink]="['/author']" type="submit" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
         <button *ngIf="update" type="submit" [disabled]="form.invalid" class="btn-login-logout btn-wider" #submit>Update Author</button>
-        <button *ngIf="update" type="submit" [routerLink]="['/author']" [disabled]="form.invalid" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
+        <button *ngIf="update" type="submit" [routerLink]="['/author']" class="btn-login-logout btn-wider btn-cancel" #submit>Cancel</button>
 
     </form>
 </div>

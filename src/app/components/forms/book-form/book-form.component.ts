@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 import { Book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,6 +9,8 @@ import { BookReturn } from 'src/app/models/book-return';
 import { BookAuthor } from 'src/app/models/book-author';
 import { Tag } from 'src/app/models/tag';
 import { TagService } from 'src/app/services/tag.service';
+import { Isbn10Factori } from 'src/app/forms/validators/isbn10-factori';
+import { InputLengthFactory } from 'src/app/forms/validators/input-length-factory';
 
 @Component({
   selector: 'app-book-form',
@@ -22,6 +24,7 @@ export class BookFormComponent implements OnInit {
   book: Book;
   authors: Author[];
   tagList: Tag[];
+  tagAddArray: Tag[] = new Array();
   imageFile: File;
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -30,13 +33,17 @@ export class BookFormComponent implements OnInit {
     private tagService: TagService,
     private router: Router) {
     this.form = new FormGroup({
-      isbn10: new FormControl('', {}),
-      isbn13: new FormControl('', {}),
-      title: new FormControl('', {}),
+      isbn10: new FormControl('', {
+        validators: [
+          Validators.required
+        ]
+      }),
+      isbn13: new FormControl('', { validators: [Validators.required] }),
+      title: new FormControl('', { validators: [Validators.required] }),
       about: new FormControl('', {}),
       abstract: new FormControl('', {}),
       image: new FormControl('', {}),
-      author: new FormControl('', {}),
+      author: new FormControl('', { validators: [Validators.required] }),
       datePublished: new FormControl('', {}),
       publisher: new FormControl('', {}),
       tags: new FormControl('', {})
@@ -177,6 +184,22 @@ export class BookFormComponent implements OnInit {
     if (event.target.files.length) {
       this.imageFile = event.target.files[0];
     }
+  }
+
+  addTag(event) {
+    const bookTags = this.book.tags;
+    const tagArray = this.tagAddArray;
+    let selectedTag: Tag;
+    const newTag = event.target.value;
+    this.book.tags = {} as Tag[];
+
+    this.tagList.forEach(tagElement => {
+      if (tagElement.id.toString() === bookTags.toString()) {
+        selectedTag = tagElement;
+        tagArray.push(selectedTag);
+        this.book.tags = tagArray;
+      }
+    });
   }
 
 }

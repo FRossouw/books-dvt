@@ -14,10 +14,6 @@
                         <p class="card-text"><small class="text-muted">Author Full Name: {{author.name}}</small></p>
                         <p class="card-text">{{author.about}}</p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><span class="card-features">Books: </span>
-                            <a href="/book">{{author.name}} Books</a></li>
-                    </ul>
                     <button [routerLink]="['/author']" class="btn-login-logout" type="button">Back</button>
                     <button *ngIf="admin" [routerLink]="['/author/forms/update',author.id]" class="btn-login-logout" type="button">Update</button>
                 </div>  
