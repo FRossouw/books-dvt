@@ -12,13 +12,13 @@ import { Isbn13Factory } from '../validators/isbn13-factory';
 })
 export class Isbn13DirectiveDirective implements Validator {
 
-  validateIsn13: ValidatorFn;
+  validateIsbn13: ValidatorFn;
   constructor() {
-    this.validateIsn13 = Isbn13Factory.inputIsbn13();
+    this.validateIsbn13 = Isbn13Factory.inputIsbn13();
   }
 
   validate(control: AbstractControl): ValidationErrors {
-    return (this.validateIsn13(control));
+    return (this.validateIsbn13(control));
   }
 
   registerOnValidatorChange?(fn: () => void): void {
