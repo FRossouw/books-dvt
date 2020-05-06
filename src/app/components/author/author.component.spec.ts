@@ -9,14 +9,14 @@ describe('AuthorComponent', () => {
   let fixture: ComponentFixture<AuthorComponent>;
 
   class MockService {
-    getAuthor() {
+    getAuthor(): Author[] {
       return [] as Author[];
     }
   }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthorComponent ],
+      declarations: [AuthorComponent],
       imports: [HttpClientModule],
       providers: [
         {
@@ -25,7 +25,7 @@ describe('AuthorComponent', () => {
         }
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
