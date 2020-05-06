@@ -9,8 +9,6 @@ import { BookReturn } from 'src/app/models/book-return';
 import { BookAuthor } from 'src/app/models/book-author';
 import { Tag } from 'src/app/models/tag';
 import { TagService } from 'src/app/services/tag.service';
-import { Isbn10Factori } from 'src/app/forms/validators/isbn10-factori';
-import { InputLengthFactory } from 'src/app/forms/validators/input-length-factory';
 
 @Component({
   selector: 'app-book-form',
