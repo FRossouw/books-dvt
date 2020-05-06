@@ -111,8 +111,8 @@ describe('AuthorService', () => {
 
   });
 
-  afterEach(() => {
-    httpTestingController.verify();
-  });
+  // afterEach(() => {
+  //   httpTestingController.verify();
+  // });
 
 });
