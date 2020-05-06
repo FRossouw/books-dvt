@@ -63,7 +63,7 @@ export class BookComponent implements OnInit {
   }
 
   viewMore(): void {
-    if(this.displayViewMore) {
+    if (this.displayViewMore) {
       this.skipBooks += 5;
       this.getBooksPageinated();
     }

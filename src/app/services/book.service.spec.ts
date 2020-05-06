@@ -84,7 +84,7 @@ describe('BookService', () => {
 
     it('postPicture() should update a book on the server', () => {
       const isbn13 = '9871234567891';
-      const file = new File([], "dummy.png", { type: 'image/png' });
+      const file = new File([], 'dummy.png', { type: 'image/png' });
 
       service.postPicture(isbn13, file).subscribe();
 
