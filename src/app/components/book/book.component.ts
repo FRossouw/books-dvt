@@ -1,7 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
-import { BookReturn } from 'src/app/models/book-return';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -48,17 +47,19 @@ export class BookComponent implements OnInit {
   }
 
   private getSearchBooks(bookName: string): void {
-    this.books = new Array();
-    this.bookService.getBooksSearch(bookName, this.topBooks).subscribe((bookSearched) => {
+    const booksAdd: Book[] = new Array();
+    this.bookService.getBooksSearch(bookName, this.topBooks, this.skipBooks).subscribe((bookSearched) => {
       if (bookSearched.length === 0) {
         this.noBooksFound = true;
       } else {
         this.noBooksFound = false;
       }
       bookSearched.forEach(bookSFE => {
-        this.books.push(bookSFE);
+        booksAdd.push(bookSFE);
       });
     });
+    this.books = booksAdd;
+    bookName = '';
     this.displayViewMore = false;
   }
 

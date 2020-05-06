@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorComponent } from './author.component';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('AuthorComponent', () => {
   let component: AuthorComponent;
@@ -9,8 +8,7 @@ describe('AuthorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthorComponent ],
-      imports: [HttpClientModule]
+      declarations: [ AuthorComponent ]
     })
     .compileComponents();
   }));
