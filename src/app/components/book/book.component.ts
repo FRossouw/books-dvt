@@ -2,6 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 import { BookReturn } from 'src/app/models/book-return';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -11,17 +12,27 @@ import { BookReturn } from 'src/app/models/book-return';
 export class BookComponent implements OnInit {
   books: Book[] = new Array();
   allBooks: Book[] = new Array();
-  bookReturn: BookReturn;
-  currentBookStart = 0;
-  booksPerPage = 5;
-  pagesTotal: number[];
-  lastPage = 0;
-  currentPage = 1;
+  topBooks = 5;
+  skipBooks = 0;
+  totalBooks = 0;
+  displayViewMore = true;
+  query: string;
+  noBooksFound = false;
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.query = params.get('name');
+      if (this.query != null) {
+        this.getSearchBooks(this.query);
+      }
+    });
+
+    this.getBooksPageinated();
     this.getBooks();
+
+    ;
   }
 
   private getBooks(): void {
@@ -30,61 +41,48 @@ export class BookComponent implements OnInit {
       bookX.forEach(bookFE => {
         this.allBooks.push(bookFE);
       });
-      this.paginateBooks(this.booksPerPage);
-      this.determinePages();
     });
+    this.totalBooks = this.allBooks.length;
   }
 
-  private paginateBooks(numberPerPage: number): void {
+  private getBooksPageinated(): void {
+    let booksAdd: Book[] = new Array();
+    booksAdd = this.books;
+    this.bookService.getBooksFilter(this.topBooks, this.skipBooks).subscribe((bookFilter) => {
+      if (bookFilter.length < 5) {
+        this.displayViewMore = false;
+      }
+      bookFilter.forEach((bookFFE) => {
+        booksAdd.push(bookFFE);
+      });
+    });
+    this.books = booksAdd;
+  }
+
+  private getSearchBooks(bookName: string): void {
     this.books = new Array();
-    if (this.currentBookStart === 0) {
-      for (let index = 0; index < numberPerPage; index++) {
-        this.books.push(this.allBooks[index]);
+    this.bookService.getBooksSearch(bookName, this.topBooks).subscribe((bookSearched) => {
+      if(bookSearched.length == 0) {
+        this.noBooksFound = true;
+      } else {
+        this.noBooksFound = false;
       }
+      bookSearched.forEach(bookSFE => {
+        this.books.push(bookSFE);
+      });
+    });
+    this.displayViewMore = false;
+  }
+
+  viewMore(): void {
+    if ((this.skipBooks + 5) <= this.totalBooks) {
+      this.displayViewMore = false;
     } else {
-      for (let bindex = this.currentBookStart; bindex < (this.currentBookStart + numberPerPage); bindex++) {
-        this.books.push(this.allBooks[bindex]);
-      }
+      this.skipBooks += 5;
+      this.getBooksPageinated();
     }
   }
 
-  private determinePages(): void {
-    this.pagesTotal = new Array();
-    const bookTotal = this.allBooks.length;
-    let pages = bookTotal / this.booksPerPage;
-    if (pages % 1 !== 0) {
-      pages = Math.ceil(pages);
-    }
 
-    for (let index = 1; index <= pages; index++) {
-      this.pagesTotal.push(index);
-    }
-
-    this.lastPage = pages;
-  }
-
-  movePage(number: number): void {
-    this.currentPage = number;
-
-    if (number === 1) {
-      this.currentBookStart = 0;
-    } else if (number === this.lastPage) {
-      this.currentBookStart = (this.allBooks.length - this.booksPerPage);
-    } else {
-      this.currentBookStart = (this.booksPerPage * (number - 1));
-    }
-
-    this.paginateBooks(this.booksPerPage);
-  }
-
-  previous(): void {
-    this.currentPage--;
-    this.movePage(this.currentPage);
-  }
-
-  next(): void {
-    this.currentPage++;
-    this.movePage(this.currentPage);
-  }
 
 }
