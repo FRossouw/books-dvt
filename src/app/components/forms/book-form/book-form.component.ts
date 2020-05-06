@@ -101,8 +101,18 @@ export class BookFormComponent implements OnInit {
   private getBook(isbn13: string): void {
     this.book = new Book();
     this.bookService.getBook(isbn13).subscribe((bookX) => {
-      console.log(bookX.date_published);
       this.book = bookX;
+
+      this.form.get('isbn10').setValue(this.book.isbn10);
+      this.form.get('isbn13').setValue(this.book.isbn13);
+      this.form.get('title').setValue(this.book.title);
+      this.form.get('about').setValue(this.book.about);
+      this.form.get('abstract').setValue(this.book.abstract);
+      this.form.get('image').setValue(this.book.image);
+      this.form.get('author').setValue(this.book.author);
+      this.form.get('datePublished').setValue(String(this.book.date_published).substring(0, 10));
+      this.form.get('publisher').setValue(this.book.publisher);
+      this.form.get('tags').setValue(this.book.tags);
     });
   }
 
@@ -139,10 +149,6 @@ export class BookFormComponent implements OnInit {
   private updateBook(): void {
     this.convertAuthorToBookAuthor();
     this.convertTagsToBookTags();
-    console.log('author ' + JSON.stringify(this.book.author));
-    console.log('tags ' + JSON.stringify(this.book.tags));
-    console.log('book ' + JSON.stringify(this.book));
-
     this.bookService.updateBook(this.book).subscribe((bookReturn) => {
       this.router.navigate([`/book/view/${this.book.isbn13}`]);
     });
@@ -154,7 +160,7 @@ export class BookFormComponent implements OnInit {
     const bAuth = this.book.author;
 
     this.authors.forEach(element => {
-      if (element.id.toString() === bAuth.toString()) {
+      if (element.name.toString() === bAuth.toString()) {
         selectedAuthor = element;
         bookAuth.id = selectedAuthor.id;
         bookAuth.href = selectedAuthor.href;
