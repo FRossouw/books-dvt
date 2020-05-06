@@ -13,8 +13,6 @@ describe('AuthorDetailsComponent', () => {
     paramMap: of({ get: () => '372dc0d0-6368-4eb3-8876-8b20d07cf722' }) 
   };
 
-  //  id: '372dc0d0-6368-4eb3-8876-8b20d07cf722'
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AuthorDetailsComponent ],
