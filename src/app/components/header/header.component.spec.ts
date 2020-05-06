@@ -5,6 +5,10 @@ import { AuthService } from 'src/app/services/auth.service';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
+class MockService {
+
+}
+
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
@@ -14,7 +18,12 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       imports: [RouterTestingModule],
-      providers: [AuthService]
+      providers: [
+        {
+          AuthService,
+          useValue: MockService
+        }
+      ]
     })
       .compileComponents();
   }));
