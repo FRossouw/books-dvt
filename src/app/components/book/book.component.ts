@@ -2,7 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
 import { BookReturn } from 'src/app/models/book-return';
-import { BookAuthor } from 'src/app/models/book-author';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -10,43 +10,65 @@ import { BookAuthor } from 'src/app/models/book-author';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-  @Output()
   books: Book[] = new Array();
-  bookReturn: BookReturn;
+  allBooks: Book[] = new Array();
+  topBooks = 5;
+  skipBooks = 0;
+  displayViewMore = true;
+  query: string;
+  noBooksFound = false;
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.addBook(null);
-    this.getBooks();
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.query = params.get('name');
+      if (this.query != null) {
+        this.getSearchBooks(this.query);
+      }
+    });
+
+    if (this.query == null) {
+      this.getBooksPageinated();
+    }
   }
 
-  private getBooks(): void {
-    this.books = new Array();
-    this.bookService.getBooks().subscribe((bookX) => {
-      bookX.forEach(bookFE => {
-        this.books.push(bookFE);
+  private getBooksPageinated(): void {
+    let booksAdd: Book[] = new Array();
+    booksAdd = this.books;
+    this.bookService.getBooksFilter(this.topBooks, this.skipBooks).subscribe((bookFilter) => {
+      if (bookFilter.length < 5) {
+        this.displayViewMore = false;
+      }
+      bookFilter.forEach((bookFFE) => {
+        booksAdd.push(bookFFE);
       });
     });
+    this.books = booksAdd;
   }
 
-  private addBook(newBook: Book): void {
-    const book = new Book();
-    book.isbn10 = '0133966151';
-    book.isbn13 = '9780133966392';
-    book.title = 'Testing';
-    book.image = '';
-
-    const author = new BookAuthor();
-    author.href = 'http://localhost:4201/Authors/0f3c3a97-4a31-4d06-b5e9-5a3ce01cafd6';
-    author.id = '0f3c3a97-4a31-4d06-b5e9-5a3ce01cafd6';
-    author.name = 'Robin2 Patricia Williams';
-    book.author = author;
-
-    this.bookService.createBook(book).subscribe((bookA) => {
-      this.bookReturn = bookA;
-      console.log(this.bookReturn);
+  private getSearchBooks(bookName: string): void {
+    this.books = new Array();
+    this.bookService.getBooksSearch(bookName, this.topBooks).subscribe((bookSearched) => {
+      if (bookSearched.length === 0) {
+        this.noBooksFound = true;
+      } else {
+        this.noBooksFound = false;
+      }
+      bookSearched.forEach(bookSFE => {
+        this.books.push(bookSFE);
+      });
     });
+    this.displayViewMore = false;
   }
+
+  viewMore(): void {
+    if (this.displayViewMore) {
+      this.skipBooks += 5;
+      this.getBooksPageinated();
+    }
+  }
+
+
 
 }

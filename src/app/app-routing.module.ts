@@ -24,6 +24,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'book/search/:name',
+    component: BookComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'book/forms/update/:id',
     component: BookFormComponent,
     canActivate: [AuthGuard]
@@ -64,4 +69,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { } // Here

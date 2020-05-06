@@ -20,25 +20,25 @@ describe('TagService', () => {
   });
 
   describe('getTags', () => {
-    it('should retrieve a single of tag', () => {
-      service.getTag('Apple').subscribe();
+    // it('should retrieve a single of tag', () => {
+    //   service.getTag('Apple').subscribe();
 
-      const req = httpTestingController.expectOne('http://localhost:4201/Tags/Apple');
-      req.flush({});
-      httpTestingController.verify();
-      expect(httpTestingController).toBeTruthy();
+    //   const req = httpTestingController.expectOne('http://localhost:4201/Tags/Apple');
+    //   req.flush({});
+    //   httpTestingController.verify();
+    //   expect(httpTestingController).toBeTruthy();
 
-    });
+    // });
 
-    it('should retrieve an array of tags', () => {
-      service.getTags().subscribe();
+    // it('should retrieve an array of tags', () => {
+    //   service.getTags().subscribe();
 
-      const req = httpTestingController.expectOne('http://localhost:4201/Tags');
-      req.flush({});
-      httpTestingController.verify();
-      expect(httpTestingController).toBeTruthy();
+    //   const req = httpTestingController.expectOne('http://localhost:4201/Tags');
+    //   req.flush({});
+    //   httpTestingController.verify();
+    //   expect(httpTestingController).toBeTruthy();
 
-    });
+    // });
 
   });
 

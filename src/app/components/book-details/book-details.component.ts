@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-book-details',
@@ -12,6 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class BookDetailsComponent implements OnInit {
 
   book: Book;
+  bookDate: string;
   bookImage;
   admin: boolean;
 
@@ -27,15 +29,6 @@ export class BookDetailsComponent implements OnInit {
     });
 
     this.getBook(bookIsbn13);
-    // this.bookService.getPicture(bookIsbn13).subscribe((imageX) => {
-    //   console.log(imageX);
-    //   if (imageX != null) {
-    //     this.bookImage = imageX;
-    //     console.log(this.bookImage);
-    //   } else {
-    //     this.bookImage = "../../../assets/images/slide.svg";
-    //   }
-    // });
 
   }
 
@@ -43,6 +36,7 @@ export class BookDetailsComponent implements OnInit {
     this.book = new Book();
     this.bookService.getBook(isbn13).subscribe((bookX) => {
       this.book = bookX;
+      this.bookDate = String(this.book.date_published).substring(0, 10);
     });
   }
 

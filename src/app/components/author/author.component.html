@@ -1,21 +1,16 @@
 <div class="author-header">
-    <h1>Available Authors</h1>
+    <h1 i18n="Available Authors|Words Available Authors@@Words Available Authors">Available Authors</h1>
 </div>
 <div class="author-container">
     <ng-container *ngFor="let author of authors">
-        
-            <div class="card" style="width: 18rem;">
-                <a [routerLink]="['/author/view',author.id]" class="card-anchor">
+            <div class="card" style="width: 18rem;"> 
                     <img src="../../../assets/images/author.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{author.last_name}}, {{author.first_name}} <ng-container *ngIf="author.middle_names">{{author.middle_names[0]}}.</ng-container></h5>
+                        <a [routerLink]="['/author/view',author.id]" class="card-anchor">
+                            <h5 class="card-title">{{author.last_name}}, {{author.first_name}} <ng-container *ngIf="author.middle_names">{{author.middle_names[0]}}.</ng-container></h5>
+                        </a>
                         <p class="card-text">{{author.about}}</p>
                     </div>
-                </a>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="card-features"><a [routerLink]="['/author/view', author.id]">{{author.last_name}}' Books</a></span></li>
-                </ul>
             </div>
-
     </ng-container>
 </div>

@@ -20,6 +20,14 @@ export class BookService {
     return this.http.get<Book[]>(`${environment.apiBooks}`);
   }
 
+  getBooksFilter(top: number, skip: number): Observable<Book[]> {
+    return this.http.get<Book[]>(`${environment.apiBooks}/?top=${top}&skip=${skip}`);
+  }
+
+  getBooksSearch(bookName: string, top: number): Observable<Book[]> {
+    return this.http.get<Book[]>(`${environment.apiBooks}/?query=${bookName}&top=${top}`);
+  }
+
   createBook(book: Book): Observable<BookReturn> {
     return this.http.post<BookReturn>(environment.apiBooks, book);
   }
@@ -30,10 +38,6 @@ export class BookService {
 
   postPicture(isbn13: string, file: File) {
     return this.http.put(`${environment.apiBooks}/${isbn13}/picture`, file);
-  }
-
-  getPicture(isbn13: string) {
-    return this.http.get(`${environment.apiBooks}/${isbn13}/picture`);
   }
 
 }
