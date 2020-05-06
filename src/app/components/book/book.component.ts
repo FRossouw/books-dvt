@@ -14,7 +14,6 @@ export class BookComponent implements OnInit {
   allBooks: Book[] = new Array();
   topBooks = 5;
   skipBooks = 0;
-  totalBooks = 0;
   displayViewMore = true;
   query: string;
   noBooksFound = false;
@@ -31,18 +30,7 @@ export class BookComponent implements OnInit {
 
     if (this.query == null) {
       this.getBooksPageinated();
-      this.getBooks();
     }
-  }
-
-  private getBooks(): void {
-    this.allBooks = new Array();
-    this.bookService.getBooks().subscribe((bookX) => {
-      bookX.forEach(bookFE => {
-        this.allBooks.push(bookFE);
-      });
-    });
-    this.totalBooks = this.allBooks.length;
   }
 
   private getBooksPageinated(): void {
@@ -75,9 +63,7 @@ export class BookComponent implements OnInit {
   }
 
   viewMore(): void {
-    if ((this.skipBooks + 5) <= this.totalBooks) {
-      this.displayViewMore = false;
-    } else {
+    if(this.displayViewMore) {
       this.skipBooks += 5;
       this.getBooksPageinated();
     }
