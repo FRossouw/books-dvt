@@ -52,7 +52,7 @@ describe('AuthorService', () => {
 
     it('createAuthor() with HTTP method PUT', () => {
 
-      let mockAuthor = new Author();
+      const mockAuthor = new Author();
       mockAuthor.first_name = 'John';
       mockAuthor.last_name = 'Doe';
       mockAuthor.about = 'About me..';
@@ -69,7 +69,7 @@ describe('AuthorService', () => {
 
     it('updateAuthor() with HTTP method PUT', () => {
 
-      let mockAuthor = new Author();
+      const mockAuthor = new Author();
       mockAuthor.id = '3888d8b0-af27-4fba-bbed-f91b11f98b27';
       mockAuthor.first_name = 'John';
       mockAuthor.last_name = 'Doe';
