@@ -20,6 +20,8 @@
                         <p class="card-text">{{book.about}}</p>
                         <p class="card-text"><small class="text-muted" i18n="Published By:|Words Published By@@Words Published By:">Published by: {{book.publisher}}</small></p>
                         <p class="card-text"><small class="text-muted" i18n="Tags:|Words Tags@@Word Tags:">Tags: <ng-container *ngFor="let tag of book.tags">{{tag.description}} </ng-container></small></p>
+                        <p class="card-text"><small class="text-muted" >ISBN 10: {{book.isbn10}}</small></p>
+                        <p class="card-text"><small class="text-muted" >ISBN 13: {{book.isbn13}}</small></p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li *ngIf="book.author" class="list-group-item"><span class="card-features" i18n="Author:|Word Author@@Word Author:">Author: </span>
