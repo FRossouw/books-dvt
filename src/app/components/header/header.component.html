@@ -13,8 +13,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1" i18n="Search|Word Search@@Word Search">Search</span>
         </div>
-        <input type="text" class="form-control" placeholder="Author, Book, Tag" aria-label="Username"
-            aria-describedby="basic-addon1">
+        <input [(ngModel)]="searchQuery" (change)="onChange()" type="text" class="form-control" placeholder="Book" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="navigation" *ngIf="auth.loggedIn">

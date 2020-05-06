@@ -60,6 +60,11 @@ export class AuthorFormComponent implements OnInit {
     this.author = new Author();
     this.authorService.getAuthor(authorId).subscribe((authorX) => {
       this.author = authorX;
+
+      this.form.get('firstName').setValue(this.author.first_name);
+      this.form.get('middleName').setValue(this.author.middle_names);
+      this.form.get('lastName').setValue(this.author.last_name);
+      this.form.get('about').setValue(this.author.about);
     });
   }
 
