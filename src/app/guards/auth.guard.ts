@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
           this.auth.admin = true;
           this.auth.user = false;
         }
-        
+
         if (this.auth.userProfileData[environment.namespace] && this.auth.userProfileData[environment.namespace].includes('user')) {
           this.auth.admin = false;
           this.auth.user = true;

@@ -15,12 +15,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void { }
 
   onChange(): void {
-    if ((this.searchQuery == null) || (this.searchQuery == '') || (this.searchQuery == ' ') || (this.searchQuery == undefined)) {
+    if ((this.searchQuery === null) || (this.searchQuery === '') || (this.searchQuery === ' ') || (this.searchQuery === undefined)) {
       this.router.navigate([`/book`]);
     } else {
       this.router.navigate([`/book/search/${this.searchQuery}`]);
     }
-    
   }
 
 }
