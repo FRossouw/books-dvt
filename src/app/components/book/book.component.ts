@@ -47,7 +47,7 @@ export class BookComponent implements OnInit {
   }
 
   private getSearchBooks(bookName: string): void {
-    let booksAdd: Book[] = new Array();
+    const booksAdd: Book[] = new Array();
     this.bookService.getBooksSearch(bookName, this.topBooks, this.skipBooks).subscribe((bookSearched) => {
       if (bookSearched.length === 0) {
         this.noBooksFound = true;
@@ -59,7 +59,7 @@ export class BookComponent implements OnInit {
       });
     });
     this.books = booksAdd;
-    bookName = "";
+    bookName = '';
     this.displayViewMore = false;
   }
 
