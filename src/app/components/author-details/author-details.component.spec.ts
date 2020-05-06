@@ -9,13 +9,13 @@ import { of } from 'rxjs';
 describe('AuthorDetailsComponent', () => {
   let component: AuthorDetailsComponent;
   let fixture: ComponentFixture<AuthorDetailsComponent>;
-  const mockActivatedRoute = { 
-    paramMap: of({ get: () => '372dc0d0-6368-4eb3-8876-8b20d07cf722' }) 
+  const mockActivatedRoute = {
+    paramMap: of({ get: () => '372dc0d0-6368-4eb3-8876-8b20d07cf722' })
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthorDetailsComponent ],
+      declarations: [AuthorDetailsComponent],
       imports: [
         HttpClientModule,
         RouterTestingModule
@@ -27,7 +27,7 @@ describe('AuthorDetailsComponent', () => {
         }
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
