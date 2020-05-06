@@ -18,8 +18,6 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> | Promise<boolean | UrlTree> | boolean {
     return this.auth.isAuthenticated$.pipe(
       tap(loggedIn => {
-        this.auth.admin = false;
-        this.auth.user = false;
 
         if (this.auth.userProfileData[environment.namespace] && this.auth.userProfileData[environment.namespace].includes('admin')) {
           this.auth.admin = true;
