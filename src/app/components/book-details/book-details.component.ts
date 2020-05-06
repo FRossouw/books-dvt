@@ -12,7 +12,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class BookDetailsComponent implements OnInit {
 
   book: Book;
-  bookDate: string;
   bookImage;
   admin: boolean;
 
@@ -35,7 +34,6 @@ export class BookDetailsComponent implements OnInit {
     this.book = new Book();
     this.bookService.getBook(isbn13).subscribe((bookX) => {
       this.book = bookX;
-      this.bookDate = String(this.book.date_published).substring(0, 10);
     });
   }
 
