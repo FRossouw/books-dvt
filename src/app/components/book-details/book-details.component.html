@@ -16,7 +16,7 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h4 class="card-title">{{book.title}}</h4>
-                        <p class="card-text"><small class="text-muted" i18n="Date Published:|Words Date Published@@Words Date Published:">Date Published: {{book.date_published}}</small></p>
+                        <p class="card-text"><small class="text-muted" i18n="Date Published:|Words Date Published@@Words Date Published:">Date Published: {{bookDate}}</small></p>
                         <p class="card-text">{{book.about}}</p>
                         <p class="card-text"><small class="text-muted" i18n="Published By:|Words Published By@@Words Published By:">Published by: {{book.publisher}}</small></p>
                         <p class="card-text"><small class="text-muted" i18n="Tags:|Words Tags@@Word Tags:">Tags: <ng-container *ngFor="let tag of book.tags">{{tag.description}} </ng-container></small></p>
