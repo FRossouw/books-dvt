@@ -3,15 +3,6 @@ import { TagService } from './tag.service';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { Tag } from '../models/tag';
 
-class tagMock {
-  mockTag: Tag = {
-    "id": "Angular",
-    "href": "/Tags/Angular",
-    "description": "Angular"
-  }
-
-}
-
 describe('TagService', () => {
   let service: TagService;
   let httpMock: HttpTestingController;
@@ -36,12 +27,12 @@ describe('TagService', () => {
     it('getTag() with HTTP method GET', () => {
 
       let mockTag: Tag = {
-        "id": "Angular",
-        "href": "/Tags/Angular",
-        "description": "Angular"
+        'id': 'Angular',
+        'href': '/Tags/Angular',
+        'description': 'Angular'
       }
 
-      service.getTag("Angular").subscribe(tag => {
+      service.getTag('Angular').subscribe(tag => {
         expect(tag).toEqual(mockTag);
       });
 
@@ -54,14 +45,14 @@ describe('TagService', () => {
 
       let mockTag: Tag[] = [
         {
-          "id": "Angular",
-          "href": "/Tags/Angular",
-          "description": "Angular"
+          'id': 'Angular',
+          'href': '/Tags/Angular',
+          'description': 'Angular'
         },
         {
-          "id": "iOS",
-          "href": "/Tags/iOS",
-          "description": "iOS"
+          'id': 'iOS',
+          'href': '/Tags/iOS',
+          'description': 'iOS'
         }
       ];
 
