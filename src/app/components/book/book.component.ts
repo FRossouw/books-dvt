@@ -29,10 +29,10 @@ export class BookComponent implements OnInit {
       }
     });
 
-    this.getBooksPageinated();
-    this.getBooks();
-
-    ;
+    if (this.query == null) {
+      this.getBooksPageinated();
+      this.getBooks();
+    }
   }
 
   private getBooks(): void {
@@ -62,7 +62,7 @@ export class BookComponent implements OnInit {
   private getSearchBooks(bookName: string): void {
     this.books = new Array();
     this.bookService.getBooksSearch(bookName, this.topBooks).subscribe((bookSearched) => {
-      if(bookSearched.length == 0) {
+      if (bookSearched.length == 0) {
         this.noBooksFound = true;
       } else {
         this.noBooksFound = false;
