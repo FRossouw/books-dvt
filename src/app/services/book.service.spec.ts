@@ -60,6 +60,39 @@ describe('BookService', () => {
       expect(httpTestingController).toBeTruthy();
     });
 
+    it('getBooksFilter() should update a book on the server', () => {
+      const top = 0;
+      const skip = 5;
+
+      service.getBooksFilter(top, skip).subscribe(); 
+
+      httpTestingController.expectOne(`http://localhost:4201/Books/?top=${top}&skip=${skip}`);
+      httpTestingController.verify();
+      expect(httpTestingController).toBeTruthy();
+    });
+
+    it('getBooksSearch() should update a book on the server', () => {
+      const top = 0;
+      const bookName = "iOS For Dummies";
+
+      service.getBooksSearch(bookName, top).subscribe(); 
+
+      httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}`);
+      httpTestingController.verify();
+      expect(httpTestingController).toBeTruthy();
+    });
+
+    it('postPicture() should update a book on the server', () => {
+      const isbn13 = "9871234567891";
+      let file: File;
+
+      service.postPicture(isbn13, file).subscribe(); 
+
+      httpTestingController.expectOne(`http://localhost:4201/Books/${isbn13}/picture`);
+      httpTestingController.verify();
+      expect(httpTestingController).toBeTruthy();
+    });
+
   });
 
 });
