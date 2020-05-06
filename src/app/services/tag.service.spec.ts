@@ -30,7 +30,7 @@ describe('TagService', () => {
         id: 'Angular',
         href: '/Tags/Angular',
         description: 'Angular'
-      }
+      };
 
       service.getTag('Angular').subscribe(tag => {
         expect(tag).toEqual(mockTag);
@@ -38,12 +38,13 @@ describe('TagService', () => {
 
       const req = httpMock.expectOne('http://localhost:4201/Tags/Angular');
       expect(req.request.method).toBe('GET');
+      req.flush(mockTag);
 
     });
 
     it('getTags() with HTTP method GET', () => {
 
-      const mockTag: Tag[] = [
+      const mockTags: Tag[] = [
         {
           id: 'Angular',
           href: '/Tags/Angular',
@@ -57,14 +58,19 @@ describe('TagService', () => {
       ];
 
       service.getTags().subscribe(tag => {
-        expect(tag.length).toEqual(12);
+        expect(tag.length).toEqual(2);
       });
 
       const req = httpMock.expectOne('http://localhost:4201/Tags');
       expect(req.request.method).toBe('GET');
+      req.flush(mockTags);
 
     });
 
+  });
+
+  afterEach(() => {
+    httpMock.verify();
   });
 
 });
