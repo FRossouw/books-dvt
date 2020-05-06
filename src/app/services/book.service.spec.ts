@@ -71,13 +71,14 @@ describe('BookService', () => {
 
       const mockBooks = {} as Book[];
       const top = 0;
+      const skip = 5;
       const bookName = 'iOS';
 
-      service.getBooksSearch(bookName, top).subscribe(auth => {
+      service.getBooksSearch(bookName, top, skip).subscribe(auth => {
         expect(auth).toEqual(mockBooks);
       });
 
-      const req = httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}`);
+      const req = httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}&skip=${skip}`);
       expect(req.request.method).toBe('GET');
       req.flush(mockBooks);
 
