@@ -11,7 +11,7 @@ export class AuthorComponent implements OnInit {
 
   authors: Author[] = new Array();
 
-  constructor(private authorService: AuthorService) { }
+  constructor(public authorService: AuthorService) { }
 
   ngOnInit(): void {
     this.getAuthors();
