@@ -47,17 +47,19 @@ export class BookComponent implements OnInit {
   }
 
   private getSearchBooks(bookName: string): void {
-    this.books = new Array();
-    this.bookService.getBooksSearch(bookName, this.topBooks).subscribe((bookSearched) => {
+    let booksAdd: Book[] = new Array();
+    this.bookService.getBooksSearch(bookName, this.topBooks, this.skipBooks).subscribe((bookSearched) => {
       if (bookSearched.length === 0) {
         this.noBooksFound = true;
       } else {
         this.noBooksFound = false;
       }
       bookSearched.forEach(bookSFE => {
-        this.books.push(bookSFE);
+        booksAdd.push(bookSFE);
       });
     });
+    this.books = booksAdd;
+    bookName = "";
     this.displayViewMore = false;
   }
 
