@@ -3,6 +3,16 @@ import { TagService } from './tag.service';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { Tag } from '../models/tag';
 
+class MockService {
+  getTag(): Tag {
+    return {} as Tag;
+  }
+
+  getTags(): Tag[] {
+    return {} as Tag[];
+  }
+}
+
 describe('TagService', () => {
   let service: TagService;
   let httpMock: HttpTestingController;
@@ -11,7 +21,12 @@ describe('TagService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [TagService]
+      providers: [
+        {
+          TagService,
+          useValue: MockService
+        }
+      ]
     });
 
     service = TestBed.inject(TagService);
