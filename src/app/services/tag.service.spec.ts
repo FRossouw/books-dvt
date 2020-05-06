@@ -1,44 +1,78 @@
 import { TestBed } from '@angular/core/testing';
 import { TagService } from './tag.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { Tag } from '../models/tag';
+
+class tagMock {
+  mockTag: Tag = {
+    "id": "Angular",
+    "href": "/Tags/Angular",
+    "description": "Angular"
+  }
+
+}
 
 describe('TagService', () => {
   let service: TagService;
-  let httpTestingController: HttpTestingController;
+  let httpMock: HttpTestingController;
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
+      providers: [TagService]
     });
 
-    httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(TagService);
+    httpMock = TestBed.inject(HttpTestingController);
+
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('getTags', () => {
-    // it('should retrieve a single of tag', () => {
-    //   service.getTag('Apple').subscribe();
+  describe('Call methods', () => {
+    it('getTag() with HTTP method GET', () => {
 
-    //   const req = httpTestingController.expectOne('http://localhost:4201/Tags/Apple');
-    //   req.flush({});
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
+      let mockTag: Tag = {
+        "id": "Angular",
+        "href": "/Tags/Angular",
+        "description": "Angular"
+      }
 
-    // });
+      service.getTag("Angular").subscribe(tag => {
+        expect(tag).toEqual(mockTag);
+      });
 
-    // it('should retrieve an array of tags', () => {
-    //   service.getTags().subscribe();
+      const req = httpMock.expectOne('http://localhost:4201/Tags/Angular');
+      expect(req.request.method).toBe('GET');
 
-    //   const req = httpTestingController.expectOne('http://localhost:4201/Tags');
-    //   req.flush({});
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
+    });
 
-    // });
+    it('getTags() with HTTP method GET', () => {
+
+      let mockTag: Tag[] = [
+        {
+          "id": "Angular",
+          "href": "/Tags/Angular",
+          "description": "Angular"
+        },
+        {
+          "id": "iOS",
+          "href": "/Tags/iOS",
+          "description": "iOS"
+        }
+      ];
+
+      service.getTags().subscribe(tag => {
+        expect(tag.length).toEqual(2);
+      });
+
+      const req = httpMock.expectOne('http://localhost:4201/Tags');
+      expect(req.request.method).toBe('GET');
+
+    });
 
   });
 
