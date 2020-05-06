@@ -2,6 +2,25 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { AuthorService } from './author.service';
 import { Author } from '../models/author';
+import { AuthorReturn } from '../models/author-return';
+
+class MockService {
+  getAuthor(): Author {
+    return {} as Author;
+  }
+
+  getAuthors(): Author[] {
+    return {} as Author[];
+  }
+
+  createAuthor(): AuthorReturn {
+    return {} as AuthorReturn;
+  }
+
+  updateAuthor(): AuthorReturn {
+    return {} as AuthorReturn;
+  }
+}
 
 describe('AuthorService', () => {
   let service: AuthorService;
@@ -10,7 +29,12 @@ describe('AuthorService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [AuthorService]
+      providers: [
+        {
+          AuthorService,
+          useValue: MockService
+        }
+      ]
     });
 
     httpTestingController = TestBed.inject(HttpTestingController);
