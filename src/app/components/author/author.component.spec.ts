@@ -8,7 +8,7 @@ describe('AuthorComponent', () => {
   let component: AuthorComponent;
   let fixture: ComponentFixture<AuthorComponent>;
 
-  class mockService {
+  class MockService {
     getAuthor() {
       return [] as Author[];
     }
@@ -21,7 +21,7 @@ describe('AuthorComponent', () => {
       providers: [
         {
           AuthorService,
-          useValue: mockService
+          useValue: MockService
         }
       ]
     })
