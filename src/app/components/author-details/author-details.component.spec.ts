@@ -17,8 +17,6 @@ class MockService {
 
 class MockAuth { }
 
-class mockActivatedRoute {}
-
 describe('AuthorDetailsComponent', () => {
   let component: AuthorDetailsComponent;
   let fixture: ComponentFixture<AuthorDetailsComponent>;
