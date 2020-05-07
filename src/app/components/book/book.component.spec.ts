@@ -52,4 +52,11 @@ describe('BookComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should increase the amount of books viewable', () => {
+    component.displayViewMore = true;
+    component.skipBooks = 0;
+    component.viewMore();
+    expect(component.skipBooks).toEqual(5);
+  });
+
 });
