@@ -60,19 +60,19 @@ describe('AuthorService', () => {
 
     });
 
-    it('getAuthors() with HTTP method GET', () => {
+    // it('getAuthors() with HTTP method GET', () => {
 
-      const mockAuthor = {} as Author[];
+    //   const mockAuthor = {} as Author[];
 
-      service.getAuthors().subscribe(auth => {
-        expect(auth).toEqual(mockAuthor);
-      });
+    //   service.getAuthors().subscribe(auth => {
+    //     expect(auth).toEqual(mockAuthor);
+    //   });
 
-      const req = httpTestingController.expectOne('http://localhost:4201/Authors');
-      expect(req.request.method).toBe('GET');
-      req.flush(mockAuthor);
+    //   const req = httpTestingController.expectOne('http://localhost:4201/Authors');
+    //   expect(req.request.method).toBe('GET');
+    //   req.flush(mockAuthor);
 
-    });
+    // });
 
     it('createAuthor() with HTTP method PUT', () => {
 
@@ -111,8 +111,8 @@ describe('AuthorService', () => {
 
   });
 
-  // afterEach(() => {
-  //   httpTestingController.verify();
-  // });
+  afterEach(() => {
+    httpTestingController.verify();
+  });
 
 });
