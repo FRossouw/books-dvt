@@ -57,7 +57,7 @@ describe('BookDetailsComponent', () => {
     component = fixture.componentInstance;
     httpTestingController = TestBed.inject(HttpTestingController);
     fixture.detectChanges();
-    service = new MockService;
+    service = new MockService();
 
   });
 
