@@ -21,7 +21,7 @@ describe('BookDetailsComponent', () => {
   let component: BookDetailsComponent;
   let fixture: ComponentFixture<BookDetailsComponent>;
   let httpTestingController: HttpTestingController;
-  let service : MockService;
+  let service: MockService;
 
   const mockActivatedRoute = {
     paramMap: of({ get: (id) => id = '372dc0d0-6368-4eb3-8876-8b20d07cf722' })
@@ -62,7 +62,7 @@ describe('BookDetailsComponent', () => {
   });
 
   it('should create', () => {
-    component.getBook = () => {}
+    component.getBook = () => { };
     expect(component).toBeTruthy();
   });
 });
