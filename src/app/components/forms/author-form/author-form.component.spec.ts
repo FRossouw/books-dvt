@@ -9,7 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AuthorReturn } from 'src/app/models/author-return';
 
 class MockService {
-  createAuthor(): Observable<AuthorReturn> { return new Observable<AuthorReturn>() }
+  createAuthor(): Observable<AuthorReturn> { return new Observable<AuthorReturn>() };
 }
 
 describe('AuthorFormComponent', () => {
