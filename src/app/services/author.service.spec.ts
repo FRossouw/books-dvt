@@ -2,10 +2,9 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { AuthorService } from './author.service';
 import { Author } from '../models/author';
-import { AuthorReturn } from '../models/author-return';
 
 describe('AuthorService', () => {
-  let service: AuthorService;
+  let serviceTB: AuthorService;
   let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
@@ -15,11 +14,11 @@ describe('AuthorService', () => {
     });
 
     httpTestingController = TestBed.inject(HttpTestingController);
-    service = TestBed.inject(AuthorService);
+    serviceTB = TestBed.inject(AuthorService);
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(serviceTB).toBeTruthy();
   });
 
   describe('call methods', () => {
