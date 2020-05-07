@@ -21,7 +21,7 @@ class MockService {
       name: 'Tom  Rudderham',
       about: 'Tom kicked off his writing career at Future.',
       version: 'AAAAAAAAEHI='
-    } as Author
+    } as Author;
   }
 }
 
