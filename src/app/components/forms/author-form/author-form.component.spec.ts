@@ -14,13 +14,13 @@ class MockService {
   createAuthor(): Observable<AuthorReturn> { return new Observable<AuthorReturn>(); }
   getAuthor(): Author {
     return {
-      href: "http://localhost:4201/Authors/d9636037-fb42-4885-9890-1f4375f3ef6c",
-      id: "d9636037-fb42-4885-9890-1f4375f3ef6c",
-      first_name: "Tom",
-      last_name: "Rudderham",
-      name: "Tom  Rudderham",
-      about: "Tom kicked off his writing career at Future.",
-      version: "AAAAAAAAEHI="
+      href: 'http://localhost:4201/Authors/d9636037-fb42-4885-9890-1f4375f3ef6c',
+      id: 'd9636037-fb42-4885-9890-1f4375f3ef6c',
+      first_name: 'Tom',
+      last_name: 'Rudderham',
+      name: 'Tom  Rudderham',
+      about: 'Tom kicked off his writing career at Future.',
+      version: 'AAAAAAAAEHI='
     } as Author
   }
 }
