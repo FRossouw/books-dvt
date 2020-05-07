@@ -8,6 +8,7 @@ import { of, Observable } from 'rxjs';
 import { Author } from 'src/app/models/author';
 import { AuthService } from 'src/app/services/auth.service';
 import { AuthorService } from 'src/app/services/author.service';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 class MockService {
   getAuthors(): Observable<Author[]> {
@@ -21,6 +22,7 @@ describe('AuthorDetailsComponent', () => {
   let component: AuthorDetailsComponent;
   let fixture: ComponentFixture<AuthorDetailsComponent>;
   let service: MockService;
+  let httpTestingController: HttpTestingController;
 
   const mockActivatedRoute = {
     paramMap: of({ get: (id) => id = '372dc0d0-6368-4eb3-8876-8b20d07cf722' })
@@ -30,7 +32,7 @@ describe('AuthorDetailsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AuthorDetailsComponent],
       imports: [
-        HttpClientModule,
+        HttpClientTestingModule,
         RouterTestingModule
       ],
       providers: [
@@ -53,6 +55,7 @@ describe('AuthorDetailsComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthorDetailsComponent);
+    httpTestingController = TestBed.inject(HttpTestingController);
     component = fixture.componentInstance;
     fixture.detectChanges();
     service = new MockService();
