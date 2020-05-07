@@ -8,6 +8,10 @@ import { AuthorService } from 'src/app/services/author.service';
 import { BookService } from 'src/app/services/book.service';
 import { TagService } from 'src/app/services/tag.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { BookAuthor } from 'src/app/models/book-author';
+import { Tag } from 'src/app/models/tag';
 
 class MockBookService { }
 
@@ -30,7 +34,7 @@ describe('BookFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BookFormComponent],
-      imports: [HttpClientTestingModule, RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule, ReactiveFormsModule],
       providers: [
         {
           provide: ActivatedRoute,
@@ -74,4 +78,24 @@ describe('BookFormComponent', () => {
     component.uploadPicture = {} = () => { };
     expect(component).toBeTruthy();
   });
+
+  it('form should be invalid when empty', () => {
+    expect(component.form.valid).toBeFalsy();
+  });
+
+  it('submit valid form', () => {
+    expect(component.form.valid).toBeFalsy();
+    component.form.controls['isbn10'].setValue('1546753788');
+    component.form.controls['isbn13'].setValue('9781546753780');
+    component.form.controls['title'].setValue('Motherboard');
+    component.form.controls['about'].setValue('A book about motherboards.');
+    component.form.controls['abstract'].setValue('Abstract about book');
+    component.form.controls['image'].setValue('');
+    component.form.controls['author'].setValue({} as BookAuthor);
+    component.form.controls['publisher'].setValue('');
+    component.form.controls['datePublished'].setValue('2020/01/01');
+    component.form.controls['tags'].setValue({} as Tag[]);
+    expect(component.form.valid).toBeTruthy();
+  });
+
 });
