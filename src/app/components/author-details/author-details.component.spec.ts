@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorDetailsComponent } from './author-details.component';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of, Observable } from 'rxjs';
 import { Author } from 'src/app/models/author';
@@ -11,7 +10,7 @@ import { AuthorService } from 'src/app/services/author.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 class MockService {
-  getAuthors(): Observable<Author[]> {
+  getAuthor(): Observable<Author[]> {
     return {} as Observable<Author[]>;
   }
 }
@@ -42,7 +41,7 @@ describe('AuthorDetailsComponent', () => {
         },
         {
           AuthorService,
-          useValue: AuthorService
+          useValue: MockService
         },
         {
           provide: ActivatedRoute,
