@@ -1,14 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorFormComponent } from './author-form.component';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { AuthorService } from 'src/app/services/author.service';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AuthorReturn } from 'src/app/models/author-return';
 
 class MockService {
-
+  createAuthor(): Observable<AuthorReturn> { return new Observable<AuthorReturn>() }
 }
 
 describe('AuthorFormComponent', () => {
@@ -53,4 +54,27 @@ describe('AuthorFormComponent', () => {
     component.addAuthor = () => { };
     expect(component).toBeTruthy();
   });
+
+  it('when form submitted, author should check that the updateAuthor method is called', () => {
+    fixture.detectChanges();
+    component.updateAuthor = () => { };
+    component.update = false;
+    fixture.detectChanges();
+    component.saveForm();
+    const spy = spyOn(component, 'updateAuthor').and.callThrough();
+    spy();
+    expect(spy).toHaveBeenCalled();
+
+  });
+
+  it('when form submitted, book should check that the addAuthor method is called', () => {
+    component.addAuthor = () => { };
+    component.update = true;
+    component.saveForm();
+    const spy = spyOn(component, 'addAuthor').and.callThrough();
+    spy();
+    expect(spy).toHaveBeenCalled();
+
+  });
+
 });
