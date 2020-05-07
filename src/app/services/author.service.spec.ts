@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { AuthorService } from './author.service';
 import { Author } from '../models/author';
@@ -87,8 +87,8 @@ describe('AuthorService', () => {
 
   });
 
-  afterEach(() => {
-    httpTestingController.verify();
-  });
+  afterEach(inject([HttpTestingController], (httpMock: HttpTestingController) => {
+    httpMock.verify();
+  }));
 
 });

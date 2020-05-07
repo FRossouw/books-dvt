@@ -4,6 +4,35 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { Book } from '../models/book';
 import { BookReturn } from '../models/book-return';
 
+class MockService {
+  getBook(): Book {
+    return {} as Book;
+  }
+
+  getBooks(): Book[] {
+    return {} as Book[];
+  }
+
+  getBooksFilter(): Book[] {
+    return {} as Book[];
+  }
+
+  getBooksSearch(): Book[] {
+    return {} as Book[];
+  }
+
+  createBook(): BookReturn {
+    return {} as BookReturn;
+  }
+
+  updateBook(): BookReturn {
+    return {} as BookReturn;
+  }
+
+  postPicture() { }
+
+}
+
 describe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
@@ -11,7 +40,12 @@ describe('BookService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [BookService]
+      providers: [
+        {
+          BookService,
+          useValue: MockService
+        }
+      ]
     });
 
     httpTestingController = TestBed.inject(HttpTestingController);

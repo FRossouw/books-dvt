@@ -3,6 +3,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  let fixture;
+  let app;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -12,17 +16,15 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'books-dvt'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app.title).toEqual('books-dvt');
   });
 

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Tag } from '../models/tag';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

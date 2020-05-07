@@ -3,6 +3,10 @@ import { NotLoggedInComponent } from './not-logged-in.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
+class MockAuth {
+
+}
+
 describe('NotLoggedInComponent', () => {
   let component: NotLoggedInComponent;
   let fixture: ComponentFixture<NotLoggedInComponent>;
@@ -12,7 +16,12 @@ describe('NotLoggedInComponent', () => {
     TestBed.configureTestingModule({
       declarations: [NotLoggedInComponent],
       imports: [RouterTestingModule],
-      providers: [AuthService]
+      providers: [
+        {
+          AuthService,
+          useValue: MockAuth
+        }
+      ]
     })
       .compileComponents();
   }));
