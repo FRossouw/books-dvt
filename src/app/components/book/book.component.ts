@@ -32,7 +32,7 @@ export class BookComponent implements OnInit {
     }
   }
 
-  private getBooksPageinated(): void {
+  getBooksPageinated(): void {
     let booksAdd: Book[] = new Array();
     booksAdd = this.books;
     this.bookService.getBooksFilter(this.topBooks, this.skipBooks).subscribe((bookFilter) => {
@@ -46,7 +46,7 @@ export class BookComponent implements OnInit {
     this.books = booksAdd;
   }
 
-  private getSearchBooks(bookName: string): void {
+  getSearchBooks(bookName: string): void {
     const booksAdd: Book[] = new Array();
     this.bookService.getBooksSearch(bookName, this.topBooks, this.skipBooks).subscribe((bookSearched) => {
       if (bookSearched.length === 0) {
