@@ -62,6 +62,7 @@ describe('AuthorDetailsComponent', () => {
   });
 
   it('should create', () => {
+    component.getAuthor = () => { };
     expect(component).toBeTruthy();
   });
 });
