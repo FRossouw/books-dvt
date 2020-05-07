@@ -101,93 +101,27 @@ describe('BookFormComponent', () => {
   });
 
   it('when form submitted, book should check that the updateBook method is called', () => {
-    fixture.detectChanges;
+    fixture.detectChanges();
     component.updateBook = () => { };
     component.update = false;
-    fixture.detectChanges;
+    fixture.detectChanges();
     component.saveForm();
-    let spy = spyOn(component, 'updateBook').and.callThrough();
+    const spy = spyOn(component, 'updateBook').and.callThrough();
     spy();
     expect(spy).toHaveBeenCalled();
 
   });
 
   it('when form submitted, book should check that the addBook method is called', () => {
-    fixture.detectChanges;
+    fixture.detectChanges();
     component.addBook = () => { };
     component.update = true;
-    fixture.detectChanges;
+    fixture.detectChanges();
     component.saveForm();
-    let spy = spyOn(component, 'addBook').and.callThrough();
+    const spy = spyOn(component, 'addBook').and.callThrough();
     spy();
     expect(spy).toHaveBeenCalled();
 
   });
 
 });
-
-
-
-
-
-
-
-
-
-
-
-// component.book.author = {
-//   "href": "http://localhost:4201/Authors/d9636037-fb42-4885-9890-1f4375f3ef6c",
-//   "id": "d9636037-fb42-4885-9890-1f4375f3ef6c",
-//   "first_name": "Tom",
-//   "last_name": "Rudderham",
-//   "name": "Tom  Rudderham",
-//   "about": "Tom kicked off his writing career at Future Publishing, working for magazines including MacFormat, Computer Arts, Imagine FX, and the Official Windows Magazine.",
-//   "version": "AAAAAAAAEHI=",
-//   "books": [
-//     {
-//       "href": "http://localhost:4201/Books/9781690181507",
-//       "id": "9781690181507",
-//       "isbn10": "1690181508",
-//       "isbn13": "9781690181507",
-//       "title": "iOS 13 Guide"
-//     }
-//   ]
-// } as Author;
-
-// component.authors = [{
-//   "href": "http://localhost:4201/Authors/d9636037-fb42-4885-9890-1f4375f3ef6c",
-//   "id": "d9636037-fb42-4885-9890-1f4375f3ef6c",
-//   "first_name": "Tom",
-//   "last_name": "Rudderham",
-//   "name": "Tom  Rudderham",
-//   "about": "Tom kicked off his writing career at Future Publishing, working for magazines including MacFormat, Computer Arts, Imagine FX, and the Official Windows Magazine.",
-//   "version": "AAAAAAAAEHI=",
-//   "books": [
-//     {
-//       "href": "http://localhost:4201/Books/9781690181507",
-//       "id": "9781690181507",
-//       "isbn10": "1690181508",
-//       "isbn13": "9781690181507",
-//       "title": "iOS 13 Guide"
-//     }
-//   ]
-// },
-// {
-//   "href": "http://localhost:4201/Authors/cf3e043d-eba3-492b-8e96-e731fb74cd81",
-//   "id": "cf3e043d-eba3-492b-8e96-e731fb74cd81",
-//   "first_name": "Will",
-//   "last_name": "Grant",
-//   "name": "Will  Grant",
-//   "about": "Will is a product designer and user experience professional with over 20 years experience overseeing the design, information architecture and usability of web and mobile products that have reached over a billion users.",
-//   "version": "AAAAAAAAEIs=",
-//   "books": [
-//     {
-//       "href": "http://localhost:4201/Books/9781788837361",
-//       "id": "9781788837361",
-//       "isbn10": "1788837363",
-//       "isbn13": "9781788837361",
-//       "title": "101 UX Principles: A definitive design guide"
-//     }
-//   ]
-// }] as Author[];
