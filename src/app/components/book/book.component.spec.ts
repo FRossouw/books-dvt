@@ -50,6 +50,9 @@ describe('BookComponent', () => {
   it('should test with a query == null', () => {
     component.query = null;
     expect(component).toBeTruthy();
+    const spy = spyOn(component, 'getBooksPageinated');
+    spy();
+    expect(spy).toHaveBeenCalled();
   });
 
   it('should increase the amount of books viewable', () => {
