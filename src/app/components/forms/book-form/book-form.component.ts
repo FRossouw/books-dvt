@@ -96,7 +96,7 @@ export class BookFormComponent implements OnInit {
     }
   }
 
-  private getBook(isbn13: string): void {
+  getBook(isbn13: string): void {
     this.book = new Book();
     this.bookService.getBook(isbn13).subscribe((bookX) => {
       this.book = bookX;
@@ -114,7 +114,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  private getAuthors(): void {
+  getAuthors(): void {
     this.authors = new Array();
     this.authorService.getAuthors().subscribe((authorX) => {
       authorX.forEach((authorFE) => {
@@ -123,7 +123,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  private getTags(): void {
+  getTags(): void {
     this.tagList = new Array();
     this.tagService.getTags().subscribe((tagX) => {
       tagX.forEach((tagFe) => {
@@ -132,7 +132,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  private addBook(): void {
+  addBook(): void {
     let bookReturn = {} as BookReturn;
     this.convertAuthorToBookAuthor();
     this.convertTagsToBookTags();
@@ -144,7 +144,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  private updateBook(): void {
+  updateBook(): void {
     this.convertAuthorToBookAuthor();
     this.convertTagsToBookTags();
     this.bookService.updateBook(this.book).subscribe((bookReturn) => {
@@ -152,7 +152,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  private convertAuthorToBookAuthor(): void {
+  convertAuthorToBookAuthor(): void {
     const bookAuth = {} as BookAuthor;
     let selectedAuthor: Author;
     const bAuth = this.book.author;
@@ -168,7 +168,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  private convertTagsToBookTags(): void {
+  convertTagsToBookTags(): void {
     const bookTags = this.book.tags;
     const tagArray: Tag[] = new Array();
     let selectedTag: Tag;
