@@ -16,7 +16,7 @@ Develop a frontend to provide functionality to users.
 4. Follow corporate guidelines for consistency (Theme) ✅
 5. The project should be a progressive web application (PWA) ✅
 6. The project should be linted statically (Circle CI) ✅
-7. The project does not need to be deployed/hosted ❎
+7. The project does not need to be deployed/hosted ✅
 
 ### User Useability and Functionality
 1. Roles
