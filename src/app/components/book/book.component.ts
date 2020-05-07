@@ -36,7 +36,7 @@ export class BookComponent implements OnInit {
     let booksAdd: Book[] = new Array();
     booksAdd = this.books;
     this.bookService.getBooksFilter(this.topBooks, this.skipBooks).subscribe((bookFilter) => {
-      if (bookFilter.length < 5) {
+      if (bookFilter.length < this.topBooks) {
         this.displayViewMore = false;
       }
       bookFilter.forEach((bookFFE) => {
