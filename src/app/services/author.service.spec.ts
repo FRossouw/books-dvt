@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { AuthorService } from './author.service';
 import { Author } from '../models/author';
@@ -21,54 +21,74 @@ describe('AuthorService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('call method', () => {
-    // it('getAuthor() should retrieve a single author', () => {
-    //   service.getAuthor('3888d8b0-af27-4fba-bbed-f91b11f98b27').subscribe();
+  describe('call methods', () => {
+    it('getAuthor() with HTTP method GET', () => {
 
-    //   const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
-    //   req.flush({});
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
+      const mockAuthor = {} as Author;
 
-    // });
+      service.getAuthor('3888d8b0-af27-4fba-bbed-f91b11f98b27').subscribe(auth => {
+        expect(auth).toEqual(mockAuthor);
+      });
 
-    // it('getAuthors() should retrieve an array of authors', () => {
-    //   service.getAuthors().subscribe();
+      const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
+      expect(req.request.method).toBe('GET');
+      req.flush(mockAuthor);
 
-    //   const req = httpTestingController.expectOne('http://localhost:4201/Authors');
-    //   req.flush({});
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
+    });
 
-    // });
+    it('getAuthors() with HTTP method GET', () => {
 
-    // it('createAuthor() should send a new author to the server', () => {
-    //   const author = new Author();
-    //   author.first_name = 'Robin';
-    //   author.middle_names = 'Peter';
-    //   author.last_name = 'Smith';
+      const mockAuthor = {} as Author[];
 
-    //   service.createAuthor(author).subscribe();
+      service.getAuthors().subscribe(auth => {
+        expect(auth).toEqual(mockAuthor);
+      });
 
-    //   httpTestingController.expectOne('http://localhost:4201/Authors');
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+      const req = httpTestingController.expectOne('http://localhost:4201/Authors');
+      expect(req.request.method).toBe('GET');
+      req.flush(mockAuthor);
 
-    // it('updateAuthor() should update an author on the server', () => {
-    //   const author = new Author();
-    //   author.first_name = 'John';
-    //   author.middle_names = 'Jack';
-    //   author.last_name = 'James';
-    //   author.id = 'test-value';
+    });
 
-    //   service.updateAuthor(author).subscribe();
+    it('createAuthor() with HTTP method PUT', () => {
 
-    //   httpTestingController.expectOne(`http://localhost:4201/Authors/${author.id}`);
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+      const mockAuthor = new Author();
+      mockAuthor.first_name = 'John';
+      mockAuthor.last_name = 'Doe';
+      mockAuthor.about = 'About me..';
+
+      service.createAuthor(mockAuthor).subscribe(auth => {
+        expect(auth).toEqual(mockAuthor);
+      });
+
+      const req = httpTestingController.expectOne('http://localhost:4201/Authors');
+      expect(req.request.method).toBe('PUT');
+      req.flush(mockAuthor);
+
+    });
+
+    it('updateAuthor() with HTTP method PUT', () => {
+
+      const mockAuthor = new Author();
+      mockAuthor.id = '3888d8b0-af27-4fba-bbed-f91b11f98b27';
+      mockAuthor.first_name = 'John';
+      mockAuthor.last_name = 'Doe';
+      mockAuthor.about = 'About me..';
+
+      service.updateAuthor(mockAuthor).subscribe(auth => {
+        expect(auth).toEqual(mockAuthor);
+      });
+
+      const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
+      expect(req.request.method).toBe('PUT');
+      req.flush(mockAuthor);
+
+    });
 
   });
+
+  afterEach(inject([HttpTestingController], (httpMock: HttpTestingController) => {
+    httpMock.verify();
+  }));
 
 });

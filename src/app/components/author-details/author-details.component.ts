@@ -27,7 +27,7 @@ export class AuthorDetailsComponent implements OnInit {
     this.getAuthor(authorId);
   }
 
-  private getAuthor(authorId: string): void {
+  getAuthor(authorId: string): void {
     this.author = new Author();
     this.authorService.getAuthor(authorId).subscribe((authorX) => {
       this.author = authorX;

@@ -56,7 +56,7 @@ export class AuthorFormComponent implements OnInit {
     }
   }
 
-  private getAuthor(authorId: string): void {
+  getAuthor(authorId: string): void {
     this.author = new Author();
     this.authorService.getAuthor(authorId).subscribe((authorX) => {
       this.author = authorX;
@@ -68,7 +68,7 @@ export class AuthorFormComponent implements OnInit {
     });
   }
 
-  private addAuthor(): void {
+  addAuthor(): void {
     let authorReturn = {} as AuthorReturn;
     this.authorService.createAuthor(this.author).subscribe(authorR => {
       authorReturn = authorR;
@@ -76,7 +76,7 @@ export class AuthorFormComponent implements OnInit {
     });
   }
 
-  private updateAuthor(): void {
+  updateAuthor(): void {
     this.authorService.updateAuthor(this.author).subscribe(() => {
       this.router.navigate([`/author/view/${this.author.id}`]);
     });

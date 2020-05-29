@@ -2,6 +2,36 @@ import { TestBed } from '@angular/core/testing';
 import { BookService } from './book.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { Book } from '../models/book';
+import { BookReturn } from '../models/book-return';
+
+class MockService {
+  getBook(): Book {
+    return {} as Book;
+  }
+
+  getBooks(): Book[] {
+    return {} as Book[];
+  }
+
+  getBooksFilter(): Book[] {
+    return {} as Book[];
+  }
+
+  getBooksSearch(): Book[] {
+    return {} as Book[];
+  }
+
+  createBook(): BookReturn {
+    return {} as BookReturn;
+  }
+
+  updateBook(): BookReturn {
+    return {} as BookReturn;
+  }
+
+  postPicture() { }
+
+}
 
 describe('BookService', () => {
   let service: BookService;
@@ -10,7 +40,12 @@ describe('BookService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [BookService]
+      providers: [
+        {
+          BookService,
+          useValue: MockService
+        }
+      ]
     });
 
     httpTestingController = TestBed.inject(HttpTestingController);
@@ -22,77 +57,113 @@ describe('BookService', () => {
   });
 
   describe('call method', () => {
-    // it('getBook() should retrieve a single book', () => {
-    //   service.getBook('9780133966152').subscribe();
+    it('getBook() with HTTP method GET', () => {
 
-    //   const req = httpTestingController.expectOne('http://localhost:4201/Books/9780133966152');
-    //   req.flush({});
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+      const mockBook = {} as Book;
 
-    // it('getBooks() should retrieve an array of books', () => {
-    //   service.getBooks().subscribe();
+      service.getBook('9780133966152').subscribe(auth => {
+        expect(auth).toEqual(mockBook);
+      });
 
-    //   const req = httpTestingController.expectOne('http://localhost:4201/Books');
-    //   req.flush({});
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+      const req = httpTestingController.expectOne('http://localhost:4201/Books/9780133966152');
+      expect(req.request.method).toBe('GET');
+      req.flush(mockBook);
 
-    // it('createBook() should send a new book to the server', () => {
-    //   const book = new Book();
-    //   service.createBook(book).subscribe();
+    });
 
-    //   httpTestingController.expectOne('http://localhost:4201/Books');
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+    it('getBooks() with HTTP method GET', () => {
 
-    // it('updateBook() should update a book on the server', () => {
-    //   const book = new Book();
-    //   book.isbn13 = 'testing value';
+      const mockBooks = {} as Book[];
 
-    //   service.updateBook(book).subscribe();
+      service.getBooks().subscribe(auth => {
+        expect(auth).toEqual(mockBooks);
+      });
 
-    //   httpTestingController.expectOne(`http://localhost:4201/Books/${book.isbn13}`);
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+      const req = httpTestingController.expectOne('http://localhost:4201/Books');
+      expect(req.request.method).toBe('GET');
+      req.flush(mockBooks);
 
-    // it('getBooksFilter() should update a book on the server', () => {
-    //   const top = 0;
-    //   const skip = 5;
+    });
 
-    //   service.getBooksFilter(top, skip).subscribe();
+    it('getBooksFilter() with HTTP method GET', () => {
 
-    //   httpTestingController.expectOne(`http://localhost:4201/Books/?top=${top}&skip=${skip}`);
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+      const mockBooks = {} as Book[];
+      const top = 0;
+      const skip = 5;
 
-    // it('getBooksSearch() should update a book on the server', () => {
-    //   const top = 0;
-    //   const bookName = 'iOS For Dummies';
+      service.getBooksFilter(top, skip).subscribe(auth => {
+        expect(auth).toEqual(mockBooks);
+      });
 
-    //   service.getBooksSearch(bookName, top).subscribe();
+      const req = httpTestingController.expectOne(`http://localhost:4201/Books/?top=${top}&skip=${skip}`);
+      expect(req.request.method).toBe('GET');
+      req.flush(mockBooks);
 
-    //   httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}`);
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+    });
 
-    // it('postPicture() should update a book on the server', () => {
-    //   const isbn13 = '9871234567891';
-    //   const file = new File([], 'dummy.png', { type: 'image/png' });
+    it('getBooksSearch() with HTTP method GET', () => {
 
-    //   //service.postPicture(isbn13, file).subscribe();
+      const mockBooks = {} as Book[];
+      const top = 0;
+      const skip = 5;
+      const bookName = 'iOS';
 
-    //   httpTestingController.expectOne(`http://localhost:4201/Books/${isbn13}/picture`);
-    //   httpTestingController.verify();
-    //   expect(httpTestingController).toBeTruthy();
-    // });
+      service.getBooksSearch(bookName, top, skip).subscribe(auth => {
+        expect(auth).toEqual(mockBooks);
+      });
 
+      const req = httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}&skip=${skip}`);
+      expect(req.request.method).toBe('GET');
+      req.flush(mockBooks);
+
+    });
+
+    it('createBook() with HTTP method POST', () => {
+
+      const mockBook = new Book();
+
+      service.createBook(mockBook).subscribe(auth => {
+        expect(auth).toEqual(auth as BookReturn);
+      });
+
+      const req = httpTestingController.expectOne(`http://localhost:4201/Books`);
+      expect(req.request.method).toBe('POST');
+      req.flush(mockBook);
+
+    });
+
+    it('updateBook() with HTTP method PUT', () => {
+
+      const mockBook = new Book();
+      mockBook.isbn13 = '9780133966152';
+
+      service.updateBook(mockBook).subscribe(auth => {
+        expect(auth).toEqual(auth as BookReturn);
+      });
+
+      const req = httpTestingController.expectOne(`http://localhost:4201/Books/${mockBook.isbn13}`);
+      expect(req.request.method).toBe('PUT');
+      req.flush(mockBook);
+
+    });
+
+    it('postPicture() with HTTP method PUT', () => {
+
+      const file = new File([], 'dummy.png', { type: 'image/png' });
+      const isbn13 = '9780133966152';
+
+      service.postPicture(isbn13, file).subscribe();
+
+      const req = httpTestingController.expectOne(`http://localhost:4201/Books/${isbn13}/picture`);
+      expect(req.request.method).toBe('PUT');
+      req.flush(null);
+
+    });
+
+  });
+
+  afterEach(() => {
+    httpTestingController.verify();
   });
 
 });

@@ -24,8 +24,8 @@ export class BookService {
     return this.http.get<Book[]>(`${environment.apiBooks}/?top=${top}&skip=${skip}`);
   }
 
-  getBooksSearch(bookName: string, top: number): Observable<Book[]> {
-    return this.http.get<Book[]>(`${environment.apiBooks}/?query=${bookName}&top=${top}`);
+  getBooksSearch(bookName: string, top: number, skip: number): Observable<Book[]> {
+    return this.http.get<Book[]>(`${environment.apiBooks}/?query=${bookName}&top=${top}&skip=${skip}`);
   }
 
   createBook(book: Book): Observable<BookReturn> {

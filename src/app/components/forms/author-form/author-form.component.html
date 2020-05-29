@@ -30,7 +30,7 @@
 
         <div class="form-group">
             <label for="about" i18n="About|Word About@@Word About">About</label>
-            <textarea class="form-control" id="about" rows="3"  placeholder="Enter About" formControlName="about"></textarea>
+            <textarea maxlength="250" class="form-control" id="about" rows="3"  placeholder="Enter About" formControlName="about"></textarea>
         </div>
 
         <div *ngIf="form.invalid">
