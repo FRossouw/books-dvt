@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BookComponent } from './book.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { of } from 'rxjs';
@@ -33,33 +32,26 @@ describe('BookComponent', () => {
     httpTestingController = TestBed.inject(HttpTestingController);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
 
+  it('should be created', () => {
     component.getSearchBooks = () => { };
     component.getBooksPageinated = () => { };
-  });
-
-  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should test with a query != null', () => {
-    component.query = 'Angular';
-    expect(component).toBeTruthy();
-  });
-
-  it('should test with a query == null', () => {
-    component.query = null;
-    expect(component).toBeTruthy();
-    const spy = spyOn(component, 'getBooksPageinated');
-    spy();
-    expect(spy).toHaveBeenCalled();
-  });
-
-  it('should increase the amount of books viewable', () => {
-    component.displayViewMore = true;
+  it('should increase the amount of books being displayed on screen', () => {
     component.skipBooks = 0;
+    component.displayViewMore = true;
     component.viewMore();
-    expect(component.skipBooks).toEqual(5);
+    expect(component.skipBooks).toBe(5);
+  });
+
+  it('should not increase the amount of books being displayed on screen', () => {
+    component.skipBooks = 0;
+    component.displayViewMore = false;
+    component.viewMore();
+    expect(component.skipBooks).toBe(0);
   });
 
 });

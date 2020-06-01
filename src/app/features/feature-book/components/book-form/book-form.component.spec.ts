@@ -67,7 +67,7 @@ describe('BookFormComponent', () => {
 
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     component.getBook = {} = () => { };
     component.addBook = {} = () => { };
     component.updateBook = {} = () => { };
