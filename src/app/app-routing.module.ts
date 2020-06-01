@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProfileComponent } from './components/profile/profile.component';
-import { AuthGuard } from './guards/auth.guard';
-import { NotLoggedInComponent } from './components/not-logged-in/not-logged-in.component';
-import { HeaderComponent } from './components/header/header.component';
-import { BookComponent } from './components/book/book.component';
-import { AuthorComponent } from './components/author/author.component';
-import { BookDetailsComponent } from './components/book-details/book-details.component';
-import { AuthorDetailsComponent } from './components/author-details/author-details.component';
-import { AuthorFormComponent } from './components/forms/author-form/author-form.component';
-import { BookFormComponent } from './components/forms/book-form/book-form.component';
-
+import { AuthGuard } from './features/feature-authorization/guards/auth.guard';
+import { AuthorFormComponent } from './features/feature-author/components/author-form/author-form.component';
+import { BookFormComponent } from './features/feature-book/components/book-form/book-form.component';
+import { BookComponent } from './features/feature-book/components/book/book.component';
+import { BookDetailsComponent } from './features/feature-book/components/book-details/book-details.component';
+import { AuthorComponent } from './features/feature-author/components/author/author.component';
+import { AuthorDetailsComponent } from './features/feature-author/components/author-details/author-details.component';
+import { ProfileComponent } from './features/feature-profile/components/profile/profile.component';
 
 const routes: Routes = [
   {
