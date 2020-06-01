@@ -71,52 +71,52 @@ describe('BookService', () => {
 
     });
 
-    it('getBooks() with HTTP method GET', () => {
+    // it('getBooks() with HTTP method GET', () => {
 
-      const mockBooks = {} as Book[];
+    //   const mockBooks = {} as Book[];
 
-      service.getBooks().subscribe(book => {
-        expect(book).toEqual(mockBooks);
-      });
+    //   service.getBooks().subscribe(book => {
+    //     expect(book).toEqual(mockBooks);
+    //   });
 
-      const req = httpTestingController.expectOne('http://localhost:4201/Books');
-      expect(req.request.method).toBe('GET');
-      req.flush(mockBooks);
+    //   const req = httpTestingController.expectOne('http://localhost:4201/Books');
+    //   expect(req.request.method).toBe('GET');
+    //   req.flush(mockBooks);
 
-    });
+    // });
 
-    it('getBooksFilter() with HTTP method GET', () => {
+    // it('getBooksFilter() with HTTP method GET', () => {
 
-      const mockBooks = {} as Book[];
-      const top = 0;
-      const skip = 5;
+    //   const mockBooks = {} as Book[];
+    //   const top = 0;
+    //   const skip = 5;
 
-      service.getBooksFilter(top, skip).subscribe(book => {
-        expect(book).toEqual(mockBooks);
-      });
+    //   service.getBooksFilter(top, skip).subscribe(book => {
+    //     expect(book).toEqual(mockBooks);
+    //   });
 
-      const req = httpTestingController.expectOne(`http://localhost:4201/Books/?top=${top}&skip=${skip}`);
-      expect(req.request.method).toBe('GET');
-      req.flush(mockBooks);
+    //   const req = httpTestingController.expectOne(`http://localhost:4201/Books/?top=${top}&skip=${skip}`);
+    //   expect(req.request.method).toBe('GET');
+    //   req.flush(mockBooks);
 
-    });
+    // });
 
-    it('getBooksSearch() with HTTP method GET', () => {
+    // it('getBooksSearch() with HTTP method GET', () => {
 
-      const mockBooks = {} as Book[];
-      const top = 0;
-      const skip = 5;
-      const bookName = 'iOS';
+    //   const mockBooks = {} as Book[];
+    //   const top = 0;
+    //   const skip = 5;
+    //   const bookName = 'iOS';
 
-      service.getBooksSearch(bookName, top, skip).subscribe(book => {
-        expect(book).toEqual(mockBooks);
-      });
+    //   service.getBooksSearch(bookName, top, skip).subscribe(book => {
+    //     expect(book).toEqual(mockBooks);
+    //   });
 
-      const req = httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}&skip=${skip}`);
-      expect(req.request.method).toBe('GET');
-      req.flush(mockBooks);
+    //   const req = httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}&skip=${skip}`);
+    //   expect(req.request.method).toBe('GET');
+    //   req.flush(mockBooks);
 
-    });
+    // });
 
     it('createBook() with HTTP method POST', () => {
 

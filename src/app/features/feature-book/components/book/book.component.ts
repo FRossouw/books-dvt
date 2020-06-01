@@ -35,7 +35,7 @@ export class BookComponent implements OnInit {
   getBooksPageinated(): void {
     let booksAdd: Book[] = new Array();
     booksAdd = this.books;
-    this.bookService.getBooksFilter(this.topBooks, this.skipBooks).subscribe((bookFilter) => {
+    this.bookService.getBooks('filter', this.topBooks, this.skipBooks).subscribe((bookFilter) => {
       if (bookFilter.length < this.topBooks) {
         this.displayViewMore = false;
       }
@@ -48,7 +48,7 @@ export class BookComponent implements OnInit {
 
   getSearchBooks(bookName: string): void {
     const booksAdd: Book[] = new Array();
-    this.bookService.getBooksSearch(bookName, this.topBooks, this.skipBooks).subscribe((bookSearched) => {
+    this.bookService.getBooks('search', this.topBooks, this.skipBooks, bookName).subscribe((bookSearched) => {
       if (bookSearched.length === 0) {
         this.noBooksFound = true;
       } else {

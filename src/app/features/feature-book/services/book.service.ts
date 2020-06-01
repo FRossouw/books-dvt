@@ -16,16 +16,23 @@ export class BookService {
     return this.http.get<Book>(`${environment.apiBooks}/${isbn13}`);
   }
 
-  getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${environment.apiBooks}`);
-  }
-
-  getBooksFilter(top: number, skip: number): Observable<Book[]> {
-    return this.http.get<Book[]>(`${environment.apiBooks}/?top=${top}&skip=${skip}`);
-  }
-
-  getBooksSearch(bookName: string, top: number, skip: number): Observable<Book[]> {
-    return this.http.get<Book[]>(`${environment.apiBooks}/?query=${bookName}&top=${top}&skip=${skip}`);
+  getBooks(operation: string, top?: number, skip?: number, bookName?: string): Observable<Book[]> {
+    let books: Observable<Book[]>;
+    switch (operation) {
+      case 'all':
+        books = this.http.get<Book[]>(`${environment.apiBooks}`);
+        break;
+      case 'filter':
+        books = this.http.get<Book[]>(`${environment.apiBooks}/?top=${top}&skip=${skip}`);
+        break;
+      case 'search':
+        books = this.http.get<Book[]>(`${environment.apiBooks}/?query=${bookName}&top=${top}&skip=${skip}`);
+        break;
+      default:
+        books = this.http.get<Book[]>(`${environment.apiBooks}`);
+        break;
+    }
+    return books;
   }
 
   createBook(book: Book): Observable<BookReturn> {
