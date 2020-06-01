@@ -1,0 +1,27 @@
+@import '../../../../styling/variables';
+
+.container-profile {
+    width: 100vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        border: 2px solid $blue;
+
+        img {
+            border-bottom: 2px solid $blue;
+        }
+
+        li {
+            border-top: 2px solid $blue;
+            border-bottom: none;
+        }
+
+        li:nth-child(odd) {
+            background-color: $gray-200;
+        }
+
+    }
+}
