@@ -23,5 +23,12 @@
             background-color: $gray-200;
         }
 
+        h5, p, li {
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
     }
 }

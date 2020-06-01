@@ -22,9 +22,9 @@ export class AuthorDetailsComponent implements OnInit {
     let authorId: string;
     this.activatedRoute.paramMap.subscribe(params => {
       authorId = params.get('id');
+      this.getAuthor(authorId);
     });
 
-    this.getAuthor(authorId);
   }
 
   getAuthor(authorId: string): void {

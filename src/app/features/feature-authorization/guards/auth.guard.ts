@@ -21,15 +21,21 @@ export class AuthGuard implements CanActivate {
 
         if (this.auth.userProfileData[environment.namespace] && this.auth.userProfileData[environment.namespace].includes('admin')) {
           this.auth.admin = true;
+          return true;
         }
 
         if (this.auth.userProfileData[environment.namespace] && this.auth.userProfileData[environment.namespace].includes('user')) {
           this.auth.user = true;
+          return true;
         }
 
         if (!loggedIn) {
           this.auth.login(state.url);
+          return false;
         }
+
+        return true;
+
       })
     );
   }
