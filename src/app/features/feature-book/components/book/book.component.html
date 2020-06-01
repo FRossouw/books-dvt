@@ -1,0 +1,46 @@
+<div class="book-header">
+    <h1 i18n="Available Books|Words Available Books@@Words Available Books">Available Books</h1>
+</div>
+<div class="book-container">
+    <ng-container *ngIf="noBooksFound">
+            <div class="card" style="width: 18rem;">
+                <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a class="card-anchor">
+                        <h5 class="card-title">No Books Found</h5>
+                    </a>
+                    <p class="card-text">The searched book/s could not be found.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="card-features" i18n="Author:|Word Author@@Word Author">Author: </span><a>No author to display.</a></li>
+                </ul>
+            </div>
+    </ng-container>
+    <ng-container *ngIf="!noBooksFound">
+        <ng-container *ngFor="let book of books">
+            <div class="card" style="width: 18rem;">
+                <ng-container *ngIf="book.image">
+                    <img src="{{book.image}}" class="card-img-top" alt="...">
+                </ng-container>
+                <ng-container *ngIf="!book.image">
+                    <img src="../../../assets/images/slide.svg" class="card-img-top" alt="...">
+                </ng-container>
+                
+                <div class="card-body">
+                    <a [routerLink]="['/book/view',book.isbn13]" class="card-anchor">
+                        <h5 class="card-title">{{book.title}}</h5>
+                    </a>
+                    <p class="card-text">{{book.abstract}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="card-features" i18n="Author:|Word Author@@Word Author">Author: </span><a [routerLink]="['/author/view',book.author.id]">{{book.author.name}}</a></li>
+                </ul>
+            </div>
+    </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="displayViewMore">
+        <button (click)="viewMore()" class="btn-login-logout"  i18n="Next|Word Next@@Word Next">View More</button>
+    </ng-container>
+
+</div>

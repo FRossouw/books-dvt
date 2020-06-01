@@ -1,0 +1,16 @@
+<div class="author-header">
+    <h1 i18n="Available Authors|Words Available Authors@@Words Available Authors">Available Authors</h1>
+</div>
+<div class="author-container">
+    <ng-container *ngFor="let author of authors">
+            <div class="card" style="width: 18rem;"> 
+                    <img src="../../../assets/images/author.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a [routerLink]="['/author/view',author.id]" class="card-anchor">
+                            <h5 class="card-title">{{author.last_name}}, {{author.first_name}} <ng-container *ngIf="author.middle_names">{{author.middle_names[0]}}.</ng-container></h5>
+                        </a>
+                        <p class="card-text">{{author.about}}</p>
+                    </div>
+            </div>
+    </ng-container>
+</div>

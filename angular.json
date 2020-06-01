@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "books-dvt": {
@@ -34,6 +34,30 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "aot": true,
+              "outputPath": "dist/books-dvt/",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
+            "af": {
+              "aot": true,
+              "outputPath": "dist/books-dvt-af/",
+              "i18nFile": "src/locale/messages.af.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "af",
+              "i18nMissingTranslation": "error"
+            },
+            "zu": {
+              "aot": true,
+              "outputPath": "dist/books-dvt-zu/",
+              "i18nFile": "src/locale/messages.zu.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "zu",
+              "i18nMissingTranslation": "error"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -74,6 +98,15 @@
           "configurations": {
             "production": {
               "browserTarget": "books-dvt:build:production"
+            },
+            "en": {
+              "browserTarget": "books-dvt:build:en"
+            },
+            "af": {
+              "browserTarget": "books-dvt:build:af"
+            },
+            "zu": {
+              "browserTarget": "books-dvt:build:zu"
             }
           }
         },
@@ -89,6 +122,9 @@
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
+            "codeCoverageExclude": [
+              "src/app/services/auth.service.ts"
+            ],
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
@@ -127,6 +163,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "books-dvt"
 }

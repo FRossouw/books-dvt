@@ -1,0 +1,22 @@
+<div class="container-profile">
+    <ng-container *ngIf="auth.userProfile$">
+        <div class="card" style="width: 18rem;">
+            <ng-container *ngIf="auth.userProfileData">
+                <img src="{{auth.userProfileData.picture}}" class="card-img-top" alt="...">
+            </ng-container>
+            <div class="card-body" *ngIf="auth.userProfileData">
+              <h5 class="card-title">{{auth.userProfileData.nickname}}</h5>
+              <p class="card-text" i18n="Name:|Word Name@@Word Name:">Name: {{auth.userProfileData.name}}</p>
+            </div>
+            <ul class="list-group list-group-flush" *ngIf="auth.userProfileData">
+                <li class="list-group-item" i18n="Email:|Word Email@@Word Email:"><span>Email:</span></li>
+                <li class="list-group-item">{{auth.userProfileData.email}}</li>
+                <li class="list-group-item" i18n="Email Verified:|Words Email Verified@@Words Email Verified:"><span>Email Verified:</span></li>
+                <li class="list-group-item">
+                    <ng-container *ngIf="auth.userProfileData.email_verified" i18n="Yes verified:|Words Yes verified@@Words Yes verified:">Yes, verified</ng-container>
+                    <ng-container *ngIf="!auth.userProfileData.email_verified" i18n="No verified:|Words No verified@@Words No verified:">No, not verified</ng-container>
+                </li>
+            </ul>
+          </div>
+    </ng-container>
+</div>

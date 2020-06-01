@@ -1,0 +1,48 @@
+<app-not-logged-in></app-not-logged-in>
+<header>
+    <div>
+        <img src="../../../assets/logos/DVT_icon_inverted.png">
+        <h1 i18n="Books|Word Books@@Word Books">Books</h1>
+    </div>
+
+    <div class="welcome-text" *ngIf="auth.loggedIn">
+        <h2 *ngIf="auth.userProfileData" i18n="Welcome|Word Welcome@@Word Welcome">Welcome {{auth.userProfileData.nickname}},</h2>
+    </div>
+
+    <div *ngIf="auth.loggedIn" class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1" i18n="Search|Word Search@@Word Search">Search</span>
+        </div>
+        <input [(ngModel)]="searchQuery" (change)="onChange()" type="text" class="form-control" placeholder="Book" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="navigation" *ngIf="auth.loggedIn">
+        <a [routerLink]="['/book']" i18n="Books|Word Books@@Word Books">Books</a>
+        <a *ngIf="auth.admin" [routerLink]="['/book/forms/add']" i18n="Add Books|Words Add Books@@Words Add Books">Add Books</a>
+        <a [routerLink]="['/author']" i18n="Authors|Word Authors@@Word Authors">Authors</a>
+        <a *ngIf="auth.admin" [routerLink]="['/author/forms/add']" i18n="Add Authors|Words Add Authors@@Words Add Authors">Add Authors</a>
+        <a [routerLink]="['/profile']" i18n="Profile|Word Profile@@Word Profile">Profile</a>
+    </div>
+
+    <div>
+        <button (click)="auth.logout()" *ngIf="auth.loggedIn" class="btn-login-logout" i18n="Log Out|Words Log Out@@Words Log Out">Log Out</button>
+    </div>
+
+</header>
+
+<div *ngIf="auth.loggedIn" class="dropdown-header">
+    <div class="space"></div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button [routerLink]="['/book']" class="dropdown-item" type="button" i18n="Books|Word Books@@Word Books">Books</button>
+            <button *ngIf="auth.admin" [routerLink]="['/book/forms/add']" class="dropdown-item" type="button" i18n="Add Books|Words Add Books@@Words Add Books">Add Books</button>
+            <button [routerLink]="['/author']" class="dropdown-item" type="button" i18n="Authors|Word Authors@@Word Authors">Authors</button>
+            <button *ngIf="auth.admin" [routerLink]="['/author/forms/add']" class="dropdown-item" type="button" i18n="Add Authors|Words Add Authors@@Words Add Authors">Add Authors</button>
+            <button [routerLink]="['/profile']" class="dropdown-item" type="button" i18n="Profile|Word Profile@@Word Profile">Profile</button>
+            <button class="dropdown-item " type="button" (click)="auth.logout()" i18n="Log Out|Words Log Out@@Words Log Out">Log Out</button>
+        </div>
+    </div>
+</div>

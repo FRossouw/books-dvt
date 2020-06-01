@@ -1,0 +1,17 @@
+<ng-container *ngIf="!auth.loggedIn">
+    <div class="card-not-logged-in">
+        <div class="card-middle">
+            <div>
+                <img src="../../../assets/logos/DVT_icon_inverted.png">
+            </div>
+            <div>
+                <h1 i18n="DVT Books|Words DVT Books@@Words DVT Books">DVT Books</h1>
+                <h2 i18n="PLITC|Words Please log in to continue@@Words PLITC">Please log in to continue</h2>
+            </div>
+            <div>
+                <button (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn-login-logout" i18n="Log In|Words Log In@@Words Log In">Log In</button>
+            </div>
+        </div>
+    </div>
+
+</ng-container>

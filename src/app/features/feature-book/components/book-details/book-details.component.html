@@ -1,0 +1,37 @@
+<ng-container *ngIf="book">
+    <div class="book-details-header">
+        <h1 i18n="Information Book|Word Information@@Word Information Book">{{book.title}} Information</h1>
+    </div>
+    <div class="book-details-container">
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <ng-container *ngIf="book.image">
+                        <img src="{{book.image}}" class="card-img" alt="...">
+                    </ng-container>
+                    <ng-container *ngIf="!book.image">
+                        <img src="../../../assets/images/slide.svg" class="card-img" alt="...">
+                    </ng-container>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">{{book.title}}</h4>
+                        <p class="card-text"><small class="text-muted" i18n="Date Published:|Words Date Published@@Words Date Published:">Date Published: {{book.date_published | date:'yyyy-MM'}}</small></p>
+                        <p class="card-text">{{book.about}}</p>
+                        <p class="card-text"><small class="text-muted" i18n="Published By:|Words Published By@@Words Published By:">Published by: {{book.publisher}}</small></p>
+                        <p class="card-text"><small class="text-muted" i18n="Tags:|Words Tags@@Word Tags:">Tags: <ng-container *ngFor="let tag of book.tags">{{tag.description}} </ng-container></small></p>
+                        <p class="card-text"><small class="text-muted" >ISBN 10: {{book.isbn10}}</small></p>
+                        <p class="card-text"><small class="text-muted" >ISBN 13: {{book.isbn13}}</small></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li *ngIf="book.author" class="list-group-item"><span class="card-features" i18n="Author:|Word Author@@Word Author:">Author: </span>
+                            <a [routerLink]="['/author/view', book.author.id]">{{book.author.name}}</a>
+                        </li>
+                    </ul>
+                    <button [routerLink]="['/book']" class="btn-login-logout" type="button" i18n="Back|Word Back@@Word Back">Back</button>
+                    <button *ngIf="admin" [routerLink]="['/book/forms/update', book.isbn13]" class="btn-login-logout" type="button" type="button" i18n="Update|Word Update@@Word Update">Update</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+</ng-container>
