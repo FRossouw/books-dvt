@@ -21,18 +21,18 @@ describe('AuthorFormComponent', () => {
   }];
 
   const mockAuthorReturn = {
-    href: "reference",
-    id: "372dc0d0-6368-4eb3-8876-8b20d07cf722"
+    href: 'reference',
+    id: '372dc0d0-6368-4eb3-8876-8b20d07cf722'
   } as AuthorReturn;
 
   const mockAuthor = {
-    href: "http://localhost:4201/Authors/ca94acca-9f7f-441b-959f-7e4f357ab60a",
-    id: "ca94acca-9f7f-441b-959f-7e4f357ab60a",
-    first_name: "Anne",
-    last_name: "Boehm",
-    name: "Anne  Boehm",
-    about: "With over 30 years as a technical author, Anne Boehm obviously loves computing and writing.",
-    version: "AAAAAAAAEHs=",
+    href: 'http://localhost:4201/Authors/ca94acca-9f7f-441b-959f-7e4f357ab60a',
+    id: 'ca94acca-9f7f-441b-959f-7e4f357ab60a',
+    first_name: 'Anne',
+    last_name: 'Boehm',
+    name: 'Anne  Boehm',
+    about: 'With over 30 years as a technical author, Anne Boehm obviously loves computing and writing.',
+    version: 'AAAAAAAAEHs=',
     books: []
   } as Author;
 
