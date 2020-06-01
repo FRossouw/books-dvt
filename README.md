@@ -35,89 +35,85 @@ Develop a frontend to provide functionality to users.
     * Users can acquire access tokens from an identity server (provisioned)
     * The application can use OAuth 2.0 implicit flow
 * 2020 04 22 Docker Image (API Version Latest)
-* 2020 05 05
-    * Docker Image (API Version 1.0.1)
-    * Docker Image (API Version 1.0.2)
-    * Docker Image (API Version 1.0.3)
 
 ## Screenshots
 
 ### Home Screen Component (Web and Mobile Views)
 Users will be prompted here when they need to login.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-01.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-01.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-01.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-01.PNG)
 
 ### Auth0 Login Service (Web and Mobile Views)
-Users will be asked for their credentials through a third party application.
+Users will be asked for their credentials through a third party provider.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-02.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-02.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-02.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-02.PNG)
 
 ### Book Component (Web and Mobile Views)
-Users will use this view to navigate through all the books in the data storage.
+Users will use this view to navigate through all the books in the database.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-03.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-03.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-03.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-03.PNG)
 
 ### Author Component (Web and Mobile Views)
-Users will use this view to navigate through all the authors in the data storage.
+Users will use this view to navigate through all the authors in the database.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-04.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-04.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-04.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-04.PNG)
 
 ### Book View Component (Web and Mobile Views)
 Users will view information on a specific book here.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-05.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-05.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-05.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-05.PNG)
 
 ### Author View Component (Web and Mobile Views)
 Users will view information on a specific author here.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-06.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-06.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-06.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-06.PNG)
 
 ### Profile Component (Web and Mobile Views)
 Users will view their profiles here.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-07.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-07.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-07.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-07.PNG)
 
 ### Book Search Component (Web and Mobile Views)
-Users will be diplayed a list of books on relevant search criteria.
+Users can search and view a list of books here.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-08.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-08.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-08.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-08.PNG)
 
 ### Add Book Component (Web and Mobile Views)
-Admin users will be able to add books to the data storage.
+Admin users will be able to add books to the database.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-09.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-10.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-09.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-10.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-09.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-10.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-09.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-10.PNG)
 
 ### Add Author Component (Web and Mobile Views)
-Admin users will be able to add authors to the data storage.
+Admin users will be able to add authors to the database.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-11.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-12.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-11.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-12.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-11.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-12.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-11.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-12.PNG)
 
 
 ### Update Book Component (Web and Mobile Views)
-Admin users will be able to update books in the data storage.
+Admin users will be able to update books in the database.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-13.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-13.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-13.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-13.PNG)
 
 ### Udate Author Component (Web and Mobile Views)
-Admin users will be able to update authors in the data storage.
+Admin users will be able to update authors in the database.
 
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/web-view-14.PNG)
-![](https://raw.githubusercontent.com/FRossouw/books-dvt/feature-roles-navigation/screenshots/mob-view-14.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/web-view-14.PNG)
+![](https://raw.githubusercontent.com/FRossouw/books-dvt/master/screenshots/mob-view-14.PNG)
 
 ## Outcomes
 1. Practiced building components and services ✅

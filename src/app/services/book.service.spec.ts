@@ -61,8 +61,8 @@ describe('BookService', () => {
 
       const mockBook = {} as Book;
 
-      service.getBook('9780133966152').subscribe(auth => {
-        expect(auth).toEqual(mockBook);
+      service.getBook('9780133966152').subscribe(book => {
+        expect(book).toEqual(mockBook);
       });
 
       const req = httpTestingController.expectOne('http://localhost:4201/Books/9780133966152');
@@ -75,8 +75,8 @@ describe('BookService', () => {
 
       const mockBooks = {} as Book[];
 
-      service.getBooks().subscribe(auth => {
-        expect(auth).toEqual(mockBooks);
+      service.getBooks().subscribe(book => {
+        expect(book).toEqual(mockBooks);
       });
 
       const req = httpTestingController.expectOne('http://localhost:4201/Books');
@@ -91,8 +91,8 @@ describe('BookService', () => {
       const top = 0;
       const skip = 5;
 
-      service.getBooksFilter(top, skip).subscribe(auth => {
-        expect(auth).toEqual(mockBooks);
+      service.getBooksFilter(top, skip).subscribe(book => {
+        expect(book).toEqual(mockBooks);
       });
 
       const req = httpTestingController.expectOne(`http://localhost:4201/Books/?top=${top}&skip=${skip}`);
@@ -108,8 +108,8 @@ describe('BookService', () => {
       const skip = 5;
       const bookName = 'iOS';
 
-      service.getBooksSearch(bookName, top, skip).subscribe(auth => {
-        expect(auth).toEqual(mockBooks);
+      service.getBooksSearch(bookName, top, skip).subscribe(book => {
+        expect(book).toEqual(mockBooks);
       });
 
       const req = httpTestingController.expectOne(`http://localhost:4201/Books/?query=${bookName}&top=${top}&skip=${skip}`);
@@ -122,8 +122,8 @@ describe('BookService', () => {
 
       const mockBook = new Book();
 
-      service.createBook(mockBook).subscribe(auth => {
-        expect(auth).toEqual(auth as BookReturn);
+      service.createBook(mockBook).subscribe(book => {
+        expect(book).toEqual(book as BookReturn);
       });
 
       const req = httpTestingController.expectOne(`http://localhost:4201/Books`);
@@ -137,8 +137,8 @@ describe('BookService', () => {
       const mockBook = new Book();
       mockBook.isbn13 = '9780133966152';
 
-      service.updateBook(mockBook).subscribe(auth => {
-        expect(auth).toEqual(auth as BookReturn);
+      service.updateBook(mockBook).subscribe(book => {
+        expect(book).toEqual(book as BookReturn);
       });
 
       const req = httpTestingController.expectOne(`http://localhost:4201/Books/${mockBook.isbn13}`);
