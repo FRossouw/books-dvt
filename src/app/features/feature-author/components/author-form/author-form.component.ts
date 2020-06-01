@@ -15,6 +15,7 @@ export class AuthorFormComponent implements OnInit {
   form: FormGroup;
   update: boolean;
   author: Author;
+  authorReturn: AuthorReturn;
   constructor(private activatedRoute: ActivatedRoute, private authorService: AuthorService, private router: Router) {
     this.form = new FormGroup({
       firstName: new FormControl('', { validators: [Validators.required] }),
@@ -69,10 +70,9 @@ export class AuthorFormComponent implements OnInit {
   }
 
   addAuthor(): void {
-    let authorReturn = {} as AuthorReturn;
-    this.authorService.createAuthor(this.author).subscribe(authorR => {
-      authorReturn = authorR;
-      this.router.navigate([`/author/view/${authorReturn.id}`]);
+    this.authorService.createAuthor(this.author).subscribe((authorR) => {
+      this.authorReturn = authorR;
+      this.router.navigate([`/author/view/${this.authorReturn.id}`]);
     });
   }
 

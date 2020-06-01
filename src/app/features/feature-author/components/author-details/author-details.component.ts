@@ -28,9 +28,8 @@ export class AuthorDetailsComponent implements OnInit {
   }
 
   getAuthor(authorId: string): void {
-    this.author = new Author();
-    this.authorService.getAuthor(authorId).subscribe((authorX) => {
-      this.author = authorX;
+    this.authorService.getAuthor(authorId).subscribe((singleAuthor) => {
+      this.author = singleAuthor;
     });
   }
 

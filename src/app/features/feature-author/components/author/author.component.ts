@@ -9,7 +9,7 @@ import { Author } from 'src/app/features/feature-author/models/author';
 })
 export class AuthorComponent implements OnInit {
 
-  authors: Author[] = new Array();
+  authors: Author[] = [];
 
   constructor(public authorService: AuthorService) { }
 
@@ -18,11 +18,8 @@ export class AuthorComponent implements OnInit {
   }
 
   private getAuthors(): void {
-    this.authors = new Array();
-    this.authorService.getAuthors().subscribe((authorX) => {
-      authorX.forEach((authorFE) => {
-        this.authors.push(authorFE);
-      });
+    this.authorService.getAuthors().subscribe((authorList) => {
+      this.authors = authorList;
     });
 
   }
