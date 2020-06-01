@@ -21,70 +21,61 @@ describe('AuthorService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('call methods', () => {
-    it('getAuthor() with HTTP method GET', () => {
+  it('check that an Author is retrieved with an HTTP GET method', () => {
+    const mockAuthor = {} as Author;
 
-      const mockAuthor = {} as Author;
-
-      service.getAuthor('3888d8b0-af27-4fba-bbed-f91b11f98b27').subscribe(auth => {
-        expect(auth).toEqual(mockAuthor);
-      });
-
-      const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
-      expect(req.request.method).toBe('GET');
-      req.flush(mockAuthor);
-
+    service.getAuthor('3888d8b0-af27-4fba-bbed-f91b11f98b27').subscribe(auth => {
+      expect(auth).toEqual(mockAuthor);
     });
 
-    it('getAuthors() with HTTP method GET', () => {
+    const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockAuthor);
 
-      const mockAuthor = {} as Author[];
+  });
 
-      service.getAuthors().subscribe(auth => {
-        expect(auth).toEqual(mockAuthor);
-      });
+  it('check that a list of Authors is retrieved with an HTTP GET method', () => {
+    const mockAuthor = {} as Author[];
 
-      const req = httpTestingController.expectOne('http://localhost:4201/Authors');
-      expect(req.request.method).toBe('GET');
-      req.flush(mockAuthor);
-
+    service.getAuthors().subscribe(auth => {
+      expect(auth).toEqual(mockAuthor);
     });
 
-    it('createAuthor() with HTTP method PUT', () => {
+    const req = httpTestingController.expectOne('http://localhost:4201/Authors');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockAuthor);
 
-      const mockAuthor = new Author();
-      mockAuthor.first_name = 'John';
-      mockAuthor.last_name = 'Doe';
-      mockAuthor.about = 'About me..';
+  });
 
-      service.createAuthor(mockAuthor).subscribe(auth => {
-        expect(auth).toEqual(mockAuthor);
-      });
+  it('create a new Author using an HTTP PUT method', () => {
+    const mockAuthor = new Author();
+    mockAuthor.first_name = 'John';
+    mockAuthor.last_name = 'Doe';
+    mockAuthor.about = 'About me..';
 
-      const req = httpTestingController.expectOne('http://localhost:4201/Authors');
-      expect(req.request.method).toBe('PUT');
-      req.flush(mockAuthor);
-
+    service.createAuthor(mockAuthor).subscribe(auth => {
+      expect(auth).toEqual(mockAuthor);
     });
 
-    it('updateAuthor() with HTTP method PUT', () => {
+    const req = httpTestingController.expectOne('http://localhost:4201/Authors');
+    expect(req.request.method).toBe('PUT');
+    req.flush(mockAuthor);
+  });
 
-      const mockAuthor = new Author();
-      mockAuthor.id = '3888d8b0-af27-4fba-bbed-f91b11f98b27';
-      mockAuthor.first_name = 'John';
-      mockAuthor.last_name = 'Doe';
-      mockAuthor.about = 'About me..';
+  it('updates an existing Author using an HTTP PUT method', () => {
+    const mockAuthor = new Author();
+    mockAuthor.id = '3888d8b0-af27-4fba-bbed-f91b11f98b27';
+    mockAuthor.first_name = 'John';
+    mockAuthor.last_name = 'Doe';
+    mockAuthor.about = 'About me..';
 
-      service.updateAuthor(mockAuthor).subscribe(auth => {
-        expect(auth).toEqual(mockAuthor);
-      });
-
-      const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
-      expect(req.request.method).toBe('PUT');
-      req.flush(mockAuthor);
-
+    service.updateAuthor(mockAuthor).subscribe(auth => {
+      expect(auth).toEqual(mockAuthor);
     });
 
+    const req = httpTestingController.expectOne('http://localhost:4201/Authors/3888d8b0-af27-4fba-bbed-f91b11f98b27');
+    expect(req.request.method).toBe('PUT');
+    req.flush(mockAuthor);
   });
 
   afterEach(inject([HttpTestingController], (httpMock: HttpTestingController) => {

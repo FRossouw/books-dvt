@@ -38,49 +38,43 @@ describe('TagService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('Call methods', () => {
-    it('getTag() with HTTP method GET', () => {
+  it('retrieve a single book tag with an HTTP GET method', () => {
+    const mockTag: Tag = {
+      id: 'Angular',
+      href: '/Tags/Angular',
+      description: 'Angular'
+    };
 
-      const mockTag: Tag = {
+    service.getTag('Angular').subscribe(tag => {
+      expect(tag).toEqual(mockTag);
+    });
+
+    const req = httpMock.expectOne('http://localhost:4201/Tags/Angular');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockTag);
+  });
+
+  it('retrieve a list of book tags with an HTTP GET method', () => {
+    const mockTags: Tag[] = [
+      {
         id: 'Angular',
         href: '/Tags/Angular',
         description: 'Angular'
-      };
+      },
+      {
+        id: 'iOS',
+        href: '/Tags/iOS',
+        description: 'iOS'
+      }
+    ];
 
-      service.getTag('Angular').subscribe(tag => {
-        expect(tag).toEqual(mockTag);
-      });
-
-      const req = httpMock.expectOne('http://localhost:4201/Tags/Angular');
-      expect(req.request.method).toBe('GET');
-      req.flush(mockTag);
-
+    service.getTags().subscribe(tag => {
+      expect(tag.length).toEqual(2);
     });
 
-    it('getTags() with HTTP method GET', () => {
-
-      const mockTags: Tag[] = [
-        {
-          id: 'Angular',
-          href: '/Tags/Angular',
-          description: 'Angular'
-        },
-        {
-          id: 'iOS',
-          href: '/Tags/iOS',
-          description: 'iOS'
-        }
-      ];
-
-      service.getTags().subscribe(tag => {
-        expect(tag.length).toEqual(2);
-      });
-
-      const req = httpMock.expectOne('http://localhost:4201/Tags');
-      expect(req.request.method).toBe('GET');
-      req.flush(mockTags);
-
-    });
+    const req = httpMock.expectOne('http://localhost:4201/Tags');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockTags);
 
   });
 

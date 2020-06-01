@@ -35,12 +35,11 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call the onChange() method 1 time', () => {
-
+  it('should check for changes that occur once', () => {
     const spy = spyOn(component, 'onChange');
     component.onChange();
     fixture.detectChanges();
@@ -49,7 +48,7 @@ describe('HeaderComponent', () => {
 
   });
 
-  it('should call the onChange() method if no query is selected', () => {
+  it('should check for changes if there is no selected query', () => {
     el = fixture.debugElement.query(By.css('input'));
     el.triggerEventHandler('change', {});
 
@@ -57,7 +56,7 @@ describe('HeaderComponent', () => {
 
   });
 
-  it('should call the onChange() method if a query is selected', () => {
+  it('should check for changes if there is a selected query', () => {
     component.searchQuery = 'Angular';
     el = fixture.debugElement.query(By.css('input'));
     el.triggerEventHandler('change', {});

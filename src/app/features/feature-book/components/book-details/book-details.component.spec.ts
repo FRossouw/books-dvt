@@ -61,7 +61,7 @@ describe('BookDetailsComponent', () => {
 
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     component.getBook = () => { };
     expect(component).toBeTruthy();
   });
