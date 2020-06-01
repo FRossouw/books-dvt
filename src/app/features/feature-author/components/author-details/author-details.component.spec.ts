@@ -17,13 +17,13 @@ describe('AuthorDetailsComponent', () => {
   let httpTestingController: HttpTestingController;
 
   const mockAuthor = {
-    href: "http://localhost:4201/Authors/ca94acca-9f7f-441b-959f-7e4f357ab60a",
-    id: "ca94acca-9f7f-441b-959f-7e4f357ab60a",
-    first_name: "Anne",
-    last_name: "Boehm",
-    name: "Anne  Boehm",
-    about: "With over 30 years as a technical author, Anne Boehm obviously loves computing and writing. Since she first started with Murach Books in 1981, she has displayed a gift for organizing complex material and making it easy to understand.",
-    version: "AAAAAAAAEHs=",
+    href: 'http://localhost:4201/Authors/ca94acca-9f7f-441b-959f-7e4f357ab60a',
+    id: 'ca94acca-9f7f-441b-959f-7e4f357ab60a',
+    first_name: 'Anne',
+    last_name: 'Boehm',
+    name: 'Anne  Boehm',
+    about: 'With over 30 years as a technical author, Anne Boehm obviously loves computing and writing. Since she first started with Murach Books in 1981, she has displayed a gift for organizing complex material and making it easy to understand.',
+    version: 'AAAAAAAAEHs=',
     books: []
   } as Author;
 

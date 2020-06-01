@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { AuthorFormComponent } from './author-form.component';
 import { of } from 'rxjs';
-import { ActivatedRoute, Router, Routes } from '@angular/router';
+import { ActivatedRoute, Routes } from '@angular/router';
 import { AuthorService } from 'src/app/features/feature-author/services/author.service';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -31,7 +31,7 @@ describe('AuthorFormComponent', () => {
     first_name: "Anne",
     last_name: "Boehm",
     name: "Anne  Boehm",
-    about: "With over 30 years as a technical author, Anne Boehm obviously loves computing and writing. Since she first started with Murach Books in 1981, she has displayed a gift for organizing complex material and making it easy to understand.",
+    about: "With over 30 years as a technical author, Anne Boehm obviously loves computing and writing.",
     version: "AAAAAAAAEHs=",
     books: []
   } as Author;

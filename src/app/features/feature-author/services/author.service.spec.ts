@@ -21,7 +21,7 @@ describe('AuthorService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('check that an Author is retrieved with an HTTP GET method', () => {
+  it('should check that an Author is retrieved with an HTTP GET method', () => {
     const mockAuthor = {} as Author;
 
     service.getAuthor('3888d8b0-af27-4fba-bbed-f91b11f98b27').subscribe(auth => {
@@ -34,7 +34,7 @@ describe('AuthorService', () => {
 
   });
 
-  it('check that a list of Authors is retrieved with an HTTP GET method', () => {
+  it('should check that a list of Authors is retrieved with an HTTP GET method', () => {
     const mockAuthor = {} as Author[];
 
     service.getAuthors().subscribe(auth => {
@@ -47,7 +47,7 @@ describe('AuthorService', () => {
 
   });
 
-  it('create a new Author using an HTTP PUT method', () => {
+  it('should create a new Author using an HTTP PUT method', () => {
     const mockAuthor = new Author();
     mockAuthor.first_name = 'John';
     mockAuthor.last_name = 'Doe';
@@ -62,7 +62,7 @@ describe('AuthorService', () => {
     req.flush(mockAuthor);
   });
 
-  it('updates an existing Author using an HTTP PUT method', () => {
+  it('should updates an existing Author using an HTTP PUT method', () => {
     const mockAuthor = new Author();
     mockAuthor.id = '3888d8b0-af27-4fba-bbed-f91b11f98b27';
     mockAuthor.first_name = 'John';
