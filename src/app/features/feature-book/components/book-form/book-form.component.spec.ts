@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { BookFormComponent } from './book-form.component';
 import { of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -10,20 +10,16 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { ReactiveFormsModule } from '@angular/forms';
 import { Tag } from 'src/app/features/feature-book/models/tag';
 import { BookAuthor } from '../../models/book-author';
-
-class MockBookService { }
-
-class MockAuthorService { }
-
-class MockTagService { }
+import { Book } from '../../models/book';
+import { Author } from 'src/app/features/feature-author/models/author';
 
 describe('BookFormComponent', () => {
   let component: BookFormComponent;
   let fixture: ComponentFixture<BookFormComponent>;
   let httpTestingController: HttpTestingController;
-  let mockBS: MockBookService;
-  let mockAS: MockAuthorService;
-  let mockTS: MockTagService;
+  let mockBookService: BookService;
+  let mockAuthorService: AuthorService;
+  let mockTagService: TagService;
 
   const mockActivatedRoute = {
     paramMap: of({ get: (id) => id = '372dc0d0-6368-4eb3-8876-8b20d07cf722' })
@@ -37,18 +33,6 @@ describe('BookFormComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: mockActivatedRoute
-        },
-        {
-          AuthorService,
-          useValue: MockAuthorService
-        },
-        {
-          BookService,
-          useValue: MockBookService
-        },
-        {
-          TagService,
-          useValue: MockTagService
         }
       ]
     })
@@ -59,11 +43,10 @@ describe('BookFormComponent', () => {
     fixture = TestBed.createComponent(BookFormComponent);
     httpTestingController = TestBed.inject(HttpTestingController);
     component = fixture.componentInstance;
+    mockBookService = TestBed.inject(BookService);
+    mockAuthorService = TestBed.inject(AuthorService);
+    mockTagService = TestBed.inject(TagService);
     fixture.detectChanges();
-
-    mockBS = new MockBookService();
-    mockAS = new MockAuthorService();
-    mockTS = new MockTagService();
 
   });
 
@@ -106,7 +89,6 @@ describe('BookFormComponent', () => {
     const spy = spyOn(component, 'updateBook').and.callThrough();
     spy();
     expect(spy).toHaveBeenCalled();
-
   });
 
   it('when form submitted, book should check that the addBook method is called', () => {
@@ -118,7 +100,51 @@ describe('BookFormComponent', () => {
     const spy = spyOn(component, 'addBook').and.callThrough();
     spy();
     expect(spy).toHaveBeenCalled();
-
   });
+
+  it('should check that a specific author is retrieved and displayed on the form', fakeAsync(() => {
+    const mockBook = {} as Book;
+    mockBook.isbn10 = '1118871057';
+    mockBook.isbn13 = '9781118871058';
+    mockBook.title = ' iOS App Development For Dummies';
+    mockBook.about = 'iOS 7 represents the most significant update to Apple’s';
+    mockBook.abstract = 'Whether you’re a programming hobbyist wanting to build an.';
+    mockBook.author = {
+      href: 'http://localhost:4201/Authors/2f937600-0586-455d-9c7c-0c919626a0a5',
+      id: '2f937600-0586-455d-9c7c-0c919626a0a5',
+      name: 'Jesse  Feiler'
+    };
+    mockBook.publisher = 'For Dummies';
+    mockBook.date_published = new Date('2014 - 04 - 01T00: 00: 00 + 00: 00');
+    mockBook.image = 'http://localhost:4201/Books/9781118871058/4701128378159508786.picture';
+    mockBook.tags = [
+      {
+        id: 'iOS',
+        href: 'http://localhost:4201/Tags/iOS',
+        description: 'iOS'
+      }
+    ];
+
+    spyOn(mockBookService, 'getBook').and.returnValue(of(mockBook));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.book).toEqual(mockBook);
+  }));
+
+  it('should retrieve a list of Authors for the form drop down menu', fakeAsync(() => {
+    const mockAuthors = [{}] as Author[];
+    spyOn(mockAuthorService, 'getAuthors').and.returnValue(of(mockAuthors));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.authors).toEqual(mockAuthors);
+  }));
+
+  it('should retrieve a list of Tags for the form drop down menu', fakeAsync(() => {
+    const mockTags = [{}] as Tag[];
+    spyOn(mockTagService, 'getTags').and.returnValue(of(mockTags));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.tagList).toEqual(mockTags);
+  }));
 
 });

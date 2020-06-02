@@ -20,8 +20,9 @@ export class BookFormComponent implements OnInit {
   form: FormGroup;
   update: boolean;
   book: Book;
-  authors: Author[];
-  tagList: Tag[];
+  bookReturn: BookReturn;
+  authors: Author[] = [];
+  tagList: Tag[] = [];
   tagAddArray: Tag[] = new Array();
   imageFile: File;
   constructor(
@@ -61,8 +62,6 @@ export class BookFormComponent implements OnInit {
         this.getBook(bookIsbn13);
       }
     });
-
-
 
     this.isbn10.valueChanges.subscribe(x => this.book.isbn10 = x);
     this.isbn13.valueChanges.subscribe(x => this.book.isbn13 = x);
@@ -115,32 +114,27 @@ export class BookFormComponent implements OnInit {
   }
 
   getAuthors(): void {
-    this.authors = new Array();
-    this.authorService.getAuthors().subscribe((authorX) => {
-      authorX.forEach((authorFE) => {
-        this.authors.push(authorFE);
-      });
+    this.authors = [];
+    this.authorService.getAuthors().subscribe((retrievedAuthors) => {
+      this.authors = retrievedAuthors;
     });
   }
 
   getTags(): void {
-    this.tagList = new Array();
-    this.tagService.getTags().subscribe((tagX) => {
-      tagX.forEach((tagFe) => {
-        this.tagList.push(tagFe);
-      });
+    this.tagList = [];
+    this.tagService.getTags().subscribe((retrievedTags) => {
+      this.tagList = retrievedTags;
     });
   }
 
   addBook(): void {
-    let bookReturn = {} as BookReturn;
     this.convertAuthorToBookAuthor();
     this.convertTagsToBookTags();
 
     this.bookService.createBook(this.book).subscribe(bookR => {
-      bookReturn = bookR;
+      this.bookReturn = bookR;
       this.bookService.postPicture(this.book.isbn13, this.imageFile).subscribe();
-      this.router.navigate([`/book/view/${bookReturn.id}`]);
+      this.router.navigate([`/book/view/${this.bookReturn.id}`]);
     });
   }
 
